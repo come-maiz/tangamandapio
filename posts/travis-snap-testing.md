@@ -88,7 +88,9 @@ edge channel of the Ubuntu store to start the crowdtesting with your community.
 
 We can automate all of this with Travis. The `snapcraft.yaml` for the project
 must be already in the GitHub repository, and we will add there a `.travis.yml`
-file. First, let's see what's required to build the snap:
+file. They have
+[good docs to prepare your Travis account](https://docs.travis-ci.com/).
+First, let's see what's required to build the snap:
 
 ```
 sudo: required
@@ -160,6 +162,8 @@ snapcraft and showcase them when ready. It has many more commands that
 have to be added to the automated test suite, and it also has a web UI and
 an HTTP API. Lots of things to play with! If you would like to help, and
 on the way learn about snaps, automation and the decentralized web, please
-let me know.
+let me know. You can take a look on my
+[IPFS snap repo](https://github.com/elopio/ipfs-snap) for more details about
+testing snaps in Travis, and other tricks for the build and deployment.
 
 [![screenshot of the IPFS smoke test running in travis](https://archive.org/download/elopio-screenshots2/travis/ipsf-travis.png)](https://archive.org/download/elopio-screenshots2/travis/ipsf-travis.png)
