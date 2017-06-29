@@ -114,8 +114,8 @@ script:
   - sudo snap install *.snap --dangerous
 ```
 
-And once it is installed, we can run it and add verifications to check that it
-works as expected. That is, our automated user acceptance test. IPFS has a CLI
+And once it is installed, we can run it and check that it works as expected.
+Those checks are our automated user acceptance test. IPFS has a CLI
 client, so we can just run commands and verify outputs with grep. Or we can get
 fancier using [shunit2](https://github.com/kward/shunit2) or
 [bats](https://github.com/sstephenson/bats/). But the basic idea would be to
