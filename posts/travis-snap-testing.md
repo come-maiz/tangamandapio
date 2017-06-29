@@ -12,8 +12,7 @@ install [snaps](https://snapcraft.io) in Travis!
 I've been excited all week telling people about all the doors that this opens;
 but if you have been following my adventures in the Ubuntu world, by now you
 can problably guess that I'm mostly thinking about all the potential this has
-for automated testing. For the automation of user acceptance tests, in
-particular.
+for automated testing. For the automation of user acceptance tests.
 
 User acceptance tests are executed from the point of view of the user, with
 your software presented as a black box to them. The tests can only interact
@@ -21,7 +20,7 @@ with the software through the entry points you define for your users. If it's
 a CLI application, then the tests will call commands and subcommands and check
 the outputs. If it's a website or a desktop application, the tests will click
 things, enter text and check the changes on this GUI. If it's a service with
-an HTTP API, the tests will make requests and check the responses. On this
+an HTTP API, the tests will make requests and check the responses. On these
 tests, the closer you can get to simulate the environment and behaviour of your
 real users, the better.
 
@@ -34,7 +33,7 @@ So, getting a green execution of these tests in the Trusty machine of Travis is
 a pretty good indication that it will work on all the active releases of
 Ubuntu, Debian, Fedora and even on a Raspberry Pi.
 
-Let me show you an example of what I'm talking about, using obviously my
+Let me show you an example of what I'm talking about, obviously using my
 favourite snap called IPFS. There is
 [more information about IPFS in my previous post](http://elopio.net/blog/ipfs-crowdtesting/).
 
@@ -103,8 +102,8 @@ For now, we build the snap in a docker container to keep things simple. We have
 work in progress to be able to install snapcraft in Trusty as a snap, so soon
 this will be even nicer running everything directly in the Travis machine.
 
-This step will leave the packaged .snap file in the current directory. So we
-can install it adding a few more steps to the Travis script:
+This previous step will leave the packaged .snap file in the current directory.
+So we can install it adding a few more steps to the Travis script:
 
 ```
 [...]
@@ -119,8 +118,8 @@ And once it is installed, we can run it and add verifications to check that it
 works as expected. That is, our automated user acceptance test. IPFS has a CLI
 client, so we can just run commands and verify outputs with grep. Or we can get
 fancier using [shunit2](https://github.com/kward/shunit2) or
-[bats](https://github.com/sstephenson/bats/). But the basic idea is to add to
-the Travis script something like this:
+[bats](https://github.com/sstephenson/bats/). But the basic idea would be to
+add to the Travis script something like this:
 
 ```
 [...]
@@ -146,7 +145,7 @@ For the IPFS snap we had for a long time a manual smoke suite, that our amazing
 have been executing over and over again, every time we want to publish a new
 release. I've turned it into
 [a simple bash script](https://github.com/elopio/ipfs-snap/blob/master/tests/smoke_test.sh)
-that from now on will be executed frequently in Travis, and will tell us if
+that from now on will be executed frequently by Travis, and will tell us if
 there's something wrong before anybody gives it a try manually. With this our
 community of testers will have more time to run new and interesting scenarios,
 trying to break the application in clever ways, instead of running the same
@@ -163,4 +162,4 @@ an HTTP API. Lots of things to play with! If you would like to help, and
 on the way learn about snaps, automation and the decentralized web, please
 let me know.
 
-[![screenshot of the IPFS smoke test running in travis](https://archive.org/download/elopio-screenshots2/travis/ipsf-travis.png)](https://archive.org/download/elopio-screenshots2/ipfs-peers.png)
+[![screenshot of the IPFS smoke test running in travis](https://archive.org/download/elopio-screenshots2/travis/ipsf-travis.png)](https://archive.org/download/elopio-screenshots2/travis/ipsf-travis.png)
