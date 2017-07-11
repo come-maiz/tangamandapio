@@ -192,6 +192,6 @@ sudo snap install gobot-blink-elopio --edge --devmode
 sudo gobot-blink-elopio
 ```
 
-Now my experiments will be to try to get rid of the `--devmode`. If you have
-any questions or want to help, we have a
+Now my experiments will be to try make the snap more secure, with strict
+confinement. If you have any questions or want to help, we have a
 [topic in the forum](https://forum.snapcraft.io/t/write-your-robots-in-go-with-gobot-and-distribute-the-software-as-snaps/1086).
