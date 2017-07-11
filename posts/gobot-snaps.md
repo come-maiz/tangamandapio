@@ -134,7 +134,7 @@ boards and an operating system that supports snaps can easily install it. We
 also open the door to
 [continuous delivery](https://build.snapcraft.io) and
 [crowd testing](http://elopio.net/blog/ipfs-crowdtesting/). And as I said
-before, super simple:
+before, super simple, just put this in the `snapcraft.yaml` file:
 
 ```
 name: gobot-blink-elopio
