@@ -153,9 +153,9 @@ And go back to IRC to check.
 Last thing would be to push the source code we have just written to a GitHub
 repo, and enable the continuous delivery in build.snapcraft.io. Go to your
 server and install the bot with `sudo snap install baymax-elopio --edge`.
-Now everytime you make a change in your master repo in GitHub, the bot in
-your server will be automatically updated to get those changes within a few
-hours without any work from your side.
+Now everytime somebody from your team makes a change in the master repo in
+GitHub, the bot in your server will be automatically updated to get those
+changes within a few hours without any work from your side.
 
 If you are into chatops, make sure that every time you do a manual task, you
 also plan for some time to turn that task into a script that can be executed
