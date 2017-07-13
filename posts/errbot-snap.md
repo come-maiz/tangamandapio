@@ -99,7 +99,7 @@ And in the `config.py` file, set the following values:
     CHATROOM_PRESENCE = ('#snappy',)
 
 Run it again with the errbot command, but this time join the #snappy channel
-in irc.freenode.net, and write in there `tryme`. It works ! :)
+in irc.freenode.net, and write in there `!tryme`. It works ! :)
 
 So, this is very simple, but let's package it now to start with the good
 practice of continuous delivery before it gets more complicated. As usual, it
