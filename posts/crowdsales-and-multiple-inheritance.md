@@ -75,11 +75,13 @@ However, you should be extra careful when combining them. It's not the same to
 have three contracts with one condition than to have one contract with three
 conditions. The combination makes a bigger attack surface, so you need to have
 a good idea of what you want to achieve, and know the implementation details of
-the tools you are using. Before you go ahead and deploy a complex crowdsale
-that combines some of our contracts, I would like to spend some time going deep
-into how Solidity works when you combine contracts through multiple
-inheritance, like Gustavo did in his guide to make a contract that inherits
-from `TimedCrowdsale` **and** from `MintedCrowdsale`.
+the tools you are using.
+
+Before you go ahead and deploy a complex crowdsale that combines some of our
+contracts, I would like to spend some time going deep into how Solidity works
+when you combine contracts through multiple inheritance, like Gustavo did in
+his guide to make a contract that inherits from `TimedCrowdsale` **and** from
+`MintedCrowdsale`.
 
 Multiple inheritance is hard, and it can get very confusing if you abuse it.
 Some languages don't support it at all; but it is becoming a very common
@@ -93,7 +95,6 @@ base contract `A`, with a function named `f`:
 contract A {
   function f() {
     somethingA();
-
   }
 }
 ```
@@ -282,7 +283,7 @@ experiments with crowdsales and their tests:
 [https://github.com/elopio/zeppelin-crowdsales](https://github.com/elopio/zeppelin-crowdsales)
 
 Take a look at my
-[PreSaleWithCapCrowdsale contract](https://github.com/elopio/zeppelin-crowdsales/blob/master/contracts/PreSaleWithCapCrowdsale.sol)
+[PreSaleWithCapCrowdsale contract](https://github.com/elopio/zeppelin-crowdsales/blob/master/contracts/PreSaleWithCapCrowdsale.sol).
 You will see that I preferred to be explicit about the conditions instead of
 using `super`:
 
