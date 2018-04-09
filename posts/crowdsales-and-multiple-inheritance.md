@@ -224,8 +224,8 @@ became complicated because of the `||` (or) condition. Things are a lot easier
 when all our conditions are merged with `&&` (and), because in that case the
 order of the conditions doesn't alter the result.
 
-Let's say that we have a crowdsale that should only allow whitelisted
-investors to buy tokens while the sale is open and the cap has not been
+Let's say that we have a crowdsale that should **only** allow whitelisted
+investors to buy tokens while the sale is open **and** the cap has not been
 reached. In this case, the condition to check would be:
 
 ```
