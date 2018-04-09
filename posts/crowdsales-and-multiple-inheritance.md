@@ -49,7 +49,7 @@ which overrides the simple `_deliverTokens` behavior of the base class to call
 instead the `mint` function of an
 [ERC20 Mintable token](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/MintableToken.sol).
 
-What if we want to do someting more interesting with the price of the tokens?
+What if we want to do something more interesting with the price of the tokens?
 The base `Crowdsale` contract defines a constant rate between tokens and wei,
 but if we override `_getTokenAmount`, we could do something like increasing
 the price as the closing time of the crowdsale approaches. That's exactly what
