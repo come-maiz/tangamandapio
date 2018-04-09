@@ -262,12 +262,12 @@ contract WhitelistedTimedCappedCrowdsale is TimedCrowdsale, WhitelistedCrowdsale
 ```
 
 It doesn't matter how you order the parents, all the conditions will be
-checked always. But, take this with a grain of salt. If your parent contracts
-are not super clear, they might be hiding an `||` condition in a few
-hard-to-read code statements, meaning that all the conditions will be checked,
-but the order will be different. This can have different side-effects on
-Solidity, as some paths will execute statements that other paths won't, and it
-could lead an attacker to find a specific path that is vulnerable.
+checked always. But, take this with a grain of salt. All the conditions will be
+checked, but the order will be different. This can have different side-effects
+on Solidity, as some paths will execute statements that other paths won't, and
+it could lead an attacker to find a specific path that is vulnerable. Also, if
+your parent contracts are not super clear, they might be hiding an `||`
+condition in a few hard-to-read code statements.
 
 It's very easy to think that the parent contracts will just be magically merged
 into something that will make sense for our use case, or to make a mistake when
