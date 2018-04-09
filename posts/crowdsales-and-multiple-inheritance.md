@@ -11,7 +11,7 @@ Earlier this year, part of the team took the task to redesign our base
 and to make the experience of building and publishing your own crowdsale more
 clear and secure. These new contracts were added to OpenZeppelin version
 `1.7.0`, and since the release they have been widely used by our community with
-great success. So, this is a good moment to show them off.
+great success. So, this is a good moment to show off :)
 
 Let's start with a dive into
 [the source code of the `Crowdsale` base contract](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol).
