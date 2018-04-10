@@ -20,8 +20,8 @@ details of the OpenZeppelin crowdsale architecture. They explain that some
 functions are the core of the architecture and should not be overriden, like
 `buyTokens`. Some others like `_preValidatePurchase` can be overriden to
 implement the requirements of your crowdsale, but that extra behavior should
-be concatenated with the one of the parent calling `super`, to preserve the
-validations from the  base contract. And, some functions like
+be concatenated with the one of the parent by calling `super`, to preserve the
+validations from the  base contract. Some functions like
 `_postValidatePurchase` can be just added as hooks in other parts of the
 crowdsale's lifecycle.
 
@@ -73,7 +73,7 @@ as we have seen, the new architecture is clearer and safer, with each contract
 explaining the functions that you can or can't override, and how to do it.
 However, you should be extra careful when combining them. It's not the same to
 have three contracts with one condition than to have one contract with three
-conditions. The combination makes a bigger attack surface, so you need to have
+conditions. The combination increases the attack surface, so you need to have
 a good idea of what you want to achieve, and know the implementation details of
 the tools you are using.
 
@@ -195,10 +195,10 @@ example with a more complicated inheritance graph.
 To better understand how this can impact your crowdsales, take a look at the
 case that Philip Daian brilliantly explains on his blog post
 [Solidity anti-patterns: Fun with inheritance DAG abuse](https://pdaian.com/blog/solidity-anti-patterns-fun-with-inheritance-dag-abuse/).
-There he presents a Crowdsale contract that needs "to have a whitelist
+There, he presents a Crowdsale contract that needs "to have a whitelist
 pool of preferred investors able to buy in the pre-sale [...], along with a
 hard cap of the number of [...] tokens that can be distributed." On his first
-faulty implementation, he ends up with a crowdsale that checks:
+(deliberately) faulty implementation, he ends up with a crowdsale that checks:
 
 ```
 ((withinPeriod && nonZeroPurchase) && withinCap) || (whitelist[msg.sender] && !hasEnded())
@@ -262,7 +262,7 @@ contract WhitelistedTimedCappedCrowdsale is TimedCrowdsale, WhitelistedCrowdsale
 ```
 
 It doesn't matter how you order the parents, all the conditions will be
-checked always. But, take this with a grain of salt. All the conditions will be
+checked always. But take this with a grain of salt. All the conditions will be
 checked, but the order will be different. This can have different side-effects
 on Solidity, as some paths will execute statements that other paths won't, and
 it could lead an attacker to find a specific path that is vulnerable. Also, if
