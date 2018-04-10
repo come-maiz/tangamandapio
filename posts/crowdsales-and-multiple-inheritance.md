@@ -4,14 +4,18 @@ one of the most common uses for smart contracts right now. The Zeppelin team
 has been very involved in this topic,
 [auditing many crowdsale contracts](https://blog.zeppelin.solutions/tagged/audit),
 and supporting [OpenZeppelin](https://openzeppelin.org/), the most popular
-framework to build these crowdsales.
+framework to build these crowdsales. What we found was a lot of contracts
+repeating the same basic concepts, with very similar code, and common
+vulnerabilities.
 
 Earlier this year, part of the team took the task to redesign our base
-`Crowdsale` contract in order to easily support a lot of new crowdsale flavors,
-and to make the experience of building and publishing your own crowdsale more
-clear and secure. These new contracts were added to OpenZeppelin version
+`Crowdsale` contract in order to support a lot of new crowdsale flavors out of
+the box and to make the experience of building and publishing your own
+crowdsale more clear and secure. The idea is to make audits less necessary,
+with an architecture that is modular, that encourages reuse and that will be
+collectively reviewed. These new contracts were added to OpenZeppelin version
 `1.7.0`, and since the release they have been widely used by our community with
-great success. So, this is a good moment to show off :)
+ great success. So, this is a good moment to show off :)
 
 Let's start with a dive into
 [the source code of the `Crowdsale` base contract](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol).
@@ -311,6 +315,12 @@ implementation that will make it easier to develop crowdsales on top of our
 contracts, please
 [let us know by sending a message to the slack channel](https://slack.openzeppelin.org/).
 I am *elopio* in there.
+
+A relevant experiment here is to use
+[composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance#Benefits).
+In OpenZeppelin we couldn't implement an architecture based on composition
+because the high gas costs. That is one of the reasons we are now hard at work
+on [zeppelin_os](https://zeppelinos.org/), expect exciting news very soon!
 
 Thanks a lot to [Ale](https://github.com/ajsantander) and
 [Alejo](https://github.com/fiiiu), who worked on these new contracts and helped
