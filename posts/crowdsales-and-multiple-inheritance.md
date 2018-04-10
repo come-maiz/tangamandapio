@@ -63,12 +63,16 @@ framework, Gustavo Guimaraes published a nice
 
 These are just a few examples. I invite you to explore the
 [OpenZeppelin crowdsale contracts](https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale)
-to see all the new flavors that you can easily use to fund your cool idea. And
-remember that if you want to help us adding new flavors or improving the
-existing ones, you are welcome into
-[our community](https://slack.openzeppelin.org/).
+to see all the new flavors that you can easily use to fund your cool idea;
+and take a look at the
+[SampleCrowdsale contract](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/examples/SampleCrowdsale.sol),
+a more complex scenario that comes with full
+[test coverage](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/test/examples/SampleCrowdsale.test.js).
+If you like OpenZeppelin, remember that you are welcome into
+[our vibrating community](https://slack.openzeppelin.org/) to help us adding new
+contracts or improving the existing ones.
 
-On the repo you will also find that these contracts are very well tested. And
+On the repo you will also find that all these contracts are very well tested. And
 as we have seen, the new architecture is clearer and safer, with each contract
 explaining the functions that you can or can't override, and how to do it.
 However, you should be extra careful when combining them. It's not the same to
