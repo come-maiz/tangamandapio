@@ -1,4 +1,5 @@
-On 2017 we saw a mind-blowing number of crowdsales. They have proved to be a
+On 2017 we saw a mind-blowing number of crowdsales and ICOs running in the
+Ethereum blockchain. They have proven to be a
 powerful tool to collect the funds required to start a project, and they are
 one of the most common uses for smart contracts right now. The Zeppelin team
 has been very involved in this topic,
@@ -228,16 +229,21 @@ reverted even if the sender is whitelisted.
 
 There are some simple cases, where the order of the conditions is not
 important. By now, you should have started to suspect that the contract above
-became complicated because of the `||` (or) condition. Things are a lot easier
-when all our conditions are merged with `&&` (and), because in that case the
+became complicated because of the `||` (*or*) condition. Things are a lot easier
+when all our conditions are merged with `&&` (*and*), because in that case the
 order of the conditions doesn't alter the result.
 
-Let's say that we have a crowdsale that should **only** allow whitelisted
-investors to buy tokens while the sale is open **and** the cap has not been
-reached. In this case, the condition to check would be:
+Our new architecture was crafted for using `require` instead of returning
+booleans, which works nicely to combine *and* conditions, and to revert the
+transaction when one fails. Let's say that we have a crowdsale that should
+**only** allow whitelisted investors to buy tokens while the sale is open
+**and** the cap has not been reached. In this
+case, the condition to check would be (in pseudocode):
 
 ```
-hasStarted() && !hasEnded() && isInWhiteList(msg.sender) && isWithinCap(msg.value)
+require(hasStarted() && !hasEnded())
+require(isInWhiteList(msg.sender))
+require(isWithinCap(msg.value))
 ```
 
 Our contract would be as simple as:
@@ -319,8 +325,11 @@ I am *elopio* in there.
 A relevant experiment here is to use
 [composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance#Benefits).
 In OpenZeppelin we couldn't implement an architecture based on composition
-because the high gas costs. That is one of the reasons we are now hard at work
-on [zeppelin_os](https://zeppelinos.org/), expect exciting news very soon!
+because of the high gas costs implied, especially during deployment. That is
+one of the reasons we are now hard at work
+on [zeppelin_os](https://zeppelinos.org/), which minimizes deployment costs
+by helping you use libraries that are already on-chain. Expect exciting news
+very soon!
 
 Thanks a lot to [Ale](https://github.com/ajsantander) and
 [Alejo](https://github.com/fiiiu), who worked on these new contracts and helped
