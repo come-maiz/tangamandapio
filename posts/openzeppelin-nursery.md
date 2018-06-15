@@ -70,7 +70,7 @@ you normally do, you will have to install it from his branch:
 
 And import it as if it were part of the OpenZeppelin release:
 
-    import 'openzeppelin-solidity/contracts/oracle/Oracle.sol';
+    import "openzeppelin-solidity/contracts/oracle/Oracle.sol";
 
 A final way in which you can help is trying to find security vulnerabilities
 on the proposed code. If you do find a security issue, we ask to please make a
