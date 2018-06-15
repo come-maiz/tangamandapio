@@ -84,5 +84,8 @@ passed all our security reviews. **Do not use them in production**, only for
 testing. But having said that, let's break things and have fun nursing these
 cool ideas!
 
+To find what's in the nursery right now, just take a look at the GitHub tag:
+https://github.com/OpenZeppelin/openzeppelin-solidity/labels/nursery
+
 If you are unsure where to start, or want to share your ideas with us, please
 jump into our [Slack chat](https://slack.openzeppelin.org/).
