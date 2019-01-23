@@ -52,15 +52,36 @@ management,
 
 # ✔️ Write clean code
 
-[The only valid measurement of code quality is WTFs/minute](https://www.osnews.com/story/19266/wtfsm/).
+[The only valid measurement of code quality is WTFs/minute](https://www.osnews.com/story/19266/wtfsm/). This point *must* be simple. If things get complicated or
+weird, you are doing it wrong. Go for a walk and try again with fresh eyes.
 
-Clean Code, by Robert C. Martin.
-Consistent code style
+But don't get me wrong, no interesting software project is simple. Now add the
+complexity dimensions of decentralization, transparency, cryptography, and all
+these shiny ideas that are keeping us so busy these days. It's complicated by
+design; but with the correct abstractions, a simple model, and encapsulation,
+you can start building the bank-killer app one line at a time. And each of
+those lines *must* be clean and readable.
 
-Unit tests
+I'm not a good programmer, I just had the luck to have read Uncle Bob Martin's
+book [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) at
+the right moment, and to have read a neverending stream of very ugly code.
+It's weird to call this random stranger of the internets "uncle", but I
+actually love him a little more than a couple of my real uncles.
+
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/800px-Robert_Cecil_Martin.png" alt="Robert C. Martin" width="200"/>](https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png)
+
+Once you all agree on this point, enforce a consistent code style by running a
+[linter](https://en.wikipedia.org/wiki/Lint_(software)) on every new line of
+code you add. The particular rules you choose are not as important as it is to
+strictly follow a consistent set of rules; but if you can
+[sacrifice your peculiar preferences to be consistent with the rest of the world](https://github.com/OpenZeppelin/openzeppelin-solidity/issues/1396#issuecomment-440426310), your contributors will appreciate it a lot.
+
+# ✔️ Unit tests
 test coverage
 Test Driven Development: By Example, by Kent Beck.
 xUnit Test Patterns, by Gerard Meszaros.
+
+
 Integration tests
 Agile Testing, by Janet Gregory and Lisa Crispin.
 
