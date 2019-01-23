@@ -23,9 +23,9 @@ Take a look at the
 and start by [choosing the license](https://choosealicense.com/) that better
 suits your objectives.
 
-[<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Richard_Stallman_by_gisleh_01.jpg" alt="Richard Stallman" width="200"/>](https://en.wikipedia.org/wiki/Richard_Stallman#/media/File:Richard_Stallman_by_gisleh_01.jpg)
+I'm sure you have already met our first wise elder: [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman) 🤪
 
-Meet our first wise elder: [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman)
+[<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Richard_Stallman_by_gisleh_01.jpg" alt="Richard Stallman" width="200"/>](https://en.wikipedia.org/wiki/Richard_Stallman#/media/File:Richard_Stallman_by_gisleh_01.jpg)
 
 Publish the code
 
