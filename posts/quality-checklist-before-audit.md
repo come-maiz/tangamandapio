@@ -102,49 +102,73 @@ team.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Kent_Beck_1.jpg" alt="Kent Beck" height="400"/>](https://en.wikipedia.org/wiki/Kent_Beck#/media/File:Kent_Beck_1.jpg) [<img src="https://pbs.twimg.com/profile_images/71233259/Gerard_in_Vancouver__Brian_Foote-O-O_Canada_012_.jpg" alt="Gerard Meszaros" height="400"/>](https://twitter.com/gerardmes)
 
+Make sure to run your unit tests on all the pull requests, and that they are
+*all* green before accepting them. Also add a report of test coverage to make
+sure that it never goes down.
+
 # ✔️ Test early, test often, test agile
 
-Integration tests
-Agile Testing, by Janet Gregory and Lisa Crispin.
+Now that you have your first layer of tests covered with tons of unit tests,
+what comes next is... more tests! You need to test the integration between
+all of your components, and you even need to go one level higher to test your
+application from the point of view of a real user.
 
-Use CI
+To me, this is the biggest challenge, and designing a good test suite that
+keeps many bugs out of your system can be as difficult as designing the system
+itself. Automate as much as possible, share the load of manual testing... and
+let your community help you.
 
-Publish the code
+We'll talk later about community, but I think this is the justification for
+publishing your code as early as possible: you can get help from early adopters
+and enthusiasts to validate your system, no only for correctness but also to
+verify that you are focusing on the right use cases, that you are solving a
+real problem with a system that is usable.
 
-Documentation
+A lot has been written about iterative development processes that deliver
+functionalities in progressive sprints and milestones. I found that Mike Cohn's
+[Succeeding with Agile: Software Development Using Scrum](https://www.goodreads.com/book/show/6707987-succeeding-with-agile)
+is a good place to start, but keep in mind that any methodology will have to be
+adjusted to your team, your users, and your context. There are a lot less
+resources focused on the quality and testing part, that's why I was so happy
+when I read
+[Agile Testing](https://www.goodreads.com/book/show/5341009-agile-testing) by
+Lisa Crispin and Janet Gregory, which is full of good ideas and advice. But
+again, nothing you read will fit your project, take your time to design the
+process with as much love and care as you design your architecture.
+
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mike_Cohn_2013-06-12.jpg/1280px-Mike_Cohn_2013-06-12.jpg" alt="Mike Cohn" height="400"/>](https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg) [<img src="https://agiletester.ca/wp-content/uploads/sites/26/2013/09/Lisa-Crispin-and-Janet-Gregory.jpg" alt="Lisa Crispin and Janet Gregory" height="400"/>](https://agiletester.ca/about-the-authors/)
+
+There's some debate here about when to audit, before or after the code is
+published. I think audits should be performed when there is a release candidate
+ready to be deployed to mainnet, after you have performed extensive alfa and
+beta testing. I see some room for auditing before the code has been published,
+but this would be more to check that the development process will lead to a
+high quality, properly tested release candidate, not to perform a deep
+inspection of the code.
+
+# ✔️ Document
+
+
 readmes
 docstrings
 usability
 Specification
 
-Define a process for change
-
- Succeeding with Agile: Software Development Using Scrum
-(A Mike Cohn Signature Book)
-
-Release early and often
-
-Milestones and iterations
-
-
 Check your dependencies
 idiomatic
 Build a community
+Communication
 Jono Bacon
 Code of conduct
-
-Communication
+Contribution guidelines
+Bug bounty
 
 Known issues
 
 Ethernaut, by Zeppelin.
 Zeppelin audits reports, by Zeppelin.
-Zeppelin audits reports, by Zeppelin.
+consensys database
 
-
-Contribution guidelines
-
-Bug bounty
 
 Hire an external auditing team
 
