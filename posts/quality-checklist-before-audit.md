@@ -8,8 +8,7 @@ Finding security vulnerabilities on this futuristic cypherpunk environment is
 super challenging and fun; but I think that security actually starts in a
 pretty boring and traditional place, full of the wisdom that our elders* have
 collected through millennia of developing free software in community. So here I
-want to share our checklist for boring quality things to do before spending
-thousands of dollars in an audit by an external team.
+want to share our checklist for boring quality things to do before an audit.
 
 # ✔️ Choose a free software license
 
@@ -65,22 +64,45 @@ those lines *must* be clean and readable.
 I'm not a good programmer, I just had the luck to have read Uncle Bob Martin's
 book [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) at
 the right moment, and to have read a neverending stream of very ugly code.
-It's weird to call this random stranger of the internets "uncle", but I
-actually love him a little more than a couple of my real uncles.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/800px-Robert_Cecil_Martin.png" alt="Robert C. Martin" width="200"/>](https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png)
 
 Once you all agree on this point, enforce a consistent code style by running a
 [linter](https://en.wikipedia.org/wiki/Lint_(software)) on every new line of
-code you add. The particular rules you choose are not as important as it is to
-strictly follow a consistent set of rules; but if you can
+code you add. The particular rules are not as important as it is to strictly
+follow them; but if you can
 [sacrifice your peculiar preferences to be consistent with the rest of the world](https://github.com/OpenZeppelin/openzeppelin-solidity/issues/1396#issuecomment-440426310), your contributors will appreciate it a lot.
 
-# ✔️ Unit tests
-test coverage
-Test Driven Development: By Example, by Kent Beck.
-xUnit Test Patterns, by Gerard Meszaros.
+I also practice [slow-~~food~~](https://en.wikipedia.org/wiki/Slow_Food)programming.
+Take your time, enjoy the journey, make this your craft and something you can
+proudly set free, and let the masses read it and judge it.
 
+# ✔️ Write unit tests
+
+Tons of them. 100% coverage. This might sound extreme, but hey, your code is now
+playing directly with somebody else's money. If you forgot or got lazy and
+didn't write a test for that super obvious line of code, you might be opening
+the door for an exploit later in the game that will make your project crash, and
+all this magic internet money will disappear in no time. It has happened.
+
+I feel immediatly more secure when I do test-driven development. At least give
+an honest try to writting the tests first, and get into a cycle of
+red-green-refactor. There are other techniques that can achieve the same
+result, but I suggest to start here and then deviate if you find good
+reasons to do so. If you've never worked this way, read
+[Test Driven Development: By Example](https://www.goodreads.com/book/show/387190.Test_Driven_Development),
+by Kent Beck. It's a quick read, that will help you avoid the temptation of
+just jump into code without thinking it through.
+
+Then, even if you design for testability, you will find many scenarios that are
+hard to test. Gerard Meszaros provides all the answers in
+[xUnit Test Patterns](https://www.goodreads.com/book/show/337302.xUnit_Test_Patterns).
+This book is huge, so I recommend to choose a designated test expert on your
+team.
+
+[<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Kent_Beck_1.jpg" alt="Kent Beck" width="200"/>](https://en.wikipedia.org/wiki/Kent_Beck#/media/File:Kent_Beck_1.jpg) [<img src="https://pbs.twimg.com/profile_images/71233259/Gerard_in_Vancouver__Brian_Foote-O-O_Canada_012_.jpg" alt="Gerard Meszaros" width="200"/>](https://twitter.com/gerardmes)
+
+# ✔️ Test early, test often, test agile
 
 Integration tests
 Agile Testing, by Janet Gregory and Lisa Crispin.
@@ -95,8 +117,18 @@ docstrings
 usability
 Specification
 
-Check your dependencies
+Define a process for change
 
+ Succeeding with Agile: Software Development Using Scrum
+(A Mike Cohn Signature Book)
+
+Release early and often
+
+Milestones and iterations
+
+
+Check your dependencies
+idiomatic
 Build a community
 Jono Bacon
 Code of conduct
@@ -109,14 +141,6 @@ Ethernaut, by Zeppelin.
 Zeppelin audits reports, by Zeppelin.
 Zeppelin audits reports, by Zeppelin.
 
-Define a process for change
-
- Succeeding with Agile: Software Development Using Scrum
-(A Mike Cohn Signature Book)
-
-Release early and often
-
-Milestones and iterations
 
 Contribution guidelines
 
