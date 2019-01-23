@@ -61,9 +61,10 @@ design; but with the correct abstractions, a simple model, and encapsulation,
 you can start building the bank-killer app one line at a time. And each of
 those lines *must* be clean and readable.
 
-I'm not a good programmer, I just had the luck to have read Uncle Bob Martin's
-book [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) at
-the right moment, and to have read a neverending stream of very ugly code.
+I'm not a breathtaking programmer, I just had the luck to have read Uncle Bob
+Martin's book
+[Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) at
+the right moment, and to have read a neverending stream of very very ugly code.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/800px-Robert_Cecil_Martin.png" alt="Robert C. Martin" height="250"/>](https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png)
 
@@ -92,7 +93,7 @@ result, but I suggest to start here and then deviate if you find good
 reasons to do so. If you've never worked this way, read
 [Test Driven Development: By Example](https://www.goodreads.com/book/show/387190.Test_Driven_Development),
 by Kent Beck. It's a quick read, that will help you avoid the temptation of
-just jump into code without thinking it through.
+just jumping into code without thinking it through.
 
 Then, even if you design for testability, you will find many scenarios that are
 hard to test. Gerard Meszaros provides all the answers in
@@ -109,20 +110,21 @@ sure that it never goes down.
 # ✔️ Test early, test often, test agile
 
 Now that you have your first layer of tests covered with tons of unit tests,
-what comes next is... more tests! You need to test the integration between
-all of your components, and you even need to go one level higher to test your
-application from the point of view of a real user.
+what comes next are... more tests! You need to test the integration between
+all of your components, you need to go one level higher to test your
+application from the point of view of a real user, and you even need to go one
+level higher to test the interactions with other systems end-to-end.
 
-To me, this is the biggest challenge, and designing a good test suite that
+To me, this is the biggest challenge, and designing a good process that
 keeps many bugs out of your system can be as difficult as designing the system
 itself. Automate as much as possible, share the load of manual testing... and
-let your community help you.
+let your community help.
 
 We'll talk later about community, but I think this is the justification for
 publishing your code as early as possible: you can get help from early adopters
 and enthusiasts to validate your system, no only for correctness but also to
 verify that you are focusing on the right use cases, that you are solving a
-real problem with a system that is usable.
+real problem and building something usable.
 
 A lot has been written about iterative development processes that deliver
 functionalities in progressive sprints and milestones. I found that Mike Cohn's
@@ -133,8 +135,9 @@ resources focused on the quality and testing part, that's why I was so happy
 when I read
 [Agile Testing](https://www.goodreads.com/book/show/5341009-agile-testing) by
 Lisa Crispin and Janet Gregory, which is full of good ideas and advice. But
-again, nothing you read will fit your project, take your time to design the
-process with as much love and care as you design your architecture.
+let me stress it again, nothing you read will fit your project, take your
+time to design the process with as much love and care as you design your
+architecture.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mike_Cohn_2013-06-12.jpg/1280px-Mike_Cohn_2013-06-12.jpg" alt="Mike Cohn" height="350"/>](https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg) [<img src="https://agiletester.ca/wp-content/uploads/sites/26/2013/09/Lisa-Crispin-and-Janet-Gregory.jpg" alt="Lisa Crispin and Janet Gregory" height="350"/>](https://agiletester.ca/about-the-authors/)
 
@@ -148,20 +151,45 @@ inspection of the code.
 
 # ✔️ Document
 
+This is my least favorite part, by far. So let's keep it simple, starting at
+the beginning: the README, the most important file of your repository.
+And yet, it is usually either empty or bloated, outdated and ugly. It is the
+first things other developers read, and it should work as a clear index for
+your project.
 
-readmes
-docstrings
-usability
-Specification
+It's best to not get creative here, just follow this simple specification that
+works for all the cases, proposed by Richard Littauer on
+[Standard Readme](https://github.com/RichardLitt/standard-readme/blob/master/spec.md).
 
-Check your dependencies
-idiomatic
-Build a community
-Communication
-Jono Bacon
-Code of conduct
-Contribution guidelines
-Bug bounty
+[<img src="https://pbs.twimg.com/profile_images/853672023511490561/m_RAvJfy.jpg" alt="Richard Littauer" height="350"/>](https://twitter.com/richlitt)
+
+Next come the docstrings, the documentation inside your code files. We hit
+an apparent conflict here, because in the good theory, if your code is clean
+it will not require documentation. However, note that we are not anymore
+designing standalone systems that work as a black box. We are building
+protocols for decentralized applications, your code will be called by all sorts
+of external agents. So by all means, document all the functions that are part
+of your public API following the
+[NatSpec format](https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format).
+
+Which brings me to the next point. You also need to document the
+specification of your protocol, that's how others will know what to call and
+what to expect. But more related to the topic at hand, in an audit we check that
+the implemented code works as intended by the specification. This document is
+a *must*, without it auditors will just guess your intentions which might
+result on some issues missed, because they are completely consistent within
+the system but take it to a state that you need to avoid.
+
+Finally, there's the user documentation, the icing on the cake. If your system
+is high quality, writing the user documentation will be super easy. If things
+get weird or complicated here, reevaluate your user stories and go back to
+iterate on them.
+
+# ✔️ Check your dependencies
+
+[<img src="https://static.wixstatic.com/media/a7bdaa_ab650ff17e804731b7cf560bc5ee9a02~mv2.jpg/v1/crop/x_0,y_120,w_961,h_961/fill/w_530,h_530,al_c,q_80,usm_0.66_1.00_0.01/Pia%20Mancini%20-%20headshot.jpg" alt="Pia Mancini" height="350"/>](https://www.piamancini.com/)
+
+  idiomatic
 
 Known issues
 
@@ -169,8 +197,16 @@ Ethernaut, by Zeppelin.
 Zeppelin audits reports, by Zeppelin.
 consensys database
 
+# ✔️ Build your community
+Communication
+Jono Bacon
+Code of conduct
+Contribution guidelines
+Bug bounty
 
-Hire an external auditing team
+# ✔️ Hire an external auditing team
+
+
 
 ***
 
