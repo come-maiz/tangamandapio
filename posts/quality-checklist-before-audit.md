@@ -11,7 +11,7 @@ collected through millennia of developing free software in community. So here I
 want to share our checklist for boring quality things to do before spending
 thousands of dollars in an audit by an external team.
 
-✔️ Choose a free software license
+# ✔️ Choose a free software license
 
 Closed code is insecure. If the people using your project can't inspect it,
 study it, hack and experiment on it, there's no way it can be trusted. If you
