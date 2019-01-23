@@ -11,7 +11,7 @@ collected through millennia of developing free software in community. So here I
 want to share our checklist for boring quality things to do before spending
 thousands of dollars in an audit by an external team.
 
-✅ Choose a free software license
+✔️ Choose a free software license
 
 Closed code is insecure. If the people using your project can't inspect it,
 study it, hack and experiment on it, there's no way it can be trusted. If you
@@ -23,7 +23,8 @@ Take a look at the
 and start by [choosing the license](https://choosealicense.com/) that better
 suits your objectives.
 
-[![Richard Stallman](https://upload.wikimedia.org/wikipedia/commons/d/de/Richard_Stallman_by_gisleh_01.jpg)](https://en.wikipedia.org/wiki/Richard_Stallman#/media/File:Richard_Stallman_by_gisleh_01.jpg)
+[<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Richard_Stallman_by_gisleh_01.jpg" alt="Richard Stallman" width="200"/>](https://en.wikipedia.org/wiki/Richard_Stallman#/media/File:Richard_Stallman_by_gisleh_01.jpg)
+
 Meet our first wise elder: [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman)
 
 Publish the code
