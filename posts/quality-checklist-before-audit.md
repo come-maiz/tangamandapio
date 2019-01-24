@@ -7,7 +7,7 @@ that will shake the very foundations of our society.
 Finding security vulnerabilities on this futuristic cypherpunk environment is
 super challenging and fun; but I think that security actually starts in a
 pretty boring and traditional place, full of the wisdom that our elders* have
-collected through millennia of developing free software in community. So here I
+collected through millennia of developing software in community. So here I
 want to share our checklist for boring quality things to do before an audit.
 
 # ✔️ Choose a free software license
@@ -123,7 +123,7 @@ let your community help.
 We'll talk later about community, but I think this is the justification for
 publishing your code as early as possible: you can get help from early adopters
 and enthusiasts to validate your system, no only for correctness but also to
-verify that you are focusing on the right use cases, that you are solving a
+verify that you are focusing on the right user stories, that you are solving a
 real problem and building something usable.
 
 A lot has been written about iterative development processes that deliver
@@ -154,10 +154,10 @@ inspection of the code.
 This is my least favorite part, by far. So let's keep it simple, starting at
 the beginning: the README, the most important file of your repository.
 And yet, it is usually either empty or bloated, outdated and ugly. It is the
-first things other developers read, and it should work as a clear index for
+first thing other developers read, and it should work as a clear index for
 your project.
 
-It's best to not get creative here, just follow this simple specification that
+It's best not to get creative here, just follow this simple specification that
 works for all the cases, proposed by Richard Littauer on
 [Standard Readme](https://github.com/RichardLitt/standard-readme/blob/master/spec.md).
 
@@ -178,24 +178,57 @@ what to expect. But more related to the topic at hand, in an audit we check that
 the implemented code works as intended by the specification. This document is
 a *must*, without it auditors will just guess your intentions which might
 result on some issues missed, because they are completely consistent within
-the system but take it to a state that you need to avoid.
+the system but take it to a state that you want to avoid.
 
-Finally, there's the user documentation, the icing on the cake. If your system
-is high quality, writing the user documentation will be super easy. If things
-get weird or complicated here, reevaluate your user stories and go back to
-iterate on them.
+Finally, there's the user documentation. If your system is high quality,
+writing the user documentation will be super easy. If things get weird or
+complicated here, reevaluate your user stories and go back to iterate on
+them.
 
 # ✔️ Check your dependencies
 
+Your project builds on top of many many others. It'll probably depend at least
+on the Ethereum protocol and its network of nodes, on Solidity, a bunch of
+EIPs and their implementation, libraries for testing and UI, and maybe hundreds
+of other small projects. Even if yours is secure, you need to check the health
+of your dependencies because they can easily become the source of
+vulnerabilities.
+
+Earlier I mentioned that your team should have a strong and diverse knowledge.
+That includes this context of projects where you live. You should be able to
+write idiomatic code following the best practices of the language, to identify
+known issues and how to work them around, and to keep an eye for new
+[CVEs](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)
+that may affect you. Try to participate on the communities around your
+dependencies, that will tell you how safe they are, and how much you should
+trust them. If you participate actively, that will give you karma that will be
+handy later when you need new features and bug fixes.
+
+Also pay attention to their finances. When making a budget for your project,
+take into account a share for your dependencies, they will need it in order
+to remain actively maintained. There's a very nice project called
+[OpenCollective](https://opencollective.com/discover),
+lead by Pia Mancini, that's making super easy to support in a transparent way
+the organizations and developers you depend on.
+
 [<img src="https://static.wixstatic.com/media/a7bdaa_ab650ff17e804731b7cf560bc5ee9a02~mv2.jpg/v1/crop/x_0,y_120,w_961,h_961/fill/w_530,h_530,al_c,q_80,usm_0.66_1.00_0.01/Pia%20Mancini%20-%20headshot.jpg" alt="Pia Mancini" height="350"/>](https://www.piamancini.com/)
 
-  idiomatic
+And of course, with [ZeppelinOS](https://zeppelinos.org/) we are building a
+platform that will let you vouch for the security of a package. This is in beta
+testing, so expect exciting news very soon.
 
-Known issues
-
-Ethernaut, by Zeppelin.
-Zeppelin audits reports, by Zeppelin.
-consensys database
+Specific to Ethereum and Solidity, the community is collecting the lessons
+learned (usually on a painful way). You can learn a lot about interesting
+and tricky vulnerabilities playing the
+[Ethernaut capture the flag game](https://ethernaut.zeppelin.solutions/).
+We have
+[published many of our past audits](https://blog.zeppelin.solutions/tagged/security)
+with descriptions of the issues found, recommendations, and usually with a link
+to the patch that fixes them. The
+[Smart Contracts Weakness Registry](https://smartcontractsecurity.github.io/SWC-registry/)
+maintained by the Mythril team is also a great resource to learn from the
+experience of others. The Ethereum space is very young and we are learning
+many thinks as we go, so proceed with caution.
 
 # ✔️ Build your community
 Communication
@@ -210,4 +243,4 @@ Bug bounty
 
 ***
 
-* counted in light years of roads traveled.
+&ast; counted in light years of roads traveled.
