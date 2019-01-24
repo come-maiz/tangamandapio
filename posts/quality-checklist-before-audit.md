@@ -33,8 +33,8 @@ get there you will need to bootstrap with a strong and diverse team of core
 maintainers. They will take care of the bulk of the work, the fun and the boring
 parts, proposing and reviewing the code of your shared project. Together,
 you all need to have a strong knowledge of all of the points on this checklist.
-In addition to technical knowledge, look for a passion for cat hearding and a
-healthy workstyle, because, well, things will get complicated.
+In addition to technical knowledge, look for a passion for cat herding and a
+healthy work style, because, well, things will get complicated.
 
 Pay attention to your [bus factor](https://en.wikipedia.org/wiki/Bus_factor):
 make sure that your team is sharing their expertise, the lessons learned and their
@@ -45,7 +45,7 @@ And somebody will have to lead and orchestrate, to get value out of the eternal
 tendency to chaos. Let me introduce you to our second magician,
 [Camille Fournier](http://www.camilletalk.com/), who wrote THE book of technical
 management,
-[The Managers's Path](https://www.goodreads.com/book/show/33369254-the-manager-s-path).
+[The Manager's Path](https://www.goodreads.com/book/show/33369254-the-manager-s-path).
 
 [<img src="https://static1.squarespace.com/static/56bf8b0622482edc3dc1919d/t/56bf8ef5f85082335f63196b/1455400011874/21793992240_b56cd4b3e2_o+%281%29.jpg?format=500w" alt="Camille Fournier" height="350"/>](http://www.camilletalk.com/contact/)
 
@@ -64,7 +64,7 @@ those lines *must* be clean and readable.
 I'm not a breathtaking programmer, I just had the luck to have read Uncle Bob
 Martin's book
 [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) at
-the right moment, and to have read a neverending stream of very very ugly code.
+the right moment, and to have read a never-ending stream of very very ugly code.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/800px-Robert_Cecil_Martin.png" alt="Robert C. Martin" height="250"/>](https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png)
 
@@ -86,8 +86,8 @@ didn't write a test for that super obvious line of code, you might be opening
 the door for an exploit later in the game that will make your project crash, and
 all this magic internet money will disappear in no time. It has happened.
 
-I feel immediatly more secure when I do test-driven development. At least give
-an honest try to writting the tests first, and get into a cycle of
+I feel immediately more secure when I do test-driven development. At least give
+an honest try to writing the tests first, and get into a cycle of
 red-green-refactor. There are other techniques that can achieve the same
 result, but I suggest to start here and then deviate if you find good
 reasons to do so. If you've never worked this way, read
@@ -143,7 +143,7 @@ architecture.
 
 There's some debate here about when to audit, before or after the code is
 published. I think audits should be performed when there is a release candidate
-ready to be deployed to mainnet, after you have performed extensive alfa and
+ready to be deployed to mainnet, after you have performed extensive alpha and
 beta testing. I see room for auditing before the code has been published,
 but this would be more to check that the development process will lead to a
 high quality, properly tested release candidate, and to validate the bases of
@@ -244,11 +244,11 @@ adjust to the unexpected. There is no amount of money, experience or knowledge
 that can substitute this.
 
 Once you publish the code, you can get started engaging your community. If your
-project is interesting, they will come, and this is where the cat hearding
+project is interesting, they will come, and this is where the cat herding
 abilities of your team will shine. But you need to have good communication,
-some marketing, and a nice community manager with a plan in order to disentanble
+some marketing, and a nice community manager with a plan in order to disentangle
 and use wisely all the opportunities that your community brings. I can't
-recommend enough the writtings and videos by
+recommend enough the writings and videos by
 [Jono Bacon](https://www.jonobacon.com/).
 
 [<img src="https://farm4.staticflickr.com/3740/12622356185_b89d134675_k.jpg" alt="Jono Bacon" height="350"/>](https://www.flickr.com/photos/jonobacon/12622356185/)
