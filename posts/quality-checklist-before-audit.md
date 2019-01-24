@@ -31,7 +31,7 @@ I'm sure you have already met our first wise elder: [Richard Stallman](https://e
 If your project succeeds, it will have hundreds of contributors. But in order to
 get there you will need to bootstrap with a strong and diverse team of core
 maintainers. They will take care of the bulk of the work, the fun and the boring
-parts, proposing and reviewing all the code of your shared project. Together,
+parts, proposing and reviewing the code of your shared project. Together,
 you all need to have a strong knowledge of all of the points on this checklist.
 In addition to technical knowledge, look for a passion for cat hearding and a
 healthy workstyle, because, well, things will get complicated.
@@ -43,7 +43,7 @@ that could join this core team that sustains the project.
 
 And somebody will have to lead and orchestrate, to get value out of the eternal
 tendency to chaos. Let me introduce you to our second magician,
-[Camille Fournier](http://www.camilletalk.com/) who wrote THE book of technical
+[Camille Fournier](http://www.camilletalk.com/), who wrote THE book of technical
 management,
 [The Managers's Path](https://www.goodreads.com/book/show/33369254-the-manager-s-path).
 
@@ -117,8 +117,8 @@ level higher to test the interactions with other systems end-to-end.
 
 To me, this is the biggest challenge, and designing a good process that
 keeps many bugs out of your system can be as difficult as designing the system
-itself. Automate as much as possible, share the load of manual testing... and
-let your community help.
+itself. Iterate, automate as much as possible, share the load of manual
+testing... and let your community help.
 
 We'll talk later about community, but I think this is the justification for
 publishing your code as early as possible: you can get help from early adopters
@@ -144,10 +144,10 @@ architecture.
 There's some debate here about when to audit, before or after the code is
 published. I think audits should be performed when there is a release candidate
 ready to be deployed to mainnet, after you have performed extensive alfa and
-beta testing. I see some room for auditing before the code has been published,
+beta testing. I see room for auditing before the code has been published,
 but this would be more to check that the development process will lead to a
-high quality, properly tested release candidate, not to perform a deep
-inspection of the code.
+high quality, properly tested release candidate, and to validate the bases of
+your project, not to perform a deep inspection of the code.
 
 # ✔️ Document
 
@@ -160,8 +160,8 @@ your project.
 It's best not to get creative here, just follow this simple specification that
 works for all the cases, proposed by Richard Littauer on
 [Standard Readme](https://github.com/RichardLitt/standard-readme/blob/master/spec.md).
-*Do not forget* to add in there how to disclose security vulnerabilities found
-on your project.
+*Do not forget* to add in there how people should disclose security
+vulnerabilities found on your project.
 
 [<img src="https://pbs.twimg.com/profile_images/853672023511490561/m_RAvJfy.jpg" alt="Richard Littauer" height="350"/>](https://twitter.com/richlitt)
 
@@ -231,21 +231,23 @@ the [OpenZeppelin package](https://openzeppelin.org/), you should definitely add
 it to your list of dependencies. The
 [Smart Contracts Weakness Registry](https://smartcontractsecurity.github.io/SWC-registry/)
 maintained by the Mythril team is also a great resource to learn from the
-experience of others. The Ethereum space is very young and we are learning
-many thinks as we go, so proceed with caution.
+experience of others.
+The Ethereum space is very young and we are learning many thinks as we go, so
+proceed with caution.
 
 # ✔️ Build your community
 
 This is a complement to the first point: code without a community is insecure.
 The community gives you eyes to monitor the project, hands to test it in a
 real environment, support to survive challenging problems, and resilience to
-adjust to the unexpected. There is no amount of money that can substitute this.
+adjust to the unexpected. There is no amount of money, experience or knowledge
+that can substitute this.
 
 Once you publish the code, you can get started engaging your community. If your
 project is interesting, they will come, and this is where the cat hearding
 abilities of your team will shine. But you need to have good communication,
-some marketing, and a nice community manager with a plan in order to use wisely
-and disentangle all the opportunities that your community brings. I can't
+some marketing, and a nice community manager with a plan in order to disentanble
+and use wisely all the opportunities that your community brings. I can't
 recommend enough the writtings and videos by
 [Jono Bacon](https://www.jonobacon.com/).
 
@@ -277,21 +279,41 @@ https://zeppelin.solutions/security-audits/
 tldr:
 
 ✔️ Choose a free software license.
+
 ✔️ Build a strong and diverse team of core maintainers.
+
 ✔️ Increase your bus factor: share knowledge and responsibilities.
+
 ✔️ Choose a good leader.
+
 ✔️ Write clean code.
+
 ✔️ Enforce a consistent code style.
+
 ✔️ 100% unit test coverage.
+
+✔️ Enforce green tests on all your pull requests.
+
 ✔️ Design your iterative development and testing process.
+
 ✔️ Publish your code.
+
 ✔️ Write a good README.
+
 ✔️ Document the functions of your public API.
+
 ✔️ Document your protocol.
+
 ✔️ Write the end-user documentation.
+
 ✔️ Make sure that your dependencies can be trusted.
+
 ✔️ Review known issues and keep an eye for new ones.
+
+✔️ Use OpenZeppelin.
+
 ✔️ Build and care for your community.
+
 ✔️ Audit!
 
 ***
