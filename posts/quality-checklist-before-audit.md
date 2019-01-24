@@ -232,6 +232,7 @@ it to your list of dependencies. The
 [Smart Contracts Weakness Registry](https://smartcontractsecurity.github.io/SWC-registry/)
 maintained by the Mythril team is also a great resource to learn from the
 experience of others.
+
 The Ethereum space is very young and we are learning many thinks as we go, so
 proceed with caution.
 
