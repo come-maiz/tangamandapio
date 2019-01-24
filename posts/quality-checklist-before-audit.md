@@ -160,6 +160,8 @@ your project.
 It's best not to get creative here, just follow this simple specification that
 works for all the cases, proposed by Richard Littauer on
 [Standard Readme](https://github.com/RichardLitt/standard-readme/blob/master/spec.md).
+*Do not forget* to add in there how to disclose security vulnerabilities found
+on your project.
 
 [<img src="https://pbs.twimg.com/profile_images/853672023511490561/m_RAvJfy.jpg" alt="Richard Littauer" height="350"/>](https://twitter.com/richlitt)
 
@@ -224,22 +226,73 @@ and tricky vulnerabilities playing the
 We have
 [published many of our past audits](https://blog.zeppelin.solutions/tagged/security)
 with descriptions of the issues found, recommendations, and usually with a link
-to the patch that fixes them. The
+to the patch that fixes them. We distill all our learnings from the audits into
+the [OpenZeppelin package](https://openzeppelin.org/), you should definitely add
+it to your list of dependencies. The
 [Smart Contracts Weakness Registry](https://smartcontractsecurity.github.io/SWC-registry/)
 maintained by the Mythril team is also a great resource to learn from the
 experience of others. The Ethereum space is very young and we are learning
 many thinks as we go, so proceed with caution.
 
 # ✔️ Build your community
-Communication
-Jono Bacon
-Code of conduct
-Contribution guidelines
-Bug bounty
+
+This is a complement to the first point: code without a community is insecure.
+The community gives you eyes to monitor the project, hands to test it in a
+real environment, support to survive challenging problems, and resilience to
+adjust to the unexpected. There is no amount of money that can substitute this.
+
+Once you publish the code, you can get started engaging your community. If your
+project is interesting, they will come, and this is where the cat hearding
+abilities of your team will shine. But you need to have good communication,
+some marketing, and a nice community manager with a plan in order to use wisely
+and disentangle all the opportunities that your community brings. I can't
+recommend enough the writtings and videos by
+[Jono Bacon](https://www.jonobacon.com/).
+
+[<img src="https://farm4.staticflickr.com/3740/12622356185_b89d134675_k.jpg" alt="Jono Bacon" height="350"/>](https://www.flickr.com/photos/jonobacon/12622356185/)
+
+You should be nice with your community and care for them. A small step that
+goes a long way is to adopt and enforce a
+[code of conduct](https://www.contributor-covenant.org/) so you all can feel
+safe. Then, write some contribution guidelines to make sure that all of their
+enthusiasm can be put to good use and they don't get lost. Lastly, think about
+setting up a [bug bounty program](https://www.hackerone.com/) that will
+encourage your community to watch out for vulnerabilities in the wild, and
+to disclose them in a responsible way.
 
 # ✔️ Hire an external auditing team
 
+That's us! :) We can help you reviewing your project, we'll deep dive on
+your code with years of experience hacking, researching and developing on
+blockchains, plus a little touch of Latin American fire, to give you and
+your users all the confidence you need to continue building.
 
+We are available for auditing services, more information here:
+https://zeppelin.solutions/security-audits/
+
+[<img src="️https://pbs.twimg.com/media/DtgyV1zWwAEO1O2.jpg" alt="Zeppelin Team" height="350"/>](https://zeppelin.solutions)
+
+***
+
+tldr:
+
+✔️ Choose a free software license.
+✔️ Build a strong and diverse team of core maintainers.
+✔️ Increase your bus factor: share knowledge and responsibilities.
+✔️ Choose a good leader.
+✔️ Write clean code.
+✔️ Enforce a consistent code style.
+✔️ 100% unit test coverage.
+✔️ Design your iterative development and testing process.
+✔️ Publish your code.
+✔️ Write a good README.
+✔️ Document the functions of your public API.
+✔️ Document your protocol.
+✔️ Write the end-user documentation.
+✔️ Make sure that your dependencies can be trusted.
+✔️ Review known issues and keep an eye for new ones.
+✔️ Build and care for your community.
+✔️ Audit!
 
 ***
 
