@@ -264,15 +264,16 @@ to disclose them in a responsible way.
 
 # ✔️ Hire an external auditing team
 
-That's us! :) We can help you reviewing your project, we'll deep dive on
-your code with years of experience hacking, researching and developing on
-blockchains, plus a little touch of Latin American fire, to give you and
-your users all the confidence you need to continue building.
+That's us! :) We can help you reviewing the quality of your project and
+processes, we'll deep dive on your code with years of experience hacking,
+researching and developing on blockchains, plus a little touch of Latin
+American fire, to give you and your users all the confidence you need to
+continue building.
 
 We are available for auditing services, more information here:
 https://zeppelin.solutions/security-audits/
 
-[<img src="️https://pbs.twimg.com/media/DtgyV1zWwAEO1O2.jpg" alt="Zeppelin Team" height="350"/>](https://zeppelin.solutions)
+[<img src="https://pbs.twimg.com/media/DtgyV1zWwAEO1O2.jpg" alt="Zeppelin Team" height="350"/>](https://zeppelin.solutions)
 
 ***
 
