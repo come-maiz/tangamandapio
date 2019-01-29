@@ -6,7 +6,7 @@ that will shake the bedrock of our society.
 
 Finding security vulnerabilities on this futuristic cypherpunk environment is
 super challenging and fun; but I think that security actually starts in a
-pretty boring and traditional place, full of the wisdom that our elders have
+pretty boring and traditional place, full of the wisdom that our Standing on their shoulders, I now
 collected through millennia of developing software in community. So here I
 want to share our checklist for boring quality things that your next awesome project should consider before handing it over for an external audit.
 
