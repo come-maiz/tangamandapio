@@ -213,7 +213,7 @@ Moreover, don't forget to pay attention to their finances. When making your proj
 take into account a share for your dependencies, as they may need it in order
 to remain actively maintained. There's a very nice project called
 [OpenCollective](https://opencollective.com/discover),
-lead by Pia Mancini, that's making super easy to support in a transparent way
+led by Pia Mancini, which is making it extremely easy to transparently support
 the organizations and developers you depend on.
 
 [<img src="https://static.wixstatic.com/media/a7bdaa_ab650ff17e804731b7cf560bc5ee9a02~mv2.jpg/v1/crop/x_0,y_120,w_961,h_961/fill/w_530,h_530,al_c,q_80,usm_0.66_1.00_0.01/Pia%20Mancini%20-%20headshot.jpg" alt="Pia Mancini" height="350"/>](https://www.piamancini.com/)
@@ -268,7 +268,7 @@ providing hackers with enough incentives to disclose security issues in a respon
 
 # ✔️ Hire an external auditing team
 
-That's us! :) We can help you reviewing the quality of your project and
+That's us! :) The Zeppelin team can help you assess the quality of your project and
 processes. We'll take a deep and thorough dive on your code, with years of experience hacking,
 researching and developing on blockchains, plus a little touch of Latin
 American fire, to give you and your users all the confidence you need to
@@ -323,4 +323,7 @@ tldr:
 
 ***
 
-&ast; counted in light years of roads traveled.
+If you’re interested in discussing smart contract security, follow us on
+[Medium](https://blog.zeppelin.solutions/),
+[join our slack channel](https://slack.openzeppelin.org/), or
+[apply to work with us](https://zeppelin.solutions/jobs/)!
