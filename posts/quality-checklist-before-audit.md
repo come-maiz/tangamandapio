@@ -139,7 +139,7 @@ when I read
 [Agile Testing](https://www.goodreads.com/book/show/5341009-agile-testing) by
 Lisa Crispin and Janet Gregory, which is full of good ideas and advice. But
 let me stress it again, nothing you read will perfectly fit your project, so take your
-time to design the testing process with as much love and care as you design the system's```
+time to design the testing process with as much love and care as you design the system's
 architecture.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mike_Cohn_2013-06-12.jpg/1280px-Mike_Cohn_2013-06-12.jpg" alt="Mike Cohn" height="350"/>](https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg) [<img src="https://agiletester.ca/wp-content/uploads/sites/26/2013/09/Lisa-Crispin-and-Janet-Gregory.jpg" alt="Lisa Crispin and Janet Gregory" height="350"/>](https://agiletester.ca/about-the-authors/)
