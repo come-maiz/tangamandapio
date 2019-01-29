@@ -18,11 +18,14 @@ hold abusive control over your users, nothing prevents you (or anyone
 more powerful than you) from making them vulnerable.
 
 Take a look at the
-[Free Software Definition](https://www.gnu.org/philosophy/free-sw.en.html)
+[Free Software Definition](https://www.gnu.org/philosophy/free-sw.en.html),
 and begin with [choosing the license](https://choosealicense.com/) that best
 suits your needs.
 
-I'm sure you have already met our first wise elder: [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman) 🤪
+This is a good moment to introduce our first wise elder!
+[Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman),
+who hacked the copyright laws, started the free software movement, and wrote
+the definition above.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Richard_Stallman_by_gisleh_01.jpg" alt="Richard Stallman" height="350"/>](https://en.wikipedia.org/wiki/Richard_Stallman#/media/File:Richard_Stallman_by_gisleh_01.jpg)
 
@@ -203,7 +206,7 @@ and avoid known issues, always keeping an eye on new
 [CVEs](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)
 that may directly (or indirectly, through third-party dependencies) affect your project. Moreover, try to participate on the communities around your
 dependencies, as it is an excellent way to firsthand see how safe and trustworthy they are.
-You should also consider actively participating in those communities, to gain some karma that will surely come in 
+You should also consider actively participating in those communities, to gain some karma that will surely come in
 handy later when you need new features and bug fixes.
 
 Moreover, don't forget to pay attention to their finances. When making your project's budget,
