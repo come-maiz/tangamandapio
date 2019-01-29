@@ -1,14 +1,17 @@
-At Zeppelin we help protect the core infrastructure of open and
-decentralized applications. I'm part of the Research team, which is in charge of conducting
+At [Zeppelin](https://zeppelin.solutions/) we help protect the core
+infrastructure of open and decentralized applications. I'm part of the Research
+team, which is in charge of conducting
 [security audits](https://zeppelin.solutions/security-audits/).
 We review tons of lines of code written by very smart developers for projects
-that will shake the bedrock of our society.
+that will shake the foundations of our society.
 
 Finding security vulnerabilities on this futuristic cypherpunk environment is
 super challenging and fun; but I think that security actually starts in a
 pretty boring and traditional place, full of the wisdom that our elders have
-collected through millennia of developing software in community. Standing on their shoulders, I now
-want to share our checklist for boring quality things that your next awesome project should consider before handing it over for an external audit.
+collected through millennia of developing software in community. Standing on
+their shoulders, here I want to share our checklist for boring quality things
+that your next awesome project should consider before handing it over for an
+external audit.
 
 # ✔️ Choose a free software license
 
@@ -23,7 +26,7 @@ and begin with [choosing the license](https://choosealicense.com/) that best
 suits your needs.
 
 This is a good moment to introduce our first wise elder!
-[Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman) 🤪,
+[Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman),
 who hacked the copyright laws, started the free software movement, and wrote
 the definition above.
 
@@ -35,7 +38,7 @@ When your project succeeds, hundreds of external contributors will surely be sup
 get there you will need to bootstrap with a strong and diverse team of core
 maintainers. They will take care of the bulk of the work, the fun and the boring
 parts, proposing and reviewing the code of your shared project. Together,
-you all need to have a strong knowledge of all of the points on this checklist.
+you all need to have a strong knowledge of all points on this checklist.
 Look not only for technical knowledge, but also a knack for cat herding and a
 healthy work style, because, well, things will get complicated.
 
@@ -64,14 +67,15 @@ design; but with the correct abstractions, a clear thought-out model, and proper
 you can start building the bank-killer app one line at a time. And each of
 those lines *must* be clean and readable.
 
-I'm not a breathtaking programmer, I just was lucky to have read Uncle Bob
+I'm not a breathtaking programmer, I just was lucky to find Uncle Bob
 Martin's book
 [Clean Code](https://www.goodreads.com/book/show/3735293-clean-code) at
 the right moment, and to have read a never-ending stream of very very ugly code.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/800px-Robert_Cecil_Martin.png" alt="Robert C. Martin" height="250"/>](https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png)
 
-Once all core maintainers reach common grounds on this topic, a consistent code style should be enforced by running a
+Once all core maintainers reach common grounds on this topic, you should
+enforce a consistent code style by running a
 [linter](https://en.wikipedia.org/wiki/Lint_(software)) on every new line of
 code that's added. The particular rules are not as important as strictly
 following them; but if you can
@@ -92,8 +96,8 @@ all this magic internet money will disappear in no time. It has happened.
 I feel immediately more secure when I do test-driven development. At least give
 an honest try to writing the tests first, and get into a cycle of
 red-green-refactor. There are other techniques that can achieve the same
-result, but I suggest to start here and then deviate if you find good
-reasons to do so. If you've never worked this way, read
+result, but I suggest starting here and then deviating if you find good
+reasons to do so. Never worked this way? Read
 [Test Driven Development: By Example](https://www.goodreads.com/book/show/387190.Test_Driven_Development),
 by Kent Beck. It's a quick read, that will help you avoid the temptation of
 just jumping into code without thinking it through.
@@ -101,14 +105,14 @@ just jumping into code without thinking it through.
 Then, even if you design for testability, you will find many scenarios that are
 hard to test. Gerard Meszaros provides all the answers in
 [xUnit Test Patterns](https://www.goodreads.com/book/show/337302.xUnit_Test_Patterns).
-This book is huge, so I recommend to choose a designated test expert on your
+This book is huge, so I recommend choosing a designated test expert on your
 team.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Kent_Beck_1.jpg" alt="Kent Beck" height="350"/>](https://en.wikipedia.org/wiki/Kent_Beck#/media/File:Kent_Beck_1.jpg) [<img src="https://pbs.twimg.com/profile_images/71233259/Gerard_in_Vancouver__Brian_Foote-O-O_Canada_012_.jpg" alt="Gerard Meszaros" height="350"/>](https://twitter.com/gerardmes)
 
-Finally, make sure to run your unit tests on every single pull request, and that they have all passed
-*all* green before merging the changes. In addition, you can set up a test coverage report to ensure
-test coverage never goes down.
+Finally, make sure to run your unit tests on every single pull request, and that
+they have *all* passed before merging the changes. In addition, you can set up a
+test coverage report to ensure test coverage never goes down.
 
 # ✔️ Test early, test often, test agile
 
@@ -145,12 +149,13 @@ architecture.
 [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mike_Cohn_2013-06-12.jpg/1280px-Mike_Cohn_2013-06-12.jpg" alt="Mike Cohn" height="350"/>](https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg) [<img src="https://agiletester.ca/wp-content/uploads/sites/26/2013/09/Lisa-Crispin-and-Janet-Gregory.jpg" alt="Lisa Crispin and Janet Gregory" height="350"/>](https://agiletester.ca/about-the-authors/)
 
 While there's still some debate about the perfect moment for auditing a project (before or after the code is
-published, I think audits should be performed when there is a release candidate
+published), I think audits should be performed when there is a release candidate
 ready to be deployed to mainnet, after you have performed extensive alpha and
 beta testing. I see room for auditing before the code has been published,
-but this would be more related to checking that the development process will lead to a
-high quality, properly tested release candidate, and to validate the bases of
-your project, than to perform a deep and thorough inspection of the codebase.
+but in this case the audit would be more related to checking that the development
+process will lead to a high quality, properly tested release candidate, and to
+validate the bases of your project, than to perform a deep and thorough
+inspection of the codebase.
 
 # ✔️ Document
 
@@ -177,13 +182,13 @@ of external agents. So by all means, document every function that is part
 of the contracts' public API following the
 [NatSpec format](https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format).
 
-Which brings me to the next point. It is advisable to document the
+Which brings me to the next point. I highly recommend that you document the
 specification of your protocol, that's how others will know what to call and
 what to expect. But more related to the topic at hand, in an audit we check that
-the implemented code works as intended by the specification. This document is
-a *must*, without it auditors will just guess your intentions which might
-result on some issues missed, because they are completely consistent within
-the system but take it to a state that you want to avoid.
+the implemented code works as intended by the specification. That's why this
+document is a *must*, without it auditors will just guess your intentions which
+might result on some issues missed, because they are completely consistent
+within the system but take it to a state that you want to avoid.
 
 Finally, there's the user documentation. For high quality systems,
 writing the user documentation should be mostly painless. The moment things get cumbersome
@@ -219,11 +224,11 @@ the organizations and developers you depend on.
 [<img src="https://static.wixstatic.com/media/a7bdaa_ab650ff17e804731b7cf560bc5ee9a02~mv2.jpg/v1/crop/x_0,y_120,w_961,h_961/fill/w_530,h_530,al_c,q_80,usm_0.66_1.00_0.01/Pia%20Mancini%20-%20headshot.jpg" alt="Pia Mancini" height="350"/>](https://www.piamancini.com/)
 
 And of course, with [ZeppelinOS](https://zeppelinos.org/) we are building a
-platform that will let you vouch for the security of a package. This is in beta
+platform that will let you vouch for the security of a package. It's in beta
 testing, so expect exciting news very soon.
 
 Specific to Ethereum and Solidity, the community is collecting the lessons
-learned (usually on a painful way). You can learn a lot about interesting
+learned (usually in a painful way). You can learn a lot about interesting
 and tricky vulnerabilities playing the
 [Ethernaut capture the flag game](https://ethernaut.zeppelin.solutions/).
 We have
@@ -265,19 +270,6 @@ enthusiasm can be put to good use and they don't get lost. Lastly, think about
 setting up a [bug bounty program](https://www.hackerone.com/) that will
 encourage your community to watch out for vulnerabilities in the wild,
 providing hackers with enough incentives to disclose security issues in a responsible way.
-
-# ✔️ Hire an external auditing team
-
-That's us! :) The Zeppelin team can help you assess the quality of your project and
-processes. We'll take a deep and thorough dive on your code, with years of experience hacking,
-researching and developing on blockchains, plus a little touch of Latin
-American fire, to give you and your users all the confidence you need to
-continue building the core systems of this new decentralized, global and open economy.
-
-We are available for auditing services, more information here:
-https://zeppelin.solutions/security-audits/
-
-[<img src="https://pbs.twimg.com/media/DtgyV1zWwAEO1O2.jpg" alt="Zeppelin Team" height="350"/>](https://zeppelin.solutions)
 
 ***
 
@@ -323,7 +315,23 @@ tldr:
 
 ***
 
-If you’re interested in discussing smart contract security, follow us on
-[Medium](https://blog.zeppelin.solutions/),
-[join our slack channel](https://slack.openzeppelin.org/), or
-[apply to work with us](https://zeppelin.solutions/jobs/)!
+# Ready to hire an auditing team?
+
+That's us! :) The Zeppelin team can help you assess the quality of your project and
+processes. We'll take a deep and thorough dive on your code, with years of experience hacking,
+researching and developing on blockchains, plus a little touch of Latin
+American fire, to give you and your users all the confidence you need to
+continue building the core systems of this new decentralized, global and open economy.
+
+We are available for auditing services, more information
+[here](https://zeppelin.solutions/security-audits/).
+
+[<img src="https://pbs.twimg.com/media/DtgyV1zWwAEO1O2.jpg" alt="Zeppelin Team" height="350"/>](https://zeppelin.solutions)
+
+***
+
+# Join our community
+
+* Join our [Slack channel](https://slack.openzeppelin.org/)
+* Request a [security audit](https://zeppelin.solutions/security-audits/)
+* Even better, [join the team](https://zeppelin.solutions/jobs/) 🚀
