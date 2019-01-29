@@ -114,9 +114,9 @@ test coverage never goes down.
 
 Now that you have your first layer of tests covered with tons of unit tests,
 what comes next are... more tests! You need to test the integration between
-all of your components, you need to go one level higher to test your
-application from the point of view of a real user, and you even need to go one
-level higher to test the interactions with other systems end-to-end.
+all of your components, then go one level higher to test your
+application from the point of view of a real user, and then go even
+higher to test the interactions with other systems end-to-end.
 
 To me, this is the biggest challenge, and designing a good process that
 keeps many bugs out of your system can be as difficult as designing the system
