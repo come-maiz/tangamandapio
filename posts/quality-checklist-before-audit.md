@@ -353,7 +353,7 @@ We're available for auditing services, so check out this information about
 
 [<img src="https://pbs.twimg.com/media/DtgyV1zWwAEO1O2.jpg" alt="Zeppelin Team" height="350"/>](https://zeppelin.solutions)
 
-The Zeppelin Team
+The Zeppelin Team in 2018
 
 ***
 
