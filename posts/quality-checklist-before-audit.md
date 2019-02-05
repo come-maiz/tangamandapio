@@ -91,7 +91,7 @@ following them strictly is, but if you can
 [sacrifice your peculiar preferences to be consistent with the rest of the world](https://github.com/OpenZeppelin/openzeppelin-solidity/issues/1396#issuecomment-440426310), your contributors will appreciate it a lot.
 
 I also practice slow-food... er, slow programming.
-Take your time, enjoy the journey to becoming a master of this craft, and when you've built something you can
+Take your time, enjoy the journey to mastering this craft, and when you've built something you can
 proudly set free, let the masses read it and judge it.
 
 # ✔️ Write unit tests
@@ -155,7 +155,7 @@ resources focused on the quality and testing part; that's why I was so happy
 when I read
 [Agile Testing](https://www.goodreads.com/book/show/5341009-agile-testing) by
 Lisa Crispin and Janet Gregory, which is full of good ideas and advice. But
-let me stress againL nothing you read will perfectly fit your project, so take your
+let me stress again: nothing you read will perfectly fit your project, so take your
 time to design the testing process with as much love and care as you use when
 designigning the system's architecture.
 
@@ -174,6 +174,15 @@ but in this case, the audit would be more related to checking that the developme
 process will lead to a high-quality, properly tested release candidate and
 validating the bases of your project than to performing a deep and thorough
 inspection of the codebase.
+
+However, this doesn’t mean that you have to wait until the end of a long
+development phase to prepare for a release and audit. Once you start writing and
+testing clean code in incremental iterations, it becomes easier to think about
+your complex system. Many smaller independent parts will start to pop up, which
+can be extracted, generalized, and packaged for reuse, reducing anxiety for
+developers and auditors. These packages are the focus of
+[ZeppelinOS](https://zeppelinos.org/) for this year, to know more take a look at
+the [State of EVM Packages](https://blog.zeppelinos.org/state-of-evm-packages-end-of-2018/).
 
 # ✔️ Write documentation
 
@@ -300,43 +309,41 @@ providing hackers with enough incentives to disclose security issues in a respon
 
 tldr:
 
-✔️ Choose a free software license.
+✅ Choose a free software license.
 
-✔️ Build a strong and diverse team of core maintainers.
+✅ Build a strong and diverse team of core maintainers.
 
-✔️ Increase your bus factor: share knowledge and responsibilities.
+✅️ Increase your bus factor: share knowledge and responsibilities.
 
-✔️ Choose a good leader.
+✅ Choose a good leader.
 
-✔️ Write clean code.
+✅️ Write clean code.
 
-✔️ Enforce a consistent code style.
+✅️ Enforce a consistent code style.
 
-✔️ Ensure 100% unit test coverage.
+✅️ Ensure 100% unit test coverage.
 
-✔️ Enforce green tests on all your pull requests.
+✅️ Enforce green tests on all your pull requests.
 
-✔️ Design your iterative development and testing process.
+✅️ Design your iterative development and testing process.
 
-✔️ Publish your code.
+✅️ Publish your code.
 
-✔️ Write a good README.
+✅️ Write a good README.
 
-✔️ Document the functions of your public API.
+✅️ Document the functions of your public API.
 
-✔️ Document your protocol.
+✅️ Document your protocol.
 
-✔️ Write the end-user documentation.
+✅️ Write the end-user documentation.
 
-✔️ Make sure that your dependencies can be trusted.
+✅️ Make sure that your dependencies can be trusted.
 
-✔️ Review known issues and keep an eye out for new ones.
+✅️ Review known issues and keep an eye out for new ones.
 
-✔️ Use OpenZeppelin, the community-vetted standard for smart contract development.
+✅️ Use OpenZeppelin, the community-vetted standard for smart contract development.
 
-✔️ Build and care for your community.
-
-✔️ Audit!
+✅️ Build and care for your community.
 
 ***
 
@@ -351,14 +358,16 @@ continue building the core systems of this new decentralized, global, and open e
 We're available for auditing services, so check out this information about
 [security audits](https://zeppelin.solutions/security-audits/).
 
-[<img src="https://pbs.twimg.com/media/DtgyV1zWwAEO1O2.jpg" alt="Zeppelin Team" height="350"/>](https://zeppelin.solutions)
-
-The Zeppelin Team in 2018
+Thanks to [Martín Abbatemarco](https://notonlyowner.com/) for editing this
+post, to the Zeppelin team for the continuous experimentation and feedback,
+and to [our customers](https://blog.zeppelin.solutions/tagged/security) for
+trusting us and helping us better understand what makes a free software
+project awesome.
 
 ***
 
-# Join our community
+# Be part of our community
 
-* Join our [Slack channel](https://slack.openzeppelin.org/)
+* Continue the discussion on our [forum](https://forum.zeppelin.solutions/)
 * Request a [security audit](https://zeppelin.solutions/security-audits/)
 * Even better, [join the team](https://zeppelin.solutions/jobs/) 🚀
