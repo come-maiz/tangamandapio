@@ -236,7 +236,7 @@ since they can easily become the source of
 vulnerabilities.
 
 Earlier, I mentioned that your team should have strong and diverse knowledge.
-That includes all the projects that surround you. You should be able to
+That includes knowledge of all the projects that surround you. You should be able to
 write idiomatic code following the best practices of the language, to identify
 and avoid known issues, always keeping an eye on new
 [CVEs](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)
