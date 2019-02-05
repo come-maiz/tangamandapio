@@ -28,7 +28,7 @@ and begin with [choosing the license](https://choosealicense.com/) that best
 suits your needs.
 
 This is a good moment to introduce our first wise elder!
-[Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman),
+[Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman) 😜,
 who hacked copyright laws, started the free software movement, and wrote
 the above definition.
 
