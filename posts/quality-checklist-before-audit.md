@@ -6,7 +6,9 @@ We review tons of lines of code written by very smart developers for projects
 that will shake the foundations of our society.
 
 Finding security vulnerabilities in this futuristic cypherpunk environment is
-super challenging and fun. But I think that security actually starts in a
+super challenging and fun, but
+[we have already covered those topics elsewhere](https://blog.zeppelin.solutions/).
+I think that security actually starts in a
 pretty boring and traditional place, full of the wisdom that our elders have
 collected through millennia of developing software in community. Standing on
 their shoulders, I want to share our checklist for boring quality measures
