@@ -11,7 +11,7 @@ super challenging and fun, but
 I think that security actually starts in a
 pretty boring and traditional place, full of the wisdom that our elders have
 collected through millennia of developing software in community. Standing on
-their shoulders, I want to share our checklist for boring quality measures
+their shoulders, I want to share our checklist for basic quality measures
 that your next awesome project should consider before you hand it over for an
 external audit.
 
