@@ -245,7 +245,7 @@ dependencies, as it's an excellent way to see firsthand how safe and trustworthy
 You should also consider *actively* participating in those communities, to gain some karma that will surely come in
 handy later when you need new features and bug fixes.
 
-Moreover, don't forget to pay attention your dependencies' finances. When making your project's budget,
+Moreover, don't forget to pay attention to your dependencies' finances. When making your project's budget,
 take into account a share for your dependencies, as they may need it in order
 to remain actively maintained. There's a very nice project called
 [OpenCollective](https://opencollective.com/discover),
