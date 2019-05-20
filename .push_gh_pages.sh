@@ -4,6 +4,7 @@ GH_REPO="@github.com/elopio/tangamandapio.git"
 
 FULL_REPO="https://$GH_TOKEN$GH_REPO"
 
+cp keybase.txt output
 cd output
 
 echo elopio.net > CNAME
