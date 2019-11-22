@@ -27,15 +27,12 @@ Take a look at the
 and begin with [choosing the license](https://choosealicense.com/) that best
 suits your needs.
 
-This is a good moment to introduce our first wise elder!
-[Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman) 😜,
-who hacked copyright laws, started the free software movement, and wrote
-the above definition.
-
-[<img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Richard_Stallman_by_gisleh_01.jpg" alt="Richard Stallman" height="350"/>](https://en.wikipedia.org/wiki/Richard_Stallman#/media/File:Richard_Stallman_by_gisleh_01.jpg)
-
-Richard Stallman in costume as St. IGNUcius (Monastir, Tunisia, 2012. Image taken from
-[Wikipedia](https://en.wikipedia.org/wiki/Richard_Stallman#/media/File:Richard_Stallman_by_gisleh_01.jpg))
+*Update: previously we introduced here Richard Stallman as a wise elder, dressed as a saint 🤦. 
+This joke no longer seems appropriate due to his repeated 
+bad comments, [brough to light by a recent controversy](https://en.wikipedia.org/wiki/Richard_Stallman#Controversy_and_resignation_from_MIT_and_Free_Software_Foundation).
+Let's just say that we thank him for having hacked copyright laws, for starting the free software movement, and 
+for writing the above definition. And that we consider appropriate him stepping down from his
+leadership position in the free software community.*
 
 # ✔️ Build your core team of maintainers
 
@@ -53,7 +50,7 @@ responsibilities, while at the same time constantly mentoring new people
 that could potentially join the core team.
 
 And somebody will have to lead and orchestrate in order to get value out of the eternal
-tendency toward chaos. Let me introduce you to our second magician,
+tendency toward chaos. Let me introduce you to the magician,
 [Camille Fournier](http://www.camilletalk.com/), who wrote THE book on technical
 management,
 [The Manager's Path](https://www.goodreads.com/book/show/33369254-the-manager-s-path).
