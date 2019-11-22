@@ -29,7 +29,7 @@ suits your needs.
 
 *Update: previously we introduced here Richard Stallman as a wise elder, dressed as a saint 🤦. 
 This joke no longer seems appropriate due to his repeated 
-bad comments, [brough to light by a recent controversy](https://en.wikipedia.org/wiki/Richard_Stallman#Controversy_and_resignation_from_MIT_and_Free_Software_Foundation).
+bad comments, [brought to light by a recent controversy](https://en.wikipedia.org/wiki/Richard_Stallman#Controversy_and_resignation_from_MIT_and_Free_Software_Foundation).
 Let's just say that we thank him for having hacked copyright laws, for starting the free software movement, and 
 for writing the above definition. And that we consider appropriate him stepping down from his
 leadership position in the free software community.*
