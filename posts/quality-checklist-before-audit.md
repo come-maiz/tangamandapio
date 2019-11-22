@@ -1,13 +1,13 @@
-At [Zeppelin](https://zeppelin.solutions/) we help protect the core
+At [OpenZeppelin](https://openzeppelin.com/) we help protect the core
 infrastructure of open and decentralized applications. I'm part of the Research
 team, which is in charge of conducting
-[security audits](https://zeppelin.solutions/security-audits/).
+[security audits](https://openzeppelin.com/security-audits/).
 We review tons of lines of code written by very smart developers for projects
 that will shake the foundations of our society.
 
 Finding security vulnerabilities in this futuristic cypherpunk environment is
 super challenging and fun, but
-[we have already covered those topics elsewhere](https://blog.zeppelin.solutions/).
+[we have already covered those topics elsewhere](https://blog.openzeppelin.com/).
 I think that security actually starts in a
 pretty boring and traditional place, full of the wisdom that our elders have
 collected through millennia of developing software in community. Standing on
@@ -351,18 +351,18 @@ tldr:
 
 # Ready to hire an auditing team?
 
-That's us! :) The Zeppelin team can help you assess the quality of your project and
+That's us! :) The OpenZeppelin team can help you assess the quality of your project and
 processes. We'll take a deep and thorough dive into your code, with years of experience hacking,
 researching, and developing on blockchains, plus a little touch of Latin
 American fire, to give you and your users all the confidence you need to
 continue building the core systems of this new decentralized, global, and open economy.
 
 We're available for auditing services, so check out this information about
-[security audits](https://zeppelin.solutions/security-audits/).
+[security audits](https://openzeppelin.com/security-audits/).
 
 Thanks to [Martín Abbatemarco](https://notonlyowner.com/) for editing this
-post, to the Zeppelin team for the continuous experimentation and feedback,
-and to [our customers](https://blog.zeppelin.solutions/tagged/security) for
+post, to the OpenZeppelin team for the continuous experimentation and feedback,
+and to [our customers](https://blog.openzeppelin.com/tagged/security) for
 trusting us and helping us better understand what makes a free software
 project awesome.
 
@@ -370,6 +370,6 @@ project awesome.
 
 # Be part of our community
 
-* Continue the discussion on our [forum](https://forum.zeppelin.solutions/)
-* Request a [security audit](https://zeppelin.solutions/security-audits/)
-* Even better, [join the team](https://zeppelin.solutions/jobs/) 🚀
+* Continue the discussion on our [forum](https://forum.openzeppelin.com/)
+* Request a [security audit](https://openzeppelin.com/security-audits/)
+* Even better, [join the team](https://openzeppelin.com/jobs/) 🚀
