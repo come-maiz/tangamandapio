@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Tangamandapio (Publicaciones sobre free software)</title><link>http://elopio.net/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://elopio.net/es/categories/free-software.xml"></atom:link><language>es</language><lastBuildDate>Mon, 13 Jan 2020 17:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Follow this quality checklist before an audit</title><link>http://elopio.net/es/blog/quality-checklist-before-audit/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;At &lt;a href="https://openzeppelin.com/"&gt;OpenZeppelin&lt;/a&gt; we help protect the core
+infrastructure of open and decentralized applications. I'm part of the Research
+team, which is in charge of conducting
+&lt;a href="https://openzeppelin.com/security-audits/"&gt;security audits&lt;/a&gt;.
+We review tons of lines of code written by very smart developers for projects
+that will shake the foundations of our society.&lt;/p&gt;
+&lt;p&gt;Finding security vulnerabilities in this futuristic cypherpunk environment is
+super challenging and fun, but
+&lt;a href="https://blog.openzeppelin.com/"&gt;we have already covered those topics elsewhere&lt;/a&gt;.
+I think that security actually starts in a
+pretty boring and traditional place, full of the wisdom that our elders have
+collected through millennia of developing software in community. Standing on
+their shoulders, I want to share our checklist for basic quality measures
+that your next awesome project should consider before you hand it over for an
+external audit.&lt;/p&gt;
+&lt;h2&gt;✔️ Choose a free software license&lt;/h2&gt;
+&lt;p&gt;Closed code is inherently insecure. If people who use your project can't inspect it,
+study it, hack it, and experiment on it, there's no way it can be trusted. If you
+hold abusive control over your users, nothing prevents you (or anyone
+more powerful than you) from making them vulnerable.&lt;/p&gt;
+&lt;p&gt;Take a look at the
+&lt;a href="https://www.gnu.org/philosophy/free-sw.en.html"&gt;Free Software Definition&lt;/a&gt;,
+and begin with &lt;a href="https://choosealicense.com/"&gt;choosing the license&lt;/a&gt; that best
+suits your needs.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update: previously we introduced here Richard Stallman as a wise elder, dressed as a saint 🤦. 
+This joke no longer seems appropriate due to his repeated 
+bad comments, &lt;a href="https://en.wikipedia.org/wiki/Richard_Stallman#Controversy_and_resignation_from_MIT_and_Free_Software_Foundation"&gt;brought to light by a recent controversy&lt;/a&gt;.
+Let's just say that we thank him for having hacked copyright laws, for starting the free software movement, and 
+for writing the above definition. And that we consider appropriate him stepping down from his
+leadership position in the free software community.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;✔️ Build your core team of maintainers&lt;/h2&gt;
+&lt;p&gt;When your project succeeds, hundreds of external contributors will surely be supporting it. But in order to
+get to that point, you'll need to bootstrap with a strong and diverse team of core
+maintainers. They'll take care of the bulk of the work, the fun and the boring
+parts, proposing and reviewing the code of your shared project. Together,
+you all need to have strong knowledge of all points on this checklist.
+Look not only for technical knowledge, but also for a knack for cat-herding and a
+healthy work style—because, well, things will get complicated.&lt;/p&gt;
+&lt;p&gt;Pay attention to your &lt;a href="https://en.wikipedia.org/wiki/Bus_factor"&gt;bus factor&lt;/a&gt;:
+make sure your team members are sharing their expertise, the lessons learned, and their
+responsibilities, while at the same time constantly mentoring new people
+that could potentially join the core team.&lt;/p&gt;
+&lt;p&gt;And somebody will have to lead and orchestrate in order to get value out of the eternal
+tendency toward chaos. Let me introduce you to the magician,
+&lt;a href="http://www.camilletalk.com/"&gt;Camille Fournier&lt;/a&gt;, who wrote THE book on technical
+management,
+&lt;a href="https://www.goodreads.com/book/show/33369254-the-manager-s-path"&gt;The Manager's Path&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.camilletalk.com/contact/"&gt;&lt;img src="https://static1.squarespace.com/static/56bf8b0622482edc3dc1919d/t/56bf8ef5f85082335f63196b/1455400011874/21793992240_b56cd4b3e2_o+%281%29.jpg?format=500w" alt="Camille Fournier" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Camille Fournier (Image taken from
+&lt;a href="http://www.camilletalk.com/contact/"&gt;her website&lt;/a&gt;)&lt;/p&gt;
+&lt;h2&gt;✔️ Write clean code&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.osnews.com/story/19266/wtfsm/"&gt;The only valid measurement of code quality is WTFs per minute&lt;/a&gt;. This point &lt;em&gt;must&lt;/em&gt; be simple. If things get overly complicated or
+weird, you're doing it wrong. Go for a walk and try again with fresh eyes.&lt;/p&gt;
+&lt;p&gt;But don't get me wrong: no interesting software project is simple. Add the
+complexity dimensions of decentralization, transparency, cryptography, and all
+these shiny ideas that are keeping us so busy these days. It's complicated by
+design. But with the correct abstractions, a well thought-out model, and proper encapsulation,
+you can start building the bank-killer app one line at a time. And each of
+those lines &lt;em&gt;must&lt;/em&gt; be clean and readable.&lt;/p&gt;
+&lt;p&gt;I'm not a spectacular programmer, I was just lucky to find Uncle Bob
+Martin's book
+&lt;a href="https://www.goodreads.com/book/show/3735293-clean-code"&gt;Clean Code&lt;/a&gt; at
+the right moment and to have read a never-ending stream of very, very ugly code.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/800px-Robert_Cecil_Martin.png" alt="Robert C. Martin" height="250"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Robert Cecil Martin (Image taken from
+&lt;a href="https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png"&gt;Wikipedia&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Once all core maintainers reach common ground on this topic, you should
+enforce a consistent code style by running a
+&lt;a href="https://en.wikipedia.org/wiki/Lint_(software)"&gt;linter&lt;/a&gt; on every new line of
+code that's added. The particular rules aren't as important as
+following them strictly is, but if you can
+&lt;a href="https://github.com/OpenZeppelin/openzeppelin-solidity/issues/1396#issuecomment-440426310"&gt;sacrifice your peculiar preferences to be consistent with the rest of the world&lt;/a&gt;, your contributors will appreciate it a lot.&lt;/p&gt;
+&lt;p&gt;I also practice slow-food... er, slow programming.
+Take your time, enjoy the journey to mastering this craft, and when you've built something you can
+proudly set free, let the masses read it and judge it.&lt;/p&gt;
+&lt;h2&gt;✔️ Write unit tests&lt;/h2&gt;
+&lt;p&gt;Write unit tests. Tons of them. 100% coverage. This might sound extreme, but hey, your code is now
+playing directly with somebody else's money. If you forget, or just get lazy and
+don't write a test for that super obvious line of code, you might be leaving an open
+door for an exploit later in the game that will make your project crash, and
+all this magic internet money will disappear in no time. It &lt;em&gt;has&lt;/em&gt; happened.&lt;/p&gt;
+&lt;p&gt;I feel immediately more secure when I do test-driven development. At least give
+an honest try to writing the tests first, and get into a cycle of
+red-green-refactor. There are other techniques that can achieve the same
+result, but I suggest starting there and then deviating if you find good
+reasons to do so. Never worked this way? Read
+&lt;a href="https://www.goodreads.com/book/show/387190.Test_Driven_Development"&gt;Test Driven Development: By Example&lt;/a&gt;
+by Kent Beck. It's a quick read that will help you avoid the temptation of
+just jumping into code without thinking it through.&lt;/p&gt;
+&lt;p&gt;Then, even if you design for testability, you'll find many scenarios that are
+hard to test. Gerard Meszaros provides all the answers in
+&lt;a href="https://www.goodreads.com/book/show/337302.xUnit_Test_Patterns"&gt;xUnit Test Patterns&lt;/a&gt;.
+This book is huge, so I recommend choosing a designated test expert on your
+team.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Kent_Beck#/media/File:Kent_Beck_1.jpg"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Kent_Beck_1.jpg" alt="Kent Beck" height="350"&gt;&lt;/a&gt; &lt;a href="https://twitter.com/gerardmes"&gt;&lt;img src="https://pbs.twimg.com/profile_images/71233259/Gerard_in_Vancouver__Brian_Foote-O-O_Canada_012_.jpg" alt="Gerard Meszaros" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Left: Kent Beck speaking in 2001 (Image taken from
+&lt;a href="https://en.wikipedia.org/wiki/Kent_Beck#/media/File:Kent_Beck_1.jpg"&gt;Wikipedia&lt;/a&gt;)
+Right: Gerard Meszaros (Image taken from &lt;a href="https://twitter.com/gerardmes"&gt;Twitter&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Finally, make sure to run your unit tests on every single pull request, and make sure
+they're &lt;em&gt;all&lt;/em&gt; green before merging the changes. In addition, you can set up a
+test coverage report to ensure that test coverage never goes down.&lt;/p&gt;
+&lt;h2&gt;✔️ Test early, test often, test agile&lt;/h2&gt;
+&lt;p&gt;Now that you have your first layer of tests covered with tons of unit tests,
+what comes next is...more tests! You need to test the integration between
+all of your components, then go one level higher to test your
+application from the point of view of a real user, and then go even
+higher to test the interactions with other systems end-to-end.&lt;/p&gt;
+&lt;p&gt;To me, this is the biggest challenge, and designing a good process that
+keeps many bugs out of your system can be as difficult as designing the system
+itself. Iterate, automate as much as possible, share the load of manual
+testing...and let your community help.&lt;/p&gt;
+&lt;p&gt;We'll talk later about community, but I think this is the reason for
+publishing your code as early as possible: you can get help from early adopters
+and enthusiasts to validate your system, not only for correctness but also to
+verify that you're focusing on the right user stories and that you're tackling a
+real problem with a user-friendly solution.&lt;/p&gt;
+&lt;p&gt;A lot has been written about iterative development processes that deliver
+functionalities in progressive sprints and milestones. I found Mike Cohn's
+&lt;a href="https://www.goodreads.com/book/show/6707987-succeeding-with-agile"&gt;Succeeding with Agile: Software Development Using Scrum&lt;/a&gt;
+a good place to start, but keep in mind that any methodology will have to be
+adjusted to your team, your users, and your context. There are a lot fewer
+resources focused on the quality and testing part; that's why I was so happy
+when I read
+&lt;a href="https://www.goodreads.com/book/show/5341009-agile-testing"&gt;Agile Testing&lt;/a&gt; by
+Lisa Crispin and Janet Gregory, which is full of good ideas and advice. But
+let me stress again: nothing you read will perfectly fit your project, so take your
+time to design the testing process with as much love and care as you use when
+designing the system's architecture.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mike_Cohn_2013-06-12.jpg/1280px-Mike_Cohn_2013-06-12.jpg" alt="Mike Cohn" height="350"&gt;&lt;/a&gt; &lt;a href="https://agiletester.ca/about-the-authors/"&gt;&lt;img src="https://agiletester.ca/wp-content/uploads/sites/26/2013/09/Lisa-Crispin-and-Janet-Gregory.jpg" alt="Lisa Crispin and Janet Gregory" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Left: Mike Cohn in 2013 (Image taken from
+&lt;a href="https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg"&gt;Wikipedia&lt;/a&gt;)
+Right: Right: Lisa Crispin and Janet Gregory (Image taken from their
+&lt;a href="https://agiletester.ca/about-the-authors/"&gt;website&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;While there's still some debate about the perfect moment for auditing a project (i.e, before or after the code is
+published), I think audits should be performed when there's a release candidate
+ready to be deployed to mainnet, after you have performed extensive alpha and
+beta testing. I see room for auditing before the code has been published,
+but in this case, the audit would be more related to checking that the development
+process will lead to a high-quality, properly tested release candidate and
+validating the bases of your project than to performing a deep and thorough
+inspection of the codebase.&lt;/p&gt;
+&lt;p&gt;However, this doesn’t mean that you have to wait until the end of a long
+development phase to prepare for a release and audit. Once you start writing and
+testing clean code in incremental iterations, it becomes easier to think about
+your complex system. Many smaller independent parts will start to pop up, which
+can be extracted, generalized, and packaged for reuse, reducing anxiety for
+developers and auditors. These packages are the focus of
+&lt;a href="https://zeppelinos.org/"&gt;ZeppelinOS&lt;/a&gt; for this year, to know more take a look at
+the &lt;a href="https://blog.zeppelinos.org/state-of-evm-packages-end-of-2018/"&gt;State of EVM Packages&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;✔️ Write documentation&lt;/h2&gt;
+&lt;p&gt;This is my least favorite part, by far. So let's keep it simple, starting at
+the beginning: the README, the most important file of your repository.
+And yet, it's usually either empty or bloated, outdated, and ugly. Ideally, as it's the
+first thing developers and potential contributors will read, it should work as a clear, straightforward index of
+your project.&lt;/p&gt;
+&lt;p&gt;It's best not to get creative here. Just follow this simple specification that
+works for all cases, proposed by Richard Littauer in
+&lt;a href="https://github.com/RichardLitt/standard-readme/blob/master/spec.md"&gt;Standard Readme&lt;/a&gt;.
+&lt;em&gt;Do not forget&lt;/em&gt; to include a specific section in the main README that states how people should disclose any security
+vulnerabilities found in your project.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/richlitt"&gt;&lt;img src="https://pbs.twimg.com/profile_images/853672023511490561/m_RAvJfy.jpg" alt="Richard Littauer" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Richard Littauer (Image taken from &lt;a href="https://twitter.com/richlitt"&gt;Twitter&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Next come the docstrings, the documentation inside your code files. We hit
+an apparent conflict here, since in theory, if your code is clean,
+it will not require documentation. However, note that we are no longer
+designing standalone systems that work as a black box. We are building
+protocols for decentralized applications, and your code will be called by all sorts
+of external agents. So by all means, document every function that's part
+of the contract's public API, following the
+&lt;a href="https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format"&gt;NatSpec format&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Which brings me to the next point. I highly recommend that you document the
+specification of your protocol—that's how others will know what to call and
+what to expect. But more related to the topic at hand, in an audit, we check that
+the implemented code works as intended by the specification. That's why this
+document is a &lt;em&gt;must&lt;/em&gt;: without it, auditors will just guess at your intentions, which
+might result in some issues getting missed because they're completely consistent
+within the system but take it to a state that you want to avoid.&lt;/p&gt;
+&lt;p&gt;Finally, there's the user documentation. For high-quality systems,
+writing the user documentation should be mostly painless. The moment things get cumbersome
+while documenting, consider re-evaluating your user stories, and don't be afraid to go back to iterate on
+them.&lt;/p&gt;
+&lt;h2&gt;✔️ Check your dependencies&lt;/h2&gt;
+&lt;p&gt;Your project builds on top of many, many others. It will probably depend at least
+on the Ethereum protocol and its network of nodes, and on Solidity, a bunch of
+Ethereum Improvement Proposals and their implementation, libraries for testing and UI, and maybe hundreds
+of other small projects. Even if yours is secure, you need to check how healthy your dependencies are,
+since they can easily become the source of
+vulnerabilities.&lt;/p&gt;
+&lt;p&gt;Earlier, I mentioned that your team should have strong and diverse knowledge.
+That includes knowledge of all the projects that surround you. You should be able to
+write idiomatic code following the best practices of the language, to identify
+and avoid known issues, always keeping an eye on new
+&lt;a href="https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures"&gt;CVEs&lt;/a&gt;
+that may directly (or indirectly, through third-party dependencies) affect your project. Moreover, try to participate in the communities around your
+dependencies, as it's an excellent way to see firsthand how safe and trustworthy they are.
+You should also consider &lt;em&gt;actively&lt;/em&gt; participating in those communities, to gain some karma that will surely come in
+handy later when you need new features and bug fixes.&lt;/p&gt;
+&lt;p&gt;Moreover, don't forget to pay attention to your dependencies' finances. When making your project's budget,
+take into account a share for your dependencies, as they may need it in order
+to remain actively maintained. There's a very nice project called
+&lt;a href="https://opencollective.com/discover"&gt;OpenCollective&lt;/a&gt;,
+led by Pia Mancini, which is making it extremely easy to transparently support
+the organizations and developers you depend on.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.piamancini.com/"&gt;&lt;img src="https://static.wixstatic.com/media/a7bdaa_ab650ff17e804731b7cf560bc5ee9a02~mv2.jpg/v1/crop/x_0,y_120,w_961,h_961/fill/w_530,h_530,al_c,q_80,usm_0.66_1.00_0.01/Pia%20Mancini%20-%20headshot.jpg" alt="Pia Mancini" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pia Mancini (Image taken from her &lt;a href="https://www.piamancini.com/"&gt;website&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;And, of course, with &lt;a href="https://zeppelinos.org/"&gt;ZeppelinOS&lt;/a&gt;, we're building a
+platform that will let you vouch for the security of a package. It's in beta
+testing, so expect exciting news very soon.&lt;/p&gt;
+&lt;p&gt;Specific to Ethereum and Solidity, the community is collecting the lessons
+learned (usually in a painful way). You can learn a lot about interesting
+and tricky vulnerabilities playing the
+&lt;a href="https://ethernaut.zeppelin.solutions/"&gt;Ethernaut capture-the-flag game&lt;/a&gt;.
+We've
+&lt;a href="https://blog.zeppelin.solutions/tagged/security"&gt;published many of our past audits&lt;/a&gt;
+with descriptions of the issues found, recommendations, and usually a link
+to the patch that fixes them. All of our learnings from audits are distilled into
+the &lt;a href="https://openzeppelin.org/"&gt;OpenZeppelin package&lt;/a&gt;, which you should definitely add
+to your list of dependencies—if you're not one of the thousands that already did. The
+&lt;a href="https://smartcontractsecurity.github.io/SWC-registry/"&gt;Smart Contracts Weakness Registry&lt;/a&gt;
+maintained by the Mythril team is also a great resource for learning from the
+experience of others.&lt;/p&gt;
+&lt;p&gt;Whatever approach you take, remember that as the Ethereum space is very young and unexplored, we're learning many things as we go, so &lt;em&gt;always&lt;/em&gt;
+proceed with caution.&lt;/p&gt;
+&lt;h2&gt;✔️ Build your community&lt;/h2&gt;
+&lt;p&gt;This is a complement to the first point: code without a community is insecure.
+The community gives you eyes to monitor the project, hands to test it in a
+real environment, support to survive challenging problems, and resilience to
+adjust to the unexpected. No amount of money, experience, or knowledge
+can substitute for this.&lt;/p&gt;
+&lt;p&gt;Once you publish the code, you can get started engaging your community. If your
+project is interesting, they will come, and this is where the cat-herding
+abilities of your team will shine. However, you definitely need to set up proper and fluent communication channels,
+invest in some marketing, and hire a bold community manager with a plan to disentangle
+and wisely leverage all the opportunities your community brings. I can't
+recommend highly enough the writings and videos by
+&lt;a href="https://www.jonobacon.com/"&gt;Jono Bacon&lt;/a&gt;, who has covered all the topics you
+can imagine about community management.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.flickr.com/photos/jonobacon/12622356185/"&gt;&lt;img src="https://farm4.staticflickr.com/3740/12622356185_b89d134675_k.jpg" alt="Jono Bacon" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Jono Bacon in 2014 (Image taken from &lt;a href="https://www.flickr.com/photos/jonobacon/12622356185/"&gt;Flickr&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;You should be thoughtful and caring with your community. A small step that
+goes a long way is to adopt and enforce a
+&lt;a href="https://www.contributor-covenant.org/"&gt;code of conduct&lt;/a&gt; so you can all feel
+safe. Then, write some contribution guidelines to make sure that all of their
+enthusiasm can be put to good use and they don't get lost. Lastly, think about
+setting up a &lt;a href="https://www.hackerone.com/"&gt;bug bounty program&lt;/a&gt; that will
+encourage your community to watch out for vulnerabilities in the wild,
+providing hackers with enough incentives to disclose security issues in a responsible way.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;tldr:&lt;/p&gt;
+&lt;p&gt;✅ Choose a free software license.&lt;/p&gt;
+&lt;p&gt;✅ Build a strong and diverse team of core maintainers.&lt;/p&gt;
+&lt;p&gt;✅️ Increase your bus factor: share knowledge and responsibilities.&lt;/p&gt;
+&lt;p&gt;✅ Choose a good leader.&lt;/p&gt;
+&lt;p&gt;✅️ Write clean code.&lt;/p&gt;
+&lt;p&gt;✅️ Enforce a consistent code style.&lt;/p&gt;
+&lt;p&gt;✅️ Ensure 100% unit test coverage.&lt;/p&gt;
+&lt;p&gt;✅️ Enforce green tests on all your pull requests.&lt;/p&gt;
+&lt;p&gt;✅️ Design your iterative development and testing process.&lt;/p&gt;
+&lt;p&gt;✅️ Publish your code.&lt;/p&gt;
+&lt;p&gt;✅️ Write a good README.&lt;/p&gt;
+&lt;p&gt;✅️ Document the functions of your public API.&lt;/p&gt;
+&lt;p&gt;✅️ Document your protocol.&lt;/p&gt;
+&lt;p&gt;✅️ Write the end-user documentation.&lt;/p&gt;
+&lt;p&gt;✅️ Make sure that your dependencies can be trusted.&lt;/p&gt;
+&lt;p&gt;✅️ Review known issues and keep an eye out for new ones.&lt;/p&gt;
+&lt;p&gt;✅️ Use OpenZeppelin, the community-vetted standard for smart contract development.&lt;/p&gt;
+&lt;p&gt;✅️ Build and care for your community.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Ready to hire an auditing team?&lt;/h2&gt;
+&lt;p&gt;That's us! :) The OpenZeppelin team can help you assess the quality of your project and
+processes. We'll take a deep and thorough dive into your code, with years of experience hacking,
+researching, and developing on blockchains, plus a little touch of Latin
+American fire, to give you and your users all the confidence you need to
+continue building the core systems of this new decentralized, global, and open economy.&lt;/p&gt;
+&lt;p&gt;We're available for auditing services, so check out this information about
+&lt;a href="https://openzeppelin.com/security-audits/"&gt;security audits&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href="https://notonlyowner.com/"&gt;Martín Abbatemarco&lt;/a&gt; for editing this
+post, to the OpenZeppelin team for the continuous experimentation and feedback,
+and to &lt;a href="https://blog.openzeppelin.com/tagged/security"&gt;our customers&lt;/a&gt; for
+trusting us and helping us better understand what makes a free software
+project awesome.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Be part of our community&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Continue the discussion on our &lt;a href="https://forum.openzeppelin.com/"&gt;forum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Request a &lt;a href="https://openzeppelin.com/security-audits/"&gt;security audit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Even better, &lt;a href="https://openzeppelin.com/jobs/"&gt;join the team&lt;/a&gt; 🚀&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/quality-checklist-before-audit/</guid><pubDate>Fri, 08 Feb 2019 15:58:13 GMT</pubDate></item><item><title>On crowdsales and multiple inheritance</title><link>http://elopio.net/es/blog/crowdsales-and-multiple-inheritance/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;On 2017 we saw a mind-blowing number of crowdsales and ICOs running in the
+Ethereum blockchain. They have proven to be a
+powerful tool to collect the funds required to start a project, and they are
+one of the most common uses for smart contracts right now. The Zeppelin team
+has been very involved in this topic,
+&lt;a href="https://blog.zeppelin.solutions/tagged/audit"&gt;auditing many crowdsale contracts&lt;/a&gt;,
+and supporting &lt;a href="https://openzeppelin.org/"&gt;OpenZeppelin&lt;/a&gt;, the most popular
+framework to build these crowdsales. What we found was a lot of contracts
+repeating the same basic concepts, with very similar code, and common
+vulnerabilities.&lt;/p&gt;
+&lt;p&gt;Earlier this year, part of the team took the task to redesign our base
+&lt;code&gt;Crowdsale&lt;/code&gt; contract in order to support a lot of new crowdsale flavors out of
+the box and to make the experience of building and publishing your own
+crowdsale more clear and secure. The idea is to make audits less necessary,
+with an architecture that is modular, that encourages reuse and that will be
+collectively reviewed. These new contracts were added to OpenZeppelin version
+&lt;code&gt;1.7.0&lt;/code&gt;, and since the release they have been widely used by our community with
+ great success. So, this is a good moment to show off :)&lt;/p&gt;
+&lt;p&gt;Let's start with a dive into
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol"&gt;the source code of the &lt;code&gt;Crowdsale&lt;/code&gt; base contract&lt;/a&gt;.
+The first thing you will notice is a lot of comments, guiding you through the
+details of the OpenZeppelin crowdsale architecture. They explain that some
+functions are the core of the architecture and should not be overriden, like
+&lt;code&gt;buyTokens&lt;/code&gt;. Some others like &lt;code&gt;_preValidatePurchase&lt;/code&gt; can be overriden to
+implement the requirements of your crowdsale, but that extra behavior should
+be concatenated with the one of the parent by calling &lt;code&gt;super&lt;/code&gt;, to preserve the
+validations from the  base contract. Some functions like
+&lt;code&gt;_postValidatePurchase&lt;/code&gt; can be just added as hooks in other parts of the
+crowdsale's lifecycle.&lt;/p&gt;
+&lt;p&gt;Building on top of this base, we now provide some contracts for common
+crowdsale scenarios involving
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/distribution"&gt;distribution&lt;/a&gt;,
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/emission"&gt;emission&lt;/a&gt;,
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/price"&gt;price&lt;/a&gt;,
+and
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/validation"&gt;validation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So, let's say that you want to set a goal for your crowdsale and if it's not
+met by the time the sale finishes, you want to refund all your investors. For
+that, you can use the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/distribution/RefundableCrowdsale.sol"&gt;RefundableCrowdsale contract&lt;/a&gt;,
+which overrides the base &lt;code&gt;_forwardFunds&lt;/code&gt; behavior to send the funds to a fancy
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/distribution/utils/RefundVault.sol"&gt;RefundVault&lt;/a&gt;
+while the crowdsale is in progress, instead of sending them directly to the
+wallet of the crowdsale owner.&lt;/p&gt;
+&lt;p&gt;Another common scenario is when you want the tokens to be minted when they are
+purchased. For that, take a look at the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/emission/MintedCrowdsale.sol"&gt;MintedCrowdsale contract&lt;/a&gt;,
+which overrides the simple &lt;code&gt;_deliverTokens&lt;/code&gt; behavior of the base class to call
+instead the &lt;code&gt;mint&lt;/code&gt; function of an
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/MintableToken.sol"&gt;ERC20 Mintable token&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What if we want to do something more interesting with the price of the tokens?
+The base &lt;code&gt;Crowdsale&lt;/code&gt; contract defines a constant rate between tokens and wei,
+but if we override &lt;code&gt;_getTokenAmount&lt;/code&gt;, we could do something like increasing
+the price as the closing time of the crowdsale approaches. That's exactly what
+the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/price/IncreasingPriceCrowdsale.sol"&gt;IncreasingPriceCrowdsale contract&lt;/a&gt;
+does.&lt;/p&gt;
+&lt;p&gt;To get started developing and deploying a crowdsale using the OpenZeppelin
+framework, Gustavo Guimaraes published a nice
+&lt;a href="https://blog.zeppelin.solutions/how-to-create-token-and-initial-coin-offering-contracts-using-truffle-openzeppelin-1b7a5dae99b6"&gt;guide where you will see in action a crowdsale that is timed &lt;strong&gt;and&lt;/strong&gt; minted&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;These are just a few examples. I invite you to explore the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale"&gt;OpenZeppelin crowdsale contracts&lt;/a&gt;
+to see all the new flavors that you can easily use to fund your cool idea;
+and take a look at the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/examples/SampleCrowdsale.sol"&gt;SampleCrowdsale contract&lt;/a&gt;,
+a more complex scenario that comes with full
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/test/examples/SampleCrowdsale.test.js"&gt;test coverage&lt;/a&gt;.
+If you like OpenZeppelin, remember that you are welcome into
+&lt;a href="https://slack.openzeppelin.org/"&gt;our vibrating community&lt;/a&gt; to help us adding new
+contracts or improving the existing ones.&lt;/p&gt;
+&lt;p&gt;On the repo you will also find that all these contracts are very well tested. And
+as we have seen, the new architecture is clearer and safer, with each contract
+explaining the functions that you can or can't override, and how to do it.
+However, you should be extra careful when combining them. It's not the same to
+have three contracts with one condition than to have one contract with three
+conditions. The combination increases the attack surface, so you need to have
+a good idea of what you want to achieve, and know the implementation details of
+the tools you are using.&lt;/p&gt;
+&lt;p&gt;Before you go ahead and deploy a complex crowdsale that combines some of our
+contracts, I would like to spend some time going deep into how Solidity works
+when you combine contracts through multiple inheritance, like Gustavo did in
+his guide to make a contract that inherits from &lt;code&gt;TimedCrowdsale&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; from
+&lt;code&gt;MintedCrowdsale&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Multiple inheritance is hard, and it can get very confusing if you abuse it.
+Some languages don't support it at all; but it is becoming a very common
+pattern on Solidity.&lt;/p&gt;
+&lt;p&gt;The problem, from the point of view of the programmer, is to understand the
+order of the calls when a contract has multiple parents. Let's say we have a
+base contract &lt;code&gt;A&lt;/code&gt;, with a function named &lt;code&gt;f&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract A {&lt;/span&gt;
+&lt;span class="err"&gt;  function f() {&lt;/span&gt;
+&lt;span class="err"&gt;    somethingA();&lt;/span&gt;
+&lt;span class="err"&gt;  }&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Then we have two contracts &lt;code&gt;B&lt;/code&gt; and &lt;code&gt;C&lt;/code&gt;, both inherit from &lt;code&gt;A&lt;/code&gt; and override &lt;code&gt;f&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;somethingB&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;super&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;somethingC&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;super&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;And finaly we have a contract &lt;code&gt;D&lt;/code&gt;, which inherits from &lt;code&gt;B&lt;/code&gt; and &lt;code&gt;C&lt;/code&gt;, and
+overrides &lt;code&gt;f&lt;/code&gt; too:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is B, C {&lt;/span&gt;
+&lt;span class="err"&gt;  function f() {&lt;/span&gt;
+&lt;span class="err"&gt;    somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;    super.f();&lt;/span&gt;
+&lt;span class="err"&gt;  }&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;What happens when you call &lt;code&gt;D.f&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;This is called the diamond problem, because we end up with a diamond-shaped
+inheritance diagram:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/180px-Diamond_inheritance.svg.png"&gt;&lt;img alt="Diamond inheritance problem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/180px-Diamond_inheritance.svg.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(the image is from wikipedia)&lt;/p&gt;
+&lt;p&gt;To solve it, Solidity uses C3 linearization, also called Method Resolution
+Order (MRO). This means that it will linearize the inheritance graph. If &lt;code&gt;D&lt;/code&gt;
+is defined as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is B, C {}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;then &lt;code&gt;D.f&lt;/code&gt; will call:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;somethingC();&lt;/span&gt;
+&lt;span class="err"&gt;somethingB();&lt;/span&gt;
+&lt;span class="err"&gt;somethingA();&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When &lt;code&gt;D&lt;/code&gt; inherits from &lt;code&gt;B, C&lt;/code&gt;, the linearization results in D→ C→ B→ A. This
+means that &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;D&lt;/code&gt; calls &lt;code&gt;C&lt;/code&gt;. And you might be a little surprised by the
+fact that calling &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;C&lt;/code&gt; will result on a call to &lt;code&gt;B&lt;/code&gt; instead of &lt;code&gt;A&lt;/code&gt;,
+even though &lt;code&gt;C&lt;/code&gt; doesn't inherit from &lt;code&gt;B&lt;/code&gt;. Finally, &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;B&lt;/code&gt; will call
+&lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If &lt;code&gt;D&lt;/code&gt; is instead defined as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is C, B {}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;then &lt;code&gt;D.f&lt;/code&gt; will call:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;somethingB();&lt;/span&gt;
+&lt;span class="err"&gt;somethingC();&lt;/span&gt;
+&lt;span class="err"&gt;somethingA();&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When &lt;code&gt;D&lt;/code&gt; inherits from &lt;code&gt;C, B&lt;/code&gt;, the linearization results in D→ B→ C→ A.&lt;/p&gt;
+&lt;p&gt;Notice here that the order in which you declare the parent contracts matters a
+lot. If the inheritance graph is not too complex, it will be easy to see that
+the order of calls will follow the order in which the parents were declared,
+right to left. If your inheritance is more complicated than this and the
+hierarchy is not very clear, you should probably stop using multiple
+inheritance and look for an alternate solution.&lt;/p&gt;
+&lt;p&gt;I recommend you to read the wikipedia pages of
+&lt;a href="https://en.wikipedia.org/wiki/Multiple_inheritance"&gt;Multiple inheritance&lt;/a&gt; and
+&lt;a href="https://en.wikipedia.org/wiki/C3_linearization"&gt;C3 linearization&lt;/a&gt;, and the
+&lt;a href="https://solidity.readthedocs.io/en/latest/contracts.html#multiple-inheritance-and-linearization"&gt;Solidity docs about multiple inheritance&lt;/a&gt;.
+You will find in there a complete explanation of the C3 algorithm, and an
+example with a more complicated inheritance graph.&lt;/p&gt;
+&lt;p&gt;To better understand how this can impact your crowdsales, take a look at the
+case that Philip Daian brilliantly explains on his blog post
+&lt;a href="https://pdaian.com/blog/solidity-anti-patterns-fun-with-inheritance-dag-abuse/"&gt;Solidity anti-patterns: Fun with inheritance DAG abuse&lt;/a&gt;.
+There, he presents a Crowdsale contract that needs "to have a whitelist
+pool of preferred investors able to buy in the pre-sale [...], along with a
+hard cap of the number of [...] tokens that can be distributed." On his first
+(deliberately) faulty implementation, he ends up with a crowdsale that checks:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;((withinPeriod &amp;amp;&amp;amp; nonZeroPurchase) &amp;amp;&amp;amp; withinCap) || (whitelist[msg.sender] &amp;amp;&amp;amp; !hasEnded())&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Pay close attention to the resulting condition, and notice that if a
+whitelisted investor buys tokens before the crowdsale has ended, she will be
+able to bypass the hard cap, and buy as many tokens as she wants.&lt;/p&gt;
+&lt;p&gt;By just inverting the order on which the parents are defined, he fixes the
+contract which will now check for:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;(withinPeriod &amp;amp;&amp;amp; nonZeroPurchase || (whitelist[msg.sender] &amp;amp;&amp;amp; !hasEnded())) &amp;amp;&amp;amp; withinCap&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now, if the purchase attempt goes above the cap, the transaction will be
+reverted even if the sender is whitelisted.&lt;/p&gt;
+&lt;p&gt;There are some simple cases, where the order of the conditions is not
+important. By now, you should have started to suspect that the contract above
+became complicated because of the &lt;code&gt;||&lt;/code&gt; (&lt;em&gt;or&lt;/em&gt;) condition. Things are a lot easier
+when all our conditions are merged with &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; (&lt;em&gt;and&lt;/em&gt;), because in that case the
+order of the conditions doesn't alter the result.&lt;/p&gt;
+&lt;p&gt;Our new architecture was crafted for using &lt;code&gt;require&lt;/code&gt; instead of returning
+booleans, which works nicely to combine &lt;em&gt;and&lt;/em&gt; conditions, and to revert the
+transaction when one fails. Let's say that we have a crowdsale that should
+&lt;strong&gt;only&lt;/strong&gt; allow whitelisted investors to buy tokens while the sale is open
+&lt;strong&gt;and&lt;/strong&gt; the cap has not been reached. In this
+case, the condition to check would be (in pseudocode):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;require(hasStarted() &amp;amp;&amp;amp; !hasEnded())&lt;/span&gt;
+&lt;span class="err"&gt;require(isInWhiteList(msg.sender))&lt;/span&gt;
+&lt;span class="err"&gt;require(isWithinCap(msg.value))&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Our contract would be as simple as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pragma&lt;/span&gt; &lt;span class="n"&gt;solidity&lt;/span&gt; &lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mf"&gt;0.4&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="n"&gt;WhitelistedTimedCappedCrowdsale&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;TimedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;WhitelistedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CappedCrowdsale&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+  &lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;WhitelistedTimedCappedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;address&lt;/span&gt; &lt;span class="n"&gt;_wallet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;ERC20&lt;/span&gt; &lt;span class="n"&gt;_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_openingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_closingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_cap&lt;/span&gt;
+  &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;public&lt;/span&gt;
+    &lt;span class="n"&gt;Crowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_wallet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_token&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;TimedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_openingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_closingTime&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;CappedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_cap&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;It doesn't matter how you order the parents, all the conditions will be
+checked always. But take this with a grain of salt. All the conditions will be
+checked, but the order will be different. This can have different side-effects
+on Solidity, as some paths will execute statements that other paths won't, and
+it could lead an attacker to find a specific path that is vulnerable. Also, if
+your parent contracts are not super clear, they might be hiding an &lt;code&gt;||&lt;/code&gt;
+condition in a few hard-to-read code statements.&lt;/p&gt;
+&lt;p&gt;It's very easy to think that the parent contracts will just be magically merged
+into something that will make sense for our use case, or to make a mistake when
+we linearize them in our mind. Every use case will be different, so our
+framework can't save you from the work of organizing your contracts' hierarchy.
+You must analyze the linearization of the inheritance graph to get a clear view
+of the functions that will be called and their order, and always always add a
+full suite of automated tests for your final crowdsale contract to make sure
+that it enforces all the conditions.&lt;/p&gt;
+&lt;p&gt;To finish, I wanted to show you my repo where I will be doing
+experiments with crowdsales and their tests:
+&lt;a href="https://github.com/elopio/zeppelin-crowdsales"&gt;https://github.com/elopio/zeppelin-crowdsales&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Take a look at my
+&lt;a href="https://github.com/elopio/zeppelin-crowdsales/blob/master/contracts/PreSaleWithCapCrowdsale.sol"&gt;PreSaleWithCapCrowdsale contract&lt;/a&gt;.
+You will see that I preferred to be explicit about the conditions instead of
+using &lt;code&gt;super&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_preValidatePurchase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;uint256&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;internal&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;timestamp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;openingTime&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;whitelist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;timestamp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;closingTime&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;weiRaised&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cap&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;I encourage you to join me on these experiments, to try different combinations
+of crowdsales and to play switching the order of the inheritance graph. We will
+learn more about the resulting code that Solidity compiles, we will improve our
+mental picture of the execution stack, and we will practice writing tests
+that fully cover all the possible paths. If you have questions, find
+errors on the implementations in OpenZeppelin, or find an alternative
+implementation that will make it easier to develop crowdsales on top of our
+contracts, please
+&lt;a href="https://slack.openzeppelin.org/"&gt;let us know by sending a message to the slack channel&lt;/a&gt;.
+I am &lt;em&gt;elopio&lt;/em&gt; in there.&lt;/p&gt;
+&lt;p&gt;A relevant experiment here is to use
+&lt;a href="https://en.wikipedia.org/wiki/Composition_over_inheritance#Benefits"&gt;composition over inheritance&lt;/a&gt;.
+In OpenZeppelin we couldn't implement an architecture based on composition
+because of the high gas costs implied, especially during deployment. That is
+one of the reasons we are now hard at work
+on &lt;a href="https://zeppelinos.org/"&gt;zeppelin_os&lt;/a&gt;, which minimizes deployment costs
+by helping you use libraries that are already on-chain. Expect exciting news
+very soon!&lt;/p&gt;
+&lt;p&gt;Thanks a lot to &lt;a href="https://github.com/ajsantander"&gt;Ale&lt;/a&gt; and
+&lt;a href="https://github.com/fiiiu"&gt;Alejo&lt;/a&gt;, who worked on these new contracts and helped
+me to understand them. &amp;lt;3&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/crowdsales-and-multiple-inheritance/</guid><pubDate>Sun, 08 Apr 2018 15:58:13 GMT</pubDate></item><item><title>Quipus incas y cifrado con factorización de números primos</title><link>http://elopio.net/es/blog/factorizacion-primos-incas/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Quipu#/media/File:Nueva_cor%C3%B3nica_y_buen_gobierno_(1936_facsimile)_p360.png"&gt;&lt;img alt="Dibujo de un inca y su quipu" src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Nueva_cor%C3%B3nica_y_buen_gobierno_%281936_facsimile%29_p360.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Según este sabio [Nordenskiöld], los indios colocaban en las tumbas
+únicamente quipus con números que a sus ojos tenían valor mágico,
+expresándolos no en forma directa sino mediante otros que los incluyen o que
+son sus múltiplos y tratando de hacerlos coincidir con la numeración
+resultante de cálculos obtenidos de la consulta de los astros. [...].
+La finalidad que llevó a los indios a tal práctica fue entretener, mediante
+estos complicados «rebus», a los espíritus malignos, quienes se esforzarían
+para desanudar las cuerdas y encontrar esta numeración mágica [...].&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;en Estudio sobre los quipus, de Carlos Radicati di Primeglio.&lt;/p&gt;
+&lt;p&gt;Y así fue como lxs incas inventaron el cifrado con factorización de números
+primos, la base de todas las comunicaciones seguras y criptomonedas de hoy. :D&lt;/p&gt;&lt;/div&gt;</description><category>free software</category><category>readings</category><guid>http://elopio.net/es/blog/factorizacion-primos-incas/</guid><pubDate>Tue, 09 Jan 2018 16:08:35 GMT</pubDate></item><item><title>San José participará en #CompletetheMap, para mejorar el mapa de la ciudad entre todes</title><link>http://elopio.net/es/blog/completethemap/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://www.mapillary.com/"&gt;Mapillary&lt;/a&gt; por primera vez ha lanzado un reto
+global de captura de imágenes. Desde el 11 de diciembre hasta el 31 de enero,
+San José estará participando en
+&lt;a href="https://blog.mapillary.com/community/2017/06/29/completethemap-challenges.html"&gt;#CompletetheMap&lt;/a&gt;
+para completar su mapa capturando fotos con las herramientas de Mapillary,
+junto a ciudades, pueblos y lugares remotos de todo el mundo.&lt;/p&gt;
+&lt;p&gt;Mapillary es una plataforma colaborativa que permite visualizar el mundo con
+fotos a nivel de la calle. Las fotos son contribuidas por una amplia gama de
+fuentes, incluyendo personas, gobiernos, agencias humanitarias y empresas de
+mapas. Las fotos luego son procesadas por Mapillary para extraer datos
+geográficos como límites de velocidad, giros prohibidos, ciclovías y la
+cantidad de vegetación en un lugar. Por estas razones, se ha convertido en una
+herramienta popular en la comunidad de OpenStreetMap, un proyecto de código
+abierto que se basa en personas editoras voluntarias para crear el mapa del
+mundo.&lt;/p&gt;
+&lt;iframe width="640" height="480" src="https://embed-v1.mapillary.com/embed?version=1&amp;amp;filter=%5B%22all%22%5D&amp;amp;map_filter=%5B%22all%22%5D&amp;amp;map_style=mapbox_streets&amp;amp;image_key=mlDTpI2tIa5fP_My7riHcw&amp;amp;x=0.49787228454942833&amp;amp;y=0.4727477024147648&amp;amp;client_id=WHJxWW40RWhyVGR6ajVEci1saHZNUTozZDQ5NjRmM2I4ZjBiNjc2&amp;amp;style=photo" frameborder="0"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Algunos usos prácticos de estos datos incluyen el análisis de la infraestructura
+para bicicletas a lo largo de una ciudad, reducción de riesgos antes y después de
+desastres, movilidad urbana, y puntos de reunión. #CompletetheMap viene a impulsar
+este estilo rápido de recolección de datos en un área específica. La idea
+de #CompletetheMap es simple. El área seleccionada se divide en zonas, y personas
+miembros de la comunidad local colaboran para capturar imágenes en cada zona.
+Conforme el porcentaje de fotos de calles y caminos aumenta, la zona cambia de
+color de rojo a naranja, y de naranja a verde.&lt;/p&gt;
+&lt;p&gt;El reto #CompletetheMap empezó en mayo de este año y ya se ha realizado en ciudades
+como
+&lt;a href="https://mapillary.github.io/mapillary_greenhouse/ctm/brasilia/"&gt;Brasilia&lt;/a&gt;,
+&lt;a href="https://mapillary.github.io/mapillary_greenhouse/challenge/moscow/"&gt;Moscú&lt;/a&gt;,
+&lt;a href="https://mapillary.github.io/mapillary_greenhouse/challenge/berlin/"&gt;Berlín&lt;/a&gt; y
+&lt;a href="https://mapillary.github.io/mapillary_greenhouse/challenge/ottawa/"&gt;Ottawa&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cada una de estas ciudades ha respondido en su propia forma, reuniendo a la
+comunidad y mostrando la gran cantidad de datos que incluso un pequeño grupo de
+personas puede recolectar. Brasilia se ha concentrado en características de
+calles y puntos de interés. Moscú se reunió para capturar fotos de algunas de
+las carreteras más nuevas alrededor del centro de la ciudad. Berlín, la primera
+en participar en el reto de #CompletetheMap, ayudó a prepararlo recolectando
+muchas de las calles más pequeñas y rutas peatonales. Luego está Ottawa,
+un #CompletetheMap centrado en infraestructura para bicicletas. En este reto,
+20 personas lograron recolectar medio millón de imágenes y casi 2000 km de
+cobertura nueva.&lt;/p&gt;
+&lt;p&gt;El reto global le permite a cualquier persona seguir su progreso relativo a
+otras alrededor del mundo, recolectando fotos en un área de 50 km2. Las
+participantes pueden ganar aumentando los km de nuevas rutas que capturan, la
+cantidad de imágenes que toman, y el número de participantes que se unen para
+ayudarles.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ia801202.us.archive.org/4/items/jaquerespeis-mapas/complethemap/complethemap.png"&gt;&lt;img alt="CompletetheMap" src="https://ia801202.us.archive.org/4/items/jaquerespeis-mapas/complethemap/complethemap.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Actualmente, 23 ciudades de 17 países se han registrado para el #CompletetheMap
+global.&lt;/p&gt;
+&lt;p&gt;Todo lo que se necesita para colaborar es un teléfono celular. Participe en el
+reto descargando la aplicación de Mapillary y tomando fotos de las calles por
+las que viaja. Una vez que se conecte a una red wifi, suba las imágenes y
+véalas aparecer en Mapillary.com.&lt;/p&gt;
+&lt;p&gt;Puede unirse a la comunidad de maperos y maperas de Costa Rica en
+&lt;a href="https://www.facebook.com/maperespeis/"&gt;https://www.facebook.com/maperespeis/&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/completethemap/</guid><pubDate>Mon, 11 Dec 2017 02:08:35 GMT</pubDate></item><item><title>An errbot snap for simplified chatops</title><link>http://elopio.net/es/blog/errbot-snap/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;I'm a Quality Assurance Engineer. A big part of my job is to find problems,
+then make sure that they are fixed and &lt;em&gt;automated&lt;/em&gt; so they don't regress. If I
+do my job well, then our process will identify new and potential problems early
+&lt;em&gt;without manual intervention&lt;/em&gt; from anybody in the team. It's like trying to
+automate myself, everyday, until I'm no longer needed and have to jump to
+another project.&lt;/p&gt;
+&lt;p&gt;However, as we work in the project, it's unavoidable that many small manual
+tasks accumulate on my hands. This happens because I set up the continuous
+integration infrastructure, so I'm the one who knows more about it and have
+easier access, or because I'm the one who requested access to the build farm
+so I'm the one with the password, or because I configured the staging
+environment and I'm the only one who knows the details. This is a great way
+to achieve job security, but it doesn't lead us to higher quality. It's a job
+half done, and it's terribly boring to be a bottleneck and a silo of
+information about testing and the release process. All of these tasks should be
+shared by the whole team, as with all the other tasks in the project.&lt;/p&gt;
+&lt;p&gt;There are two problems. First, most of these tasks involve delicate credentials
+that shouldn't be freely shared with everybody. Second, even if the task itself
+is simple and quick to execute, it's not very simple to document how to set up
+the environment to be able to execute them, nor how to make sure that the right
+task is executed in the right moment.&lt;/p&gt;
+&lt;p&gt;Chatops is how I like to solve all of this. The idea is that every task that
+requires manual intervention is implemented in a script that can be executed by
+a bot. This bot joins the communication channel where the entire team is
+present, and it will execute the tasks and report about their results as a
+response to external events that happen somewhere in the project
+infrastructure, or as a response to the direct request of a team member in the
+channel. The credentials are kept safe, they only have to be shared with the
+bot and the permissions can be handled with access control lists or membership
+to the channel. And the operative knowledge is shared with all the team,
+because they are all listening in the same channel with the bot. This means
+that anybody can execute the tasks, and the bot assists them to make it simple.&lt;/p&gt;
+&lt;p&gt;In snapcraft we started writing our bot not so long ago. It's called snappy-m-o
+(&lt;a href="http://pixar.wikia.com/wiki/M-O"&gt;Microbe Obliterator&lt;/a&gt;), and it's written
+in python with &lt;a href="http://errbot.io/"&gt;errbot&lt;/a&gt;. We, of course, packaged it as a
+snap so we have automated delivery every time we change it's source code, and
+the bot is also autoupdated in the server, so in the chat we are always
+interacting with the latest and greatest.&lt;/p&gt;
+&lt;p&gt;Let me show you how we started it, in case you want to get your own. But let's
+call this one Baymax, and let's make a virtual environment with errbot, to
+experiment.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://upload.wikimedia.org/wikipedia/en/2/2c/Baymax_from_Disney%27s_Big_Hero_6.png"&gt;&lt;img alt="drawing of the Baymax bot" src="https://upload.wikimedia.org/wikipedia/en/2/2c/Baymax_from_Disney%27s_Big_Hero_6.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ mkdir -p ~/workspace/baymax
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; ~/workspace/baymax
+$ sudo apt install python3-venv
+$ python3 -m venv .venv
+$ &lt;span class="nb"&gt;source&lt;/span&gt; .venv/bin/activate
+$ pip install errbot
+$ errbot --init
+&lt;/pre&gt;
+
+
+&lt;p&gt;The last command will initialize this bot with a super simple plugin, and
+will configure it to work in text mode. This means that the bot won't be
+listening on any channel, you can just interact with it through the command
+line (the ops, without the chat). Let's try it:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ errbot
+&lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+&amp;gt;&amp;gt;&amp;gt; !help
+All commands
+&lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+!tryme - Execute to check &lt;span class="k"&gt;if&lt;/span&gt; Errbot responds to command.
+&lt;span class="o"&gt;[&lt;/span&gt;...&lt;span class="o"&gt;]&lt;/span&gt;
+&amp;gt;&amp;gt;&amp;gt; !tryme
+It works !
+&amp;gt;&amp;gt;&amp;gt; !shutdown --confirm
+&lt;/pre&gt;
+
+
+&lt;p&gt;&lt;code&gt;tryme&lt;/code&gt; is the command provided by the example plugin that &lt;code&gt;errbot --init&lt;/code&gt;
+created. Take a look at the file &lt;code&gt;plugins/err-example/example.py&lt;/code&gt;, errbot is
+just lovely. In order to define your own plugin you will just need a class that
+inherits from &lt;code&gt;errbot.BotPlugin&lt;/code&gt;, and the commands are methods decorated with
+&lt;code&gt;@errbot.botcmd&lt;/code&gt;. I won't dig into how to write plugins, because they have an
+amazing
+&lt;a href="http://errbot.io/en/latest/user_guide/plugin_development/index.html"&gt;documentation about Plugin development&lt;/a&gt;.
+You can also read the plugins we have in our snappy-m-o, one for
+&lt;a href="https://github.com/elopio/snappy-m-o/blob/master/plugins/autopkgtest_github/autopkgtest_github.py"&gt;triggering autopkgtests on GitHub pull requests&lt;/a&gt;,
+and the other for
+&lt;a href="https://github.com/elopio/snappy-m-o/blob/master/plugins/snapcraft_github/snapcraft_github.py"&gt;subscribing to the results of the pull requests tests&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let's change the config of Baymax to put it in an IRC chat:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ pip install irc
+&lt;/pre&gt;
+
+
+&lt;p&gt;And in the &lt;code&gt;config.py&lt;/code&gt; file, set the following values:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;BACKEND = 'IRC'&lt;/span&gt;
+&lt;span class="err"&gt;BOT_IDENTITY = {&lt;/span&gt;
+&lt;span class="err"&gt;    'nickname' : 'baymax-elopio',  # Nicknames need to be unique, so append your own.&lt;/span&gt;
+&lt;span class="err"&gt;                                   # Remember to replace 'elopio' with your nick everywhere&lt;/span&gt;
+&lt;span class="err"&gt;                                   # from now on.&lt;/span&gt;
+&lt;span class="err"&gt;    'server' : 'irc.freenode.net',&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;CHATROOM_PRESENCE = ('#snappy',)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Run it again with the errbot command, but this time join the #snappy channel
+in irc.freenode.net, and write in there &lt;code&gt;!tryme&lt;/code&gt;. It works ! :)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://archive.org/download/elopio-screenshots2/errbot/errbot-snap.png"&gt;&lt;img alt="screenshot of errbot on IRC" src="https://archive.org/download/elopio-screenshots2/errbot/errbot-snap.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So, this is very simple, but let's package it now to start with the good
+practice of continuous delivery before it gets more complicated. As usual, it
+just requires a &lt;code&gt;snapcraft.yaml&lt;/code&gt; file with all the packaging info and metadata:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;baymax&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;elopio&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'0.1-dev'&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;errbot&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Chat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ops&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;my&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;team&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;grade&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;stable&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;confinement&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;strict&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nl"&gt;apps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;baymax&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;elopio&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;command&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;errbot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;SNAP&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;plugs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;home, network, network-bind&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nl"&gt;parts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nl"&gt;errbot&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;plugin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;errbot, irc&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nl"&gt;baymax&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;source&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;plugin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;dump&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;stage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;plugins&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;after&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;errbot&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;And we need to change a few more values in &lt;code&gt;config.py&lt;/code&gt; to make sure that the
+bot is relocatable, that we can run it in the isolated snap environment, and
+that we can add plugins after it has been installed:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="n"&gt;BOT_DATA_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'SNAP_USER_DATA'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;BOT_EXTRA_PLUGIN_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'SNAP'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;'plugins'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;BOT_LOG_FILE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BOT_DATA_DIR&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;'/err.log'&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;One final try, this time from the snap:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ sudo apt install snapcraft
+$ snapcraft
+$ sudo snap install baymax*.snap --dangerous
+$ baymax-elopio
+&lt;/pre&gt;
+
+
+&lt;p&gt;And go back to IRC to check.&lt;/p&gt;
+&lt;p&gt;Last thing would be to push the source code we have just written to a GitHub
+repo, and enable the continuous delivery in build.snapcraft.io. Go to your
+server and install the bot with &lt;code&gt;sudo snap install baymax-elopio --edge&lt;/code&gt;.
+Now everytime somebody from your team makes a change in the master repo in
+GitHub, the bot in your server will be automatically updated to get those
+changes within a few hours without any work from your side.&lt;/p&gt;
+&lt;p&gt;If you are into chatops, make sure that every time you do a manual task, you
+also plan for some time to turn that task into a script that can be executed
+by your bot. And get ready to enjoy tons and tons of free time, or just keep
+going through those &lt;a href="https://bugs.launchpad.net/snapcraft"&gt;400 open bugs&lt;/a&gt;,
+whichever you prefer :)&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/errbot-snap/</guid><pubDate>Wed, 12 Jul 2017 04:31:00 GMT</pubDate></item><item><title>Deploy to all SBCs with Gobot and a single snap package</title><link>http://elopio.net/es/blog/gobot-snaps/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;I love playing with my prototyping boards. Here at Ubuntu we are designing
+the &lt;a href="https://developer.ubuntu.com/core/get-started"&gt;core operating system&lt;/a&gt;
+to support every &lt;a href="https://en.wikipedia.org/wiki/Single-board_computer"&gt;single-board computer&lt;/a&gt;,
+and keep it safe, updated and simple. I've learned a lot about physical
+computing, but I always have a big problem when my prototype is done, and I
+want to deploy it. I am working with a
+&lt;a href="https://en.wikipedia.org/wiki/Raspberry_Pi"&gt;Raspberry Pi&lt;/a&gt;, a
+&lt;a href="http://www.96boards.org/product/dragonboard410c/"&gt;DragonBoard&lt;/a&gt;, and a
+&lt;a href="https://en.wikipedia.org/wiki/BeagleBoard#BeagleBone_Black"&gt;BeagleBone&lt;/a&gt;. They
+are all very different, with different architectures, different pins, onboard
+capabilities and peripherals, and they can have different operating systems.
+When I started learning about this, I had to write 3 programs that were very
+different, if I wanted to try my prototype in all my boards.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://archive.org/download/snappy-gobot/20170710_174806.jpg"&gt;&lt;img alt="picture of the three different SBCs" src="https://archive.org/download/snappy-gobot/20170710_174806.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then I found &lt;a href="https://gobot.io/"&gt;Gobot&lt;/a&gt;, a framework for robotics and IoT that
+supports my three boards, and many more. With the added benefit that you can
+write all the software in the lovely and clean Go language. The Ubuntu store
+supports all their architectures too, and
+&lt;a href="https://www.youtube.com/watch?v=b2x6mumSrpw"&gt;packaging Go projects with snapcraft&lt;/a&gt;
+is super simple. So we can combine all of this to make a single snap package
+that with the help of Gobot will work on every board, and deploy it to all the
+users of these boards through the snaps store.&lt;/p&gt;
+&lt;p&gt;Let's dig into the code with a very simple example to blink an LED, first
+for the Raspberry PI only.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+  &lt;span class="s2"&gt;"time"&lt;/span&gt;
+
+  &lt;span class="s2"&gt;"gobot.io/x/gobot"&lt;/span&gt;
+  &lt;span class="s2"&gt;"gobot.io/x/gobot/drivers/gpio"&lt;/span&gt;
+  &lt;span class="s2"&gt;"gobot.io/x/gobot/platforms/raspi"&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;func&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="n"&gt;adaptor&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;raspi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewAdaptor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="n"&gt;led&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewLedDriver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;adaptor&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"7"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="n"&gt;work&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Every&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Second&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;led&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Toggle&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="p"&gt;})&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="n"&gt;robot&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewRobot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"snapbot"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Connection&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;adaptor&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Device&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;led&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="n"&gt;work&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="n"&gt;robot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;In there you will see some of the Gobot concepts. There's an adaptor for the
+board, a driver for the specific device (in this case the LED), and a robot
+to control everything. In this program, there are only two things specific to
+the Raspberry Pi: the adaptor and the name of the GPIO pin (&lt;code&gt;"7"&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ia801502.us.archive.org/32/items/snappy-gobot/20170710_214428.ogv"&gt;&lt;img alt="picture of the Raspberry Pi prototype" src="https://ia601502.us.archive.org/32/items/snappy-gobot/20170710_214439.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It works nicely in one of the boards, but let's extend the code a little to
+support the other two.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;package&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+  &lt;span class="s2"&gt;"log"&lt;/span&gt;
+  &lt;span class="s2"&gt;"os/exec"&lt;/span&gt;
+  &lt;span class="s2"&gt;"strings"&lt;/span&gt;
+  &lt;span class="s2"&gt;"time"&lt;/span&gt;
+
+  &lt;span class="s2"&gt;"gobot.io/x/gobot"&lt;/span&gt;
+  &lt;span class="s2"&gt;"gobot.io/x/gobot/drivers/gpio"&lt;/span&gt;
+  &lt;span class="s2"&gt;"gobot.io/x/gobot/platforms/beaglebone"&lt;/span&gt;
+  &lt;span class="s2"&gt;"gobot.io/x/gobot/platforms/dragonboard"&lt;/span&gt;
+  &lt;span class="s2"&gt;"gobot.io/x/gobot/platforms/raspi"&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;func&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;exec&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"uname"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"-r"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Output&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;err&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;nil&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Fatal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;err&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;adaptor&lt;/span&gt; &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Adaptor&lt;/span&gt;
+  &lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;pin&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt;
+  &lt;span class="n"&gt;kernelRelease&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Contains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kernelRelease&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"raspi2"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;adaptor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;raspi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewAdaptor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;pin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"7"&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;strings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Contains&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kernelRelease&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"snapdragon"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;adaptor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dragonboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewAdaptor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;pin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"GPIO_A"&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;adaptor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;beaglebone&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewAdaptor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;pin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"P8_7"&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;digitalWriter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;adaptor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gpio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DigitalWriter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="err"&gt;!&lt;/span&gt;&lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Fatal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Invalid adaptor"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;led&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gpio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewLedDriver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;digitalWriter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pin&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="n"&gt;work&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Every&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Second&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="n"&gt;led&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Toggle&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="p"&gt;})&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="n"&gt;robot&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NewRobot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"snapbot"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Connection&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;adaptor&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Device&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;led&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="n"&gt;work&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="n"&gt;robot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;We are basically adding in there a block to select the right adaptor and pin,
+depending on which board the code is running. Now we can compile this program,
+throw the binary in the board, and give it a try.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ia801502.us.archive.org/32/items/snappy-gobot/20170710_212605.ogv"&gt;&lt;img alt="picture of the Dragonboard prototype" src="https://ia801502.us.archive.org/32/items/snappy-gobot/20170710_212602.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But we can do better. If we package this in a snap, anybody with one of the
+boards and an operating system that supports snaps can easily install it. We
+also open the door to
+&lt;a href="https://build.snapcraft.io"&gt;continuous delivery&lt;/a&gt; and
+&lt;a href="http://elopio.net/blog/ipfs-crowdtesting/"&gt;crowd testing&lt;/a&gt;. And as I said
+before, super simple, just put this in the &lt;code&gt;snapcraft.yaml&lt;/code&gt; file:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;blink&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;elopio&lt;/span&gt;
+&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;span class="n"&gt;summary&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;  &lt;span class="n"&gt;Blink&lt;/span&gt; &lt;span class="n"&gt;snap&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Raspberry&lt;/span&gt; &lt;span class="n"&gt;Pi&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;Gobot&lt;/span&gt;
+&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;simple&lt;/span&gt; &lt;span class="n"&gt;example&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;blink&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="n"&gt;LED&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Raspberry&lt;/span&gt; &lt;span class="n"&gt;Pi&lt;/span&gt;
+  &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Gobot&lt;/span&gt; &lt;span class="n"&gt;framework&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+&lt;span class="n"&gt;confinement&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;devmode&lt;/span&gt;
+
+&lt;span class="n"&gt;apps&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;blink&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;elopio&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;blink&lt;/span&gt;
+
+&lt;span class="n"&gt;parts&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;gobot&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;blink&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;source&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;
+    &lt;span class="n"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt;
+    &lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;importpath&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/elopio/g&lt;/span&gt;&lt;span class="n"&gt;obot&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;blink&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;To build the snap, here is a cool trick thanks to the work that
+&lt;a href="http://www.twotoasts.de/index.php/2017/06/how-to-support-cross-compilation-in-plugins/"&gt;kalikiana&lt;/a&gt;
+recently added to snapcraft. I'm writing this code in my development machine,
+which is amd64. But the raspberry pi and beaglebone are armhf, and the
+dragonboard is arm64; so I need to cross-compile the code to get binaries
+for all the architectures:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;snapcraft --target-arch=armhf&lt;/span&gt;
+&lt;span class="err"&gt;snapcraft clean&lt;/span&gt;
+&lt;span class="err"&gt;snapcraft --target-arch=arm64&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;That will leave two .snap files in my working directory that then I can upload
+to the store with &lt;code&gt;snapcraft push&lt;/code&gt;. Or I can just push the code to GitHub and
+let &lt;a href="https://build.snapcraft.io"&gt;build.snapcraft.io&lt;/a&gt; to take care of building
+and pushing for me.&lt;/p&gt;
+&lt;p&gt;Here is the source code for this simple example:
+&lt;a href="https://github.com/elopio/gobot-blink"&gt;https://github.com/elopio/gobot-blink&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Of course, Gobot supports many more devices that will let you build complex
+robots. Just take a look at the
+&lt;a href="https://gobot.io/documentation/"&gt;documentation in the Gobot site&lt;/a&gt;, and at the
+&lt;a href="https://gobot.io/documentation/guides/snapcraft/"&gt;guide about deployable packages with Gobot and snapcraft&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ia801502.us.archive.org/32/items/snappy-gobot/20170710_233319.ogv"&gt;&lt;img alt="picture of the BeagleBone prototype" src="https://ia601502.us.archive.org/32/items/snappy-gobot/20170710_233317.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have one of the boards I'm using here to play, give it a try:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;sudo snap install gobot-blink-elopio --edge --devmode&lt;/span&gt;
+&lt;span class="err"&gt;sudo gobot-blink-elopio&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now my experiments will be to try make the snap more secure, with strict
+confinement. If you have any questions or want to help, we have a
+&lt;a href="https://forum.snapcraft.io/t/write-your-robots-in-go-with-gobot-and-distribute-the-software-as-snaps/1086"&gt;topic in the forum&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/gobot-snaps/</guid><pubDate>Tue, 11 Jul 2017 14:30:00 GMT</pubDate></item><item><title>User acceptance testing of snaps, with Travis</title><link>http://elopio.net/es/blog/travis-snap-testing/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;a href="https://travis-ci.org/"&gt;Travis CI&lt;/a&gt; offers a great continuous integration
+service for the projects hosted on GitHub. With it, you can run tests, deliver
+artifacts and deploy applications every time you push a commit, on pull requests, after they are merged, or with some other frequency.&lt;/p&gt;
+&lt;p&gt;Last week Travis CI
+&lt;a href="https://blog.travis-ci.com/2017-06-21-trusty-updates-2017-Q2-launch"&gt;updated the Ubuntu 14.04 (Trusty) machines&lt;/a&gt;
+that run your tests and deployment steps. This update came with a nice surprise for everybody
+working to deliver software to Linux users, because it is now possible to
+install &lt;a href="https://snapcraft.io"&gt;snaps&lt;/a&gt; in Travis!&lt;/p&gt;
+&lt;p&gt;I've been excited all week telling people about all the doors that this opens;
+but if you have been following my adventures in the Ubuntu world, by now you
+can probably guess that I'm mostly thinking about all the potential this has
+for automated testing. For the automation of user acceptance tests.&lt;/p&gt;
+&lt;p&gt;User acceptance tests are executed from the point of view of the user, with
+your software presented as a black box to them. The tests can only interact
+with the software through the entry points you define for your users. If it's
+a CLI application, then the tests will call commands and subcommands and check
+the outputs. If it's a website or a desktop application, the tests will click
+things, enter text and check the changes on this GUI. If it's a service with
+an HTTP API, the tests will make requests and check the responses. On these
+tests, the closer you can get to simulate the environment and behaviour of your
+real users, the better.&lt;/p&gt;
+&lt;p&gt;Snaps are great for the automation of user acceptance tests because they are
+immutable and they bundle all their dependencies. With this we can make sure
+that your snap will work the same on any of the operating systems and
+architectures that support snaps. The &lt;a href="https://snapcraft.io/docs/core/snapd"&gt;snapd&lt;/a&gt; service takes care of hiding
+the differences and presenting a consistent execution environment for the snap.
+So, getting a green execution of these tests in the Trusty machine of Travis is
+a pretty good indication that it will work on all the active releases of
+Ubuntu, Debian, Fedora and even on a Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;Let me show you an example of what I'm talking about, obviously using my
+favourite snap called IPFS. There is
+&lt;a href="http://elopio.net/blog/ipfs-crowdtesting/"&gt;more information about IPFS in my previous post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check below the packaging metadata for the IPFS snap, a single &lt;code&gt;snapcraft.yaml&lt;/code&gt;
+file:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nl"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;global&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;versioned&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;peer&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;peer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;filesystem&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;IPFS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;combines&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;good&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ideas&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Git&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;BitTorrent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Kademlia&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;SFS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Web&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;It&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;like&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;single&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;bittorrent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;swarm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;exchanging&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;IPFS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;provides&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;an&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;interface&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;simple&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HTTP&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;web&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;but&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;permanence&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;You&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;can&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;also&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;confinement&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;strict&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nl"&gt;apps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nl"&gt;ipfs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;command&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;plugs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;home, network, network-bind&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nl"&gt;parts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nl"&gt;ipfs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;source&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;plugin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;nil&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;build&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;make, wget&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;prepare&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;cp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;build&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;GOPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;make&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nl"&gt;install&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;SNAPCRAFT_PART_INSTALL&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="n"&gt;mv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ipfs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;SNAPCRAFT_PART_INSTALL&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;after&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;source&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nl"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;go1&lt;/span&gt;&lt;span class="mf"&gt;.7.5&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;It's not the most simple snap because they use their own build tool to get the
+go dependencies and compile; but it's also not too complex. If you are new to
+snaps and want to understand every detail of this file, or you want to package
+your own project, the
+&lt;a href="https://tutorials.ubuntu.com/tutorial/create-first-snap"&gt;tutorial to create your first snap&lt;/a&gt;
+is a good place to start.&lt;/p&gt;
+&lt;p&gt;What's important here is that if you run &lt;code&gt;snapcraft&lt;/code&gt; using the snapcraft.yaml file above, you
+will get the IPFS snap. If you install that snap, then you can test it from the
+point of view of the user. And if the tests work well, you can push it to the
+edge channel of the Ubuntu store to start the crowdtesting with your community.&lt;/p&gt;
+&lt;p&gt;We can automate all of this with Travis. The &lt;code&gt;snapcraft.yaml&lt;/code&gt; for the project
+must be already in the GitHub repository, and we will add there a &lt;code&gt;.travis.yml&lt;/code&gt;
+file. They have
+&lt;a href="https://docs.travis-ci.com/"&gt;good docs to prepare your Travis account&lt;/a&gt;.
+First, let's see what's required to build the snap:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nl"&gt;sudo&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;required&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="nl"&gt;script&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;:$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;snapcore&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;snapcraft&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;"apt update &amp;amp;&amp;amp; snapcraft"&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;For now, we build the snap in a docker container to keep things simple. We have
+work in progress to be able to install snapcraft in Trusty as a snap, so soon
+this will be even nicer running everything directly in the Travis machine.&lt;/p&gt;
+&lt;p&gt;This previous step will leave the packaged .snap file in the current directory.
+So we can install it adding a few more steps to the Travis script:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[...]&lt;/span&gt;
+
+&lt;span class="na"&gt;script:&lt;/span&gt;
+  &lt;span class="na"&gt;- docker [...]&lt;/span&gt;
+  &lt;span class="na"&gt;- sudo apt install --yes snapd&lt;/span&gt;
+  &lt;span class="na"&gt;- sudo snap install *.snap --dangerous&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;And once the snap is installed, we can run it and check that it works as expected.
+Those checks are our automated user acceptance test. IPFS has a CLI
+client, so we can just run commands and verify outputs with grep. Or we can get
+fancier using &lt;a href="https://github.com/kward/shunit2"&gt;shunit2&lt;/a&gt; or
+&lt;a href="https://github.com/sstephenson/bats/"&gt;bats&lt;/a&gt;. But the basic idea would be to
+add to the Travis script something like this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[...]&lt;/span&gt;
+
+&lt;span class="na"&gt;script:&lt;/span&gt;
+  &lt;span class="k"&gt;[...]&lt;/span&gt;
+  &lt;span class="na"&gt;- /snap/bin/ipfs init&lt;/span&gt;
+  &lt;span class="na"&gt;- /snap/bin/ipfs cat /ipfs/QmVLDAhCY3X9P2uRudKAryuQFPM5zqA3Yij1dY8FpGbL7T/readme | grep -z "^Hello and Welcome to IPFS!.*$"&lt;/span&gt;
+  &lt;span class="na"&gt;- [...]&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;If one of those checks fail, Travis will mark the execution as failed and stop
+our release process until we fix them. If instead, all of the checks pass, then this version
+is good enough to put into the store, where people can take it and run
+exploratory tests to try to find problems caused by weird scenarios that we
+missed in the automation. To help with that we have the
+&lt;code&gt;snapcraft enable-ci travis&lt;/code&gt; command, and a tutorial to guide you
+step by step
+&lt;a href="https://tutorials.ubuntu.com/tutorial/continuous-snap-delivery-from-travis-ci#0"&gt;setting up the continuous delivery from Travis CI&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For the IPFS snap we had for a long time a manual smoke suite, that our amazing
+&lt;a href="https://forum.snapcraft.io/t/call-for-testing-ipfs/97"&gt;community of testers&lt;/a&gt;
+have been executing over and over again, every time we want to publish a new
+release. I've turned it into
+&lt;a href="https://github.com/elopio/ipfs-snap/blob/master/tests/smoke_test.sh"&gt;a simple bash script&lt;/a&gt;
+that from now on will be executed frequently by Travis, and will tell us if
+there's something wrong before anybody gives it a try manually. With this our
+community of testers will have more time to run new and interesting scenarios,
+trying to break the application in clever ways, instead of running the same
+repetitive steps many times.&lt;/p&gt;
+&lt;p&gt;Thanks to Travis and snapcraft we no longer have to worry about a big part of
+or release process. Continuous integration and delivery can be fully automated,
+and we will have to take a look only when something breaks.&lt;/p&gt;
+&lt;p&gt;As for IPFS, it will keep being my guinea pig to guide new features for
+snapcraft and showcase them when ready. It has many more commands that
+have to be added to the automated test suite, and it also has a web UI and
+an HTTP API. Lots of things to play with! If you would like to help, and
+on the way learn about snaps, automation and the decentralized web, please
+let me know. You can take a look on my
+&lt;a href="https://github.com/elopio/ipfs-snap"&gt;IPFS snap repo&lt;/a&gt; for more details about
+testing snaps in Travis, and other tricks for the build and deployment.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://archive.org/download/elopio-screenshots2/travis/ipsf-travis.png"&gt;&lt;img alt="screenshot of the IPFS smoke test running in travis" src="https://archive.org/download/elopio-screenshots2/travis/ipsf-travis.png"&gt;&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/travis-snap-testing/</guid><pubDate>Thu, 29 Jun 2017 03:51:00 GMT</pubDate></item><item><title>Crowdtesting with the Ubuntu community: the case of IPFS</title><link>http://elopio.net/es/blog/ipfs-crowdtesting/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;Here at Ubuntu we are working hard on the future of free software distribution.
+We want developers to release their software to any Linux distro in a way
+that's safe, simple and flexible. You can read more about this at
+&lt;a href="https://snapcraft.io/"&gt;snapcraft.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This work is extremely fun because we have to work constantly with a wild
+variety of free software projects to make sure that the tools we write are
+usable and that the workflow we are proposing makes sense to developers and
+gives them a lot of value in return. Today I want to talk about one of those
+projects: IPFS.&lt;/p&gt;
+&lt;p&gt;IPFS is the permanent and decentralized web. How cool is that? You get a
+peer-to-peer distributed file system where you store and retrieve files. They
+have a nice demo &lt;a href="https://ipfs.io/"&gt;in their website&lt;/a&gt;, and you can give it a
+try on Ubuntu Trusty, Xenial or later by running:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ sudo snap install ipfs
+&lt;/pre&gt;
+
+
+&lt;p&gt;&lt;a href="https://archive.org/download/elopio-screenshots2/ipfs-peers.png"&gt;&lt;img alt="screenshot of the IPFS peers" src="https://archive.org/download/elopio-screenshots2/ipfs-peers.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So, here's one of the problems we are trying to solve. We have millions of users
+on the Trusty version of Ubuntu, released during 2014. We also have millions of
+users on the Xenial version, released during 2016. Those two versions are stable
+now, and following the Ubuntu policies, they will get only security updates for
+5 years. That means that it's very hard, almost impossible, for a young project
+like IPFS to get into the Ubuntu archives for those releases. There will be no
+simple way for all those users to enjoy IPFS, they would have to use a
+&lt;a href="https://en.wikipedia.org/wiki/Personal_Package_Archive"&gt;Personal Package Archive&lt;/a&gt;
+or install the software from a
+&lt;a href="https://en.wikipedia.org/wiki/Tar_(computing)"&gt;tarball&lt;/a&gt;. Both methods are
+complex with high security risks, and both require the users to put a lot of
+trust on the developers, more than what they should ever trust anybody.&lt;/p&gt;
+&lt;p&gt;We are closing the Zesty release cycle which will go out in April, so it's
+too late there too. IPFS could make a
+&lt;a href="https://en.wikipedia.org/wiki/Deb_(file_format)"&gt;deb&lt;/a&gt;, put it into Debian,
+wait for it to sync to Ubuntu, and then it's likely that it will be ready for
+the October release. Aside from the fact that we have to wait until October,
+there are a few other problems. First, making a deb is not simple. It's not
+too hard either, but it requires quite some time to learn to do it right.
+Second, I mentioned that IPFS is young, they are on the 0.4.6 version. So, it's
+very unlikely that they will want to support this early version for such a long
+time as Debian and Ubuntu require. And they are not only young, they are also
+fast. They add new features and bug fixes every day and make new releases almost
+every week, so they need a feedback loop that's just as fast. A 6 months release
+cycle is way too slow. That works nicely for some kinds of free software
+projects, but not for one like IPFS.&lt;/p&gt;
+&lt;p&gt;They have been kind enough to let me play with their project and use it as a
+test subject to verify our end-to-end workflow. My passion is testing, so I have
+been focusing on continuous delivery to get happy early adopters and constant
+feedback about the most recent changes in the project.&lt;/p&gt;
+&lt;p&gt;I started by making a
+&lt;a href="https://github.com/elopio/ipfs-snap/blob/master/snapcraft.yaml"&gt;snapcraft.yaml&lt;/a&gt;
+file that contains all the metadata required for the snap package. The file is
+pretty simple and to make the first version it took me just a couple of minutes,
+true story. Since then I've been slowly improving and updating it with small
+changes. If you are interested in doing the same for your project, you can read
+&lt;a href="https://tutorials.ubuntu.com/tutorial/create-first-snap"&gt;the tutorial to create a snap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I built and tested this snap locally on my machines. It worked nicely, so I
+pushed it to the edge channel of the Ubuntu Store. Here, the snap is not visible
+on user searches, only the people who know about the snap will be able to
+install it. I told a couple of my friends to give it a try, and they came back
+telling me how cool IPFS was. Great choice for my first test subject, no
+doubt.&lt;/p&gt;
+&lt;p&gt;At this point, following the pace of the project by manually building and
+pushing new versions to the store was too demanding, they go too fast. So, I
+started working on continuous delivery by translating everything I did manually
+into scripts and hooking them to travis-ci. After a few days, it got pretty
+fancy, take a look at
+&lt;a href="https://github.com/elopio/ipfs-snap"&gt;the github repo of the IPFS snap&lt;/a&gt; if you
+are curious. Every day, a new version is packaged from the latest state of the
+master branch of IPFS and it is pushed to the edge channel, so we have a constant
+flow of new releases for hardcore early adopters. After they install IPFS from
+the edge channel once, the package will be automatically updated in their
+machines every day, so they don't have to do anything else, just use IPFS as
+they normally would.&lt;/p&gt;
+&lt;p&gt;Now with this constant stream of updates, me and my two friends were not enough
+to validate all the new features. We could never be sure if the project was
+stable enough to be pushed to the stable channel and make it available to the
+millions and millions of Ubuntu users out there.&lt;/p&gt;
+&lt;p&gt;Luckily, the Ubuntu community is huge, and they are very nice people. It was
+time to use the wisdom of the crowds. I invited the most brave of them to keep
+the snap installed from edge and I defined a simple pipeline that leads to the
+stable release using the four available channels in the Ubuntu store:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When a revision is tagged in the IPFS master repo, it is automatically pushed
+   to edge channel from travis, just as with any other revision.&lt;/li&gt;
+&lt;li&gt;Travis notifies me about this revision.&lt;/li&gt;
+&lt;li&gt;I install this tagged revision from edge, and run a super quick test to make
+   sure that the IPFS server starts.&lt;/li&gt;
+&lt;li&gt;If it starts, I push the snap to the beta channel.&lt;/li&gt;
+&lt;li&gt;With a couple of my friends, we run a
+   &lt;a href="https://gist.github.com/elopio/7492a28bd1aef6c4a86b5dcf5d5cb65b#file-ipfs-smoke-tests-md"&gt;suite of smoke tests&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If everything goes well, I push the snap to the candidate channel.&lt;/li&gt;
+&lt;li&gt;I notify the community of Ubuntu testers about a new version in the candidate
+   channel. This is were the magic of crowd testing happens.&lt;/li&gt;
+&lt;li&gt;The Ubuntu testers run the smoke tests in all their machines, which gives us
+   the confidence we need because we are confirming that the new version works
+   on different platforms, distros, distro releases, countries, network
+   topologies, you name it.&lt;/li&gt;
+&lt;li&gt;This candidate release is left for some time in this channel, to let the
+   community run thorough exploratory tests, trying to find weird usage
+   combinations that could break the software.&lt;/li&gt;
+&lt;li&gt;If the tag was for a final upstream release, the community also runs
+   &lt;a href="https://gist.github.com/elopio/7492a28bd1aef6c4a86b5dcf5d5cb65b#file-ipfs-update-tests-md"&gt;update tests&lt;/a&gt;
+   to make sure that the users with the stable snap installed will get this new
+   version without issues.&lt;/li&gt;
+&lt;li&gt;After all the problems found by the community have been resolved or at least
+   acknowledged and triaged as not blockers, I move the snap from candidate
+   to the stable channel.&lt;/li&gt;
+&lt;li&gt;All the users following the stable channel will automatically get a very well
+   tested version, thanks to the community who contributed with the testing and
+   accepted a higher level of risk.&lt;/li&gt;
+&lt;li&gt;And we start again, the never-ending cycle of making free software :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, let's go back to the discussion about trust. Debian and Ubuntu, and most of
+the other distros, rely on maintainers and distro developers to package and
+review every change on the software that they put in their archives. That is
+a lot of work, and it slows down the feedback loop a lot, as we have seen. In
+here we automated most of the tasks of a distro maintainer, and the new
+revisions can be delivered directly to the users without any reviews. So the
+users are trusting directly their upstream developers without intermediaries,
+but it's very different from the previously existing and unsafe methods. The
+code of snaps is installed read-only, very well constrained with access only to
+their own safe space. Any other access needs to be declared by the snap, and
+the user is always in control of which access is permitted to the application.&lt;/p&gt;
+&lt;p&gt;This way upstream developers can go faster but without exposing their users to
+unnecessary risks. And they just need a simple snapcraft.yaml file and to define
+their own continuous delivery pipeline, on their own timeline.&lt;/p&gt;
+&lt;p&gt;By removing the distro as the intermediary between the developers and their
+users, we are also making a new world full of possibilities for the Ubuntu
+community. Now they can collaborate constantly and directly with upstream
+developers, closing this quick feedback loop. In the future we will tell our
+children of the good old days when we had to report a bug in Ubuntu, which
+would be copied to Debian, then sent upstream to the developers, and after 6
+months, the fix would arrive. It was fun, and it lead us to where we are today,
+but I will not miss it at all.&lt;/p&gt;
+&lt;p&gt;Finally, what's next for IPFS? After this experiment we got more than 200
+unique testers and almost 300 test installs. I now have great confidence on
+this workflow, new revisions were delivered on time, existing Ubuntu
+testers became new IPFS contributors and I now can safely recommend IPFS
+users to install the stable snap. But there's still plenty of work ahead.
+There are still manual steps in the pipeline that can be scripted, the smoke
+tests can be automated to leave more free time for exploratory testing, we can
+release also to armhf and arm64 architectures to get IPFS into the
+&lt;a href="https://www.ubuntu.com/internet-of-things"&gt;IoT world&lt;/a&gt;, and well, of course the
+developers are not stopping, they keep releasing new interesting features. As I
+said, plenty of opportunities for us as distro contributors.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://archive.org/download/elopio-screenshots2/ipfs-stats.png"&gt;&lt;img alt="screenshot of the IPFS snap stats" src="https://archive.org/download/elopio-screenshots2/ipfs-stats.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I'd like to thank everybody who tested the IPFS snap, specially the following
+people for their help and feedback:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;freekvh&lt;/li&gt;
+&lt;li&gt;urcminister&lt;/li&gt;
+&lt;li&gt;Carla Sella&lt;/li&gt;
+&lt;li&gt;casept&lt;/li&gt;
+&lt;li&gt;Colin Law&lt;/li&gt;
+&lt;li&gt;ventrical&lt;/li&gt;
+&lt;li&gt;cariboo&lt;/li&gt;
+&lt;li&gt;howefield&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;3&lt;/p&gt;
+&lt;p&gt;If you want to release your project to the Ubuntu store, take a look at the
+&lt;a href="https://snapcraft.io/"&gt;snapcraft docs&lt;/a&gt;, the
+&lt;a href="https://tutorials.ubuntu.com/"&gt;Ubuntu tutorials&lt;/a&gt;, and come talk to us in
+&lt;a href="https://rocket.ubuntu.com/channel/snapcraft"&gt;Rocket Chat&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/ipfs-crowdtesting/</guid><pubDate>Mon, 06 Mar 2017 16:36:00 GMT</pubDate></item><item><title>Maperespeis #2: Volcán Poás</title><link>http://elopio.net/es/blog/maperespeis-poas/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;El domingo pasado fuimos a hacer mapas libres al
+&lt;a href="https://es.wikipedia.org/wiki/Volc%C3%A1n_Po%C3%A1s"&gt;Volcán Poás&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width="640" height="480" src="https://embed-v1.mapillary.com/embed?version=1&amp;amp;filter=%5B%22all%22%5D&amp;amp;map_filter=%5B%22all%22%5D&amp;amp;image_key=BHp7eM8RAbbhkLWc6XyR6g&amp;amp;client_id=WHJxWW40RWhyVGR6ajVEci1saHZNUTozZDQ5NjRmM2I4ZjBiNjc2&amp;amp;style=photo" frameborder="0"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Esta es la segunda excursión geek del JaquerEspéis. De la primera aprendimos
+que había que esperar al verano porque
+&lt;a href="https://archive.org/download/jaquerespeis-mapas/photo484953803566260.jpg"&gt;con tormenta no se puede mapear&lt;/a&gt;.
+Y el día fue perfecto. No sólo estuvo soleado, sino que el cráter estaba
+totalmente despejado y así pudimos agregar un nuevo lugar al tour virtual de
+Costa Rica.&lt;/p&gt;
+&lt;p&gt;Además, esta vez llegamos mucho mejor preparados, con varios teléfonos con
+&lt;a href="https://www.mapillary.com/"&gt;mapillary&lt;/a&gt;, &lt;a href="http://osmand.net/"&gt;osmand&lt;/a&gt; y
+&lt;a href="http://wiki.openstreetmap.org/wiki/OSMTracker_(Android)"&gt;OSMTracker&lt;/a&gt;, una
+&lt;a href="https://theta360.com/en/"&gt;cámara 360&lt;/a&gt;, un
+&lt;a href="https://buy.garmin.com/en-US/US/p/140022"&gt;GPS Garmin&lt;/a&gt;, un dron y hasta
+&lt;a href="https://twitter.com/elotrojames"&gt;una libreta&lt;/a&gt; y dos biólogos.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://archive.org/download/maperespeis-poas/image20170226_104505408.jpg"&gt;&lt;img alt="La procesión del MaperEspeis" src="https://archive.org/download/maperespeis-poas/image20170226_104505408.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Así funciona el asunto. Todos y todas con el GPS del teléfono activado
+esperamos a que el teléfono encuentre la ubicación. Después cada persona usa la
+aplicación que prefiere para recolectar datos: fotos, audios, videos, notas de
+texto, &lt;a href="https://es.wikipedia.org/wiki/GPX"&gt;trazas&lt;/a&gt;, anotaciones en la libreta...&lt;/p&gt;
+&lt;p&gt;Luego, en nuestras respectivas casas, subimos, publicamos y compartimos todos
+los datos recolectados. Estos nos sirven para mejorar los mapas libres de
+&lt;a href="https://es.wikipedia.org/wiki/OpenStreetMap"&gt;OpenStreetMap&lt;/a&gt;. Agregamos desde
+cosas tan sencillas como
+&lt;a href="https://archive.org/download/maperespeis-poas/20170226_105554.jpg"&gt;la ubicación de un basurero&lt;/a&gt;
+hasta cosas tan importantes como qué tan accesible es el lugar para una persona
+en silla de ruedas, junto con la ubicación de todos estos accesos o las partes
+en las que faltan. Cada persona mejora el mapa un poquito, en la zona que
+conoce o por la que pasó. Con más de 3 millones de usuarios, OpenStreetMap es
+el mejor mapa del mundo que existe; y es de particular importancia en zonas
+como la nuestra, que tienen poco potencial económico para las
+&lt;a href="https://en.wikipedia.org/wiki/Don't_be_evil#The_End_of_.22Don.27t_Be_Evil.22"&gt;megacorporaciones que hacen y venden mapas cerrados robando datos privados a sus usuarios&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Como los mapas que hacemos son libres, lo que sigue no tiene límites. Hay
+grupos trabajando en reconstrucción de modelos tridimensionales a partir de las
+fotos, identificación e interpretación de señales y rótulos, aplicaciones que
+calculan la ruta óptima para llegar a cualquier lugar usando cualquier
+combinación de medios de transporte, aplicaciones para asistir en la toma de
+decisiones al diseñar el futuro de una ciudad, y muchas otras cosas más. Todo
+basado en conocimiento compartido y comunidad.&lt;/p&gt;
+&lt;iframe width="800" height="600" src="https://embed-v1.mapillary.com/embed?version=1&amp;amp;filter=%5B%22all%22%5D&amp;amp;map_filter=%5B%22all%22%5D&amp;amp;image_key=dYPJnZINW7nHTEgJ7g9OEA&amp;amp;client_id=WHJxWW40RWhyVGR6ajVEci1saHZNUTozZDQ5NjRmM2I4ZjBiNjc2&amp;amp;style=classic" frameborder="0"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;La imagen de arriba es el tour virtual en Mapillary. Como
+lo grabamos con la cámara 360, pueden hacer clic y arrastrar con el mouse para
+ver todos los ángulos. También pueden hacer clic arriba, en el botón de
+reproducir para seguir el camino que tomamos. O pueden hacer clic en cualquier
+punto verde en el mapa para seguir su propio camino.&lt;/p&gt;
+&lt;p&gt;Muchas gracias a todos y todas por apuntarse a mapear, en especial a Denisse y
+Charles por servirnos de guías y llenar el paseo de datos interesantes sobre la
+flora, fauna, geología e importancia histórica del Poás.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://archive.org/download/maperespeis-poas/20170226_110006.jpg"&gt;&lt;img alt="Miembros del MaperEspeis" src="https://archive.org/download/maperespeis-poas/20170226_110006.jpg"&gt;&lt;/a&gt;
+(&lt;a href="https://archive.org/details/maperespeis-poas"&gt;Aquí más fotos y videos&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;El próximo maperespeis será el 12 de marzo.&lt;/p&gt;&lt;/div&gt;</description><category>free software</category><category>openstreetmap</category><guid>http://elopio.net/es/blog/maperespeis-poas/</guid><pubDate>Wed, 01 Mar 2017 03:23:35 GMT</pubDate></item><item><title>Call for testing: MySQL</title><link>http://elopio.net/es/blog/call-for-testing-mysql/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;I promised that more interesting things were going to be available soon for
+testing in Ubuntu. There's plenty coming, but today here is one of the
+greatest:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ sudo snap install mysql --channel&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;.0/beta
+&lt;/pre&gt;
+
+
+&lt;p&gt;&lt;a href="https://archive.org/download/elopio-screenshots2/Screenshot_ubuntu-xenial-20170228_2017-02-28_093217.png"&gt;&lt;img alt="screenshot of mysql snap running" src="https://archive.org/download/elopio-screenshots2/Screenshot_ubuntu-xenial-20170228_2017-02-28_093217.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lars Tangvald and other people at MySQL have been working on this snap for some
+time, and now they are ready to give it to the community for crowd testing. If
+you have some minutes, please give them a hand.&lt;/p&gt;
+&lt;p&gt;We have a
+&lt;a href="https://gist.github.com/elopio/c868bc68bf8640b0b49b39aeb1fae8f5"&gt;testing guide&lt;/a&gt;
+to help you getting started.&lt;/p&gt;
+&lt;p&gt;Remember that this should run in trusty, xenial, yakkety, zesty and in all
+flavours of Ubuntu. It would be great to get a diverse pool of platforms and
+test it everywhere.&lt;/p&gt;
+&lt;p&gt;In here we are introducing a new concept:
+&lt;a href="https://snapcraft.io/docs/reference/channels"&gt;tracks&lt;/a&gt;. Notice that we are
+using &lt;code&gt;--channel=8.0/beta&lt;/code&gt;, instead of only &lt;code&gt;--beta&lt;/code&gt; as we used to do before.
+That's because mysql has two different major versions currently active. In order
+to try the other one:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ sudo snap install mysql --channel&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.7/beta
+&lt;/pre&gt;
+
+
+&lt;p&gt;Please report back your results. Any kind of feedback will be highly appreciated,
+and if you have doubts or need a hand to get started, I'm hanging around in
+&lt;a href="https://rocket.ubuntu.com/channel/community"&gt;Rocket Chat&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/call-for-testing-mysql/</guid><pubDate>Tue, 28 Feb 2017 17:40:00 GMT</pubDate></item></channel></rss>

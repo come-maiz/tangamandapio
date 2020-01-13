@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Tangamandapio (Posts about solidity)</title><link>http://elopio.net/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://elopio.net/categories/solidity.xml"></atom:link><language>en</language><lastBuildDate>Mon, 13 Jan 2020 17:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>On crowdsales and multiple inheritance</title><link>http://elopio.net/blog/crowdsales-and-multiple-inheritance/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;On 2017 we saw a mind-blowing number of crowdsales and ICOs running in the
+Ethereum blockchain. They have proven to be a
+powerful tool to collect the funds required to start a project, and they are
+one of the most common uses for smart contracts right now. The Zeppelin team
+has been very involved in this topic,
+&lt;a href="https://blog.zeppelin.solutions/tagged/audit"&gt;auditing many crowdsale contracts&lt;/a&gt;,
+and supporting &lt;a href="https://openzeppelin.org/"&gt;OpenZeppelin&lt;/a&gt;, the most popular
+framework to build these crowdsales. What we found was a lot of contracts
+repeating the same basic concepts, with very similar code, and common
+vulnerabilities.&lt;/p&gt;
+&lt;p&gt;Earlier this year, part of the team took the task to redesign our base
+&lt;code&gt;Crowdsale&lt;/code&gt; contract in order to support a lot of new crowdsale flavors out of
+the box and to make the experience of building and publishing your own
+crowdsale more clear and secure. The idea is to make audits less necessary,
+with an architecture that is modular, that encourages reuse and that will be
+collectively reviewed. These new contracts were added to OpenZeppelin version
+&lt;code&gt;1.7.0&lt;/code&gt;, and since the release they have been widely used by our community with
+ great success. So, this is a good moment to show off :)&lt;/p&gt;
+&lt;p&gt;Let's start with a dive into
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol"&gt;the source code of the &lt;code&gt;Crowdsale&lt;/code&gt; base contract&lt;/a&gt;.
+The first thing you will notice is a lot of comments, guiding you through the
+details of the OpenZeppelin crowdsale architecture. They explain that some
+functions are the core of the architecture and should not be overriden, like
+&lt;code&gt;buyTokens&lt;/code&gt;. Some others like &lt;code&gt;_preValidatePurchase&lt;/code&gt; can be overriden to
+implement the requirements of your crowdsale, but that extra behavior should
+be concatenated with the one of the parent by calling &lt;code&gt;super&lt;/code&gt;, to preserve the
+validations from the  base contract. Some functions like
+&lt;code&gt;_postValidatePurchase&lt;/code&gt; can be just added as hooks in other parts of the
+crowdsale's lifecycle.&lt;/p&gt;
+&lt;p&gt;Building on top of this base, we now provide some contracts for common
+crowdsale scenarios involving
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/distribution"&gt;distribution&lt;/a&gt;,
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/emission"&gt;emission&lt;/a&gt;,
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/price"&gt;price&lt;/a&gt;,
+and
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/validation"&gt;validation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So, let's say that you want to set a goal for your crowdsale and if it's not
+met by the time the sale finishes, you want to refund all your investors. For
+that, you can use the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/distribution/RefundableCrowdsale.sol"&gt;RefundableCrowdsale contract&lt;/a&gt;,
+which overrides the base &lt;code&gt;_forwardFunds&lt;/code&gt; behavior to send the funds to a fancy
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/distribution/utils/RefundVault.sol"&gt;RefundVault&lt;/a&gt;
+while the crowdsale is in progress, instead of sending them directly to the
+wallet of the crowdsale owner.&lt;/p&gt;
+&lt;p&gt;Another common scenario is when you want the tokens to be minted when they are
+purchased. For that, take a look at the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/emission/MintedCrowdsale.sol"&gt;MintedCrowdsale contract&lt;/a&gt;,
+which overrides the simple &lt;code&gt;_deliverTokens&lt;/code&gt; behavior of the base class to call
+instead the &lt;code&gt;mint&lt;/code&gt; function of an
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/MintableToken.sol"&gt;ERC20 Mintable token&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What if we want to do something more interesting with the price of the tokens?
+The base &lt;code&gt;Crowdsale&lt;/code&gt; contract defines a constant rate between tokens and wei,
+but if we override &lt;code&gt;_getTokenAmount&lt;/code&gt;, we could do something like increasing
+the price as the closing time of the crowdsale approaches. That's exactly what
+the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/price/IncreasingPriceCrowdsale.sol"&gt;IncreasingPriceCrowdsale contract&lt;/a&gt;
+does.&lt;/p&gt;
+&lt;p&gt;To get started developing and deploying a crowdsale using the OpenZeppelin
+framework, Gustavo Guimaraes published a nice
+&lt;a href="https://blog.zeppelin.solutions/how-to-create-token-and-initial-coin-offering-contracts-using-truffle-openzeppelin-1b7a5dae99b6"&gt;guide where you will see in action a crowdsale that is timed &lt;strong&gt;and&lt;/strong&gt; minted&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;These are just a few examples. I invite you to explore the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale"&gt;OpenZeppelin crowdsale contracts&lt;/a&gt;
+to see all the new flavors that you can easily use to fund your cool idea;
+and take a look at the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/examples/SampleCrowdsale.sol"&gt;SampleCrowdsale contract&lt;/a&gt;,
+a more complex scenario that comes with full
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/test/examples/SampleCrowdsale.test.js"&gt;test coverage&lt;/a&gt;.
+If you like OpenZeppelin, remember that you are welcome into
+&lt;a href="https://slack.openzeppelin.org/"&gt;our vibrating community&lt;/a&gt; to help us adding new
+contracts or improving the existing ones.&lt;/p&gt;
+&lt;p&gt;On the repo you will also find that all these contracts are very well tested. And
+as we have seen, the new architecture is clearer and safer, with each contract
+explaining the functions that you can or can't override, and how to do it.
+However, you should be extra careful when combining them. It's not the same to
+have three contracts with one condition than to have one contract with three
+conditions. The combination increases the attack surface, so you need to have
+a good idea of what you want to achieve, and know the implementation details of
+the tools you are using.&lt;/p&gt;
+&lt;p&gt;Before you go ahead and deploy a complex crowdsale that combines some of our
+contracts, I would like to spend some time going deep into how Solidity works
+when you combine contracts through multiple inheritance, like Gustavo did in
+his guide to make a contract that inherits from &lt;code&gt;TimedCrowdsale&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; from
+&lt;code&gt;MintedCrowdsale&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Multiple inheritance is hard, and it can get very confusing if you abuse it.
+Some languages don't support it at all; but it is becoming a very common
+pattern on Solidity.&lt;/p&gt;
+&lt;p&gt;The problem, from the point of view of the programmer, is to understand the
+order of the calls when a contract has multiple parents. Let's say we have a
+base contract &lt;code&gt;A&lt;/code&gt;, with a function named &lt;code&gt;f&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract A {&lt;/span&gt;
+&lt;span class="err"&gt;  function f() {&lt;/span&gt;
+&lt;span class="err"&gt;    somethingA();&lt;/span&gt;
+&lt;span class="err"&gt;  }&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Then we have two contracts &lt;code&gt;B&lt;/code&gt; and &lt;code&gt;C&lt;/code&gt;, both inherit from &lt;code&gt;A&lt;/code&gt; and override &lt;code&gt;f&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;somethingB&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;super&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;somethingC&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;super&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;And finaly we have a contract &lt;code&gt;D&lt;/code&gt;, which inherits from &lt;code&gt;B&lt;/code&gt; and &lt;code&gt;C&lt;/code&gt;, and
+overrides &lt;code&gt;f&lt;/code&gt; too:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is B, C {&lt;/span&gt;
+&lt;span class="err"&gt;  function f() {&lt;/span&gt;
+&lt;span class="err"&gt;    somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;    super.f();&lt;/span&gt;
+&lt;span class="err"&gt;  }&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;What happens when you call &lt;code&gt;D.f&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;This is called the diamond problem, because we end up with a diamond-shaped
+inheritance diagram:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/180px-Diamond_inheritance.svg.png"&gt;&lt;img alt="Diamond inheritance problem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/180px-Diamond_inheritance.svg.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(the image is from wikipedia)&lt;/p&gt;
+&lt;p&gt;To solve it, Solidity uses C3 linearization, also called Method Resolution
+Order (MRO). This means that it will linearize the inheritance graph. If &lt;code&gt;D&lt;/code&gt;
+is defined as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is B, C {}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;then &lt;code&gt;D.f&lt;/code&gt; will call:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;somethingC();&lt;/span&gt;
+&lt;span class="err"&gt;somethingB();&lt;/span&gt;
+&lt;span class="err"&gt;somethingA();&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When &lt;code&gt;D&lt;/code&gt; inherits from &lt;code&gt;B, C&lt;/code&gt;, the linearization results in D→ C→ B→ A. This
+means that &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;D&lt;/code&gt; calls &lt;code&gt;C&lt;/code&gt;. And you might be a little surprised by the
+fact that calling &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;C&lt;/code&gt; will result on a call to &lt;code&gt;B&lt;/code&gt; instead of &lt;code&gt;A&lt;/code&gt;,
+even though &lt;code&gt;C&lt;/code&gt; doesn't inherit from &lt;code&gt;B&lt;/code&gt;. Finally, &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;B&lt;/code&gt; will call
+&lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If &lt;code&gt;D&lt;/code&gt; is instead defined as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is C, B {}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;then &lt;code&gt;D.f&lt;/code&gt; will call:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;somethingB();&lt;/span&gt;
+&lt;span class="err"&gt;somethingC();&lt;/span&gt;
+&lt;span class="err"&gt;somethingA();&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When &lt;code&gt;D&lt;/code&gt; inherits from &lt;code&gt;C, B&lt;/code&gt;, the linearization results in D→ B→ C→ A.&lt;/p&gt;
+&lt;p&gt;Notice here that the order in which you declare the parent contracts matters a
+lot. If the inheritance graph is not too complex, it will be easy to see that
+the order of calls will follow the order in which the parents were declared,
+right to left. If your inheritance is more complicated than this and the
+hierarchy is not very clear, you should probably stop using multiple
+inheritance and look for an alternate solution.&lt;/p&gt;
+&lt;p&gt;I recommend you to read the wikipedia pages of
+&lt;a href="https://en.wikipedia.org/wiki/Multiple_inheritance"&gt;Multiple inheritance&lt;/a&gt; and
+&lt;a href="https://en.wikipedia.org/wiki/C3_linearization"&gt;C3 linearization&lt;/a&gt;, and the
+&lt;a href="https://solidity.readthedocs.io/en/latest/contracts.html#multiple-inheritance-and-linearization"&gt;Solidity docs about multiple inheritance&lt;/a&gt;.
+You will find in there a complete explanation of the C3 algorithm, and an
+example with a more complicated inheritance graph.&lt;/p&gt;
+&lt;p&gt;To better understand how this can impact your crowdsales, take a look at the
+case that Philip Daian brilliantly explains on his blog post
+&lt;a href="https://pdaian.com/blog/solidity-anti-patterns-fun-with-inheritance-dag-abuse/"&gt;Solidity anti-patterns: Fun with inheritance DAG abuse&lt;/a&gt;.
+There, he presents a Crowdsale contract that needs "to have a whitelist
+pool of preferred investors able to buy in the pre-sale [...], along with a
+hard cap of the number of [...] tokens that can be distributed." On his first
+(deliberately) faulty implementation, he ends up with a crowdsale that checks:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;((withinPeriod &amp;amp;&amp;amp; nonZeroPurchase) &amp;amp;&amp;amp; withinCap) || (whitelist[msg.sender] &amp;amp;&amp;amp; !hasEnded())&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Pay close attention to the resulting condition, and notice that if a
+whitelisted investor buys tokens before the crowdsale has ended, she will be
+able to bypass the hard cap, and buy as many tokens as she wants.&lt;/p&gt;
+&lt;p&gt;By just inverting the order on which the parents are defined, he fixes the
+contract which will now check for:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;(withinPeriod &amp;amp;&amp;amp; nonZeroPurchase || (whitelist[msg.sender] &amp;amp;&amp;amp; !hasEnded())) &amp;amp;&amp;amp; withinCap&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now, if the purchase attempt goes above the cap, the transaction will be
+reverted even if the sender is whitelisted.&lt;/p&gt;
+&lt;p&gt;There are some simple cases, where the order of the conditions is not
+important. By now, you should have started to suspect that the contract above
+became complicated because of the &lt;code&gt;||&lt;/code&gt; (&lt;em&gt;or&lt;/em&gt;) condition. Things are a lot easier
+when all our conditions are merged with &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; (&lt;em&gt;and&lt;/em&gt;), because in that case the
+order of the conditions doesn't alter the result.&lt;/p&gt;
+&lt;p&gt;Our new architecture was crafted for using &lt;code&gt;require&lt;/code&gt; instead of returning
+booleans, which works nicely to combine &lt;em&gt;and&lt;/em&gt; conditions, and to revert the
+transaction when one fails. Let's say that we have a crowdsale that should
+&lt;strong&gt;only&lt;/strong&gt; allow whitelisted investors to buy tokens while the sale is open
+&lt;strong&gt;and&lt;/strong&gt; the cap has not been reached. In this
+case, the condition to check would be (in pseudocode):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;require(hasStarted() &amp;amp;&amp;amp; !hasEnded())&lt;/span&gt;
+&lt;span class="err"&gt;require(isInWhiteList(msg.sender))&lt;/span&gt;
+&lt;span class="err"&gt;require(isWithinCap(msg.value))&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Our contract would be as simple as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pragma&lt;/span&gt; &lt;span class="n"&gt;solidity&lt;/span&gt; &lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mf"&gt;0.4&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="n"&gt;WhitelistedTimedCappedCrowdsale&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;TimedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;WhitelistedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CappedCrowdsale&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+  &lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;WhitelistedTimedCappedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;address&lt;/span&gt; &lt;span class="n"&gt;_wallet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;ERC20&lt;/span&gt; &lt;span class="n"&gt;_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_openingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_closingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_cap&lt;/span&gt;
+  &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;public&lt;/span&gt;
+    &lt;span class="n"&gt;Crowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_wallet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_token&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;TimedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_openingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_closingTime&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;CappedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_cap&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;It doesn't matter how you order the parents, all the conditions will be
+checked always. But take this with a grain of salt. All the conditions will be
+checked, but the order will be different. This can have different side-effects
+on Solidity, as some paths will execute statements that other paths won't, and
+it could lead an attacker to find a specific path that is vulnerable. Also, if
+your parent contracts are not super clear, they might be hiding an &lt;code&gt;||&lt;/code&gt;
+condition in a few hard-to-read code statements.&lt;/p&gt;
+&lt;p&gt;It's very easy to think that the parent contracts will just be magically merged
+into something that will make sense for our use case, or to make a mistake when
+we linearize them in our mind. Every use case will be different, so our
+framework can't save you from the work of organizing your contracts' hierarchy.
+You must analyze the linearization of the inheritance graph to get a clear view
+of the functions that will be called and their order, and always always add a
+full suite of automated tests for your final crowdsale contract to make sure
+that it enforces all the conditions.&lt;/p&gt;
+&lt;p&gt;To finish, I wanted to show you my repo where I will be doing
+experiments with crowdsales and their tests:
+&lt;a href="https://github.com/elopio/zeppelin-crowdsales"&gt;https://github.com/elopio/zeppelin-crowdsales&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Take a look at my
+&lt;a href="https://github.com/elopio/zeppelin-crowdsales/blob/master/contracts/PreSaleWithCapCrowdsale.sol"&gt;PreSaleWithCapCrowdsale contract&lt;/a&gt;.
+You will see that I preferred to be explicit about the conditions instead of
+using &lt;code&gt;super&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_preValidatePurchase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;uint256&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;internal&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;timestamp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;openingTime&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;whitelist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;timestamp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;closingTime&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;weiRaised&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cap&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;I encourage you to join me on these experiments, to try different combinations
+of crowdsales and to play switching the order of the inheritance graph. We will
+learn more about the resulting code that Solidity compiles, we will improve our
+mental picture of the execution stack, and we will practice writing tests
+that fully cover all the possible paths. If you have questions, find
+errors on the implementations in OpenZeppelin, or find an alternative
+implementation that will make it easier to develop crowdsales on top of our
+contracts, please
+&lt;a href="https://slack.openzeppelin.org/"&gt;let us know by sending a message to the slack channel&lt;/a&gt;.
+I am &lt;em&gt;elopio&lt;/em&gt; in there.&lt;/p&gt;
+&lt;p&gt;A relevant experiment here is to use
+&lt;a href="https://en.wikipedia.org/wiki/Composition_over_inheritance#Benefits"&gt;composition over inheritance&lt;/a&gt;.
+In OpenZeppelin we couldn't implement an architecture based on composition
+because of the high gas costs implied, especially during deployment. That is
+one of the reasons we are now hard at work
+on &lt;a href="https://zeppelinos.org/"&gt;zeppelin_os&lt;/a&gt;, which minimizes deployment costs
+by helping you use libraries that are already on-chain. Expect exciting news
+very soon!&lt;/p&gt;
+&lt;p&gt;Thanks a lot to &lt;a href="https://github.com/ajsantander"&gt;Ale&lt;/a&gt; and
+&lt;a href="https://github.com/fiiiu"&gt;Alejo&lt;/a&gt;, who worked on these new contracts and helped
+me to understand them. &amp;lt;3&lt;/p&gt;&lt;/div&gt;</description><category>free software</category><category>solidity</category><category>zeppelin</category><guid>http://elopio.net/blog/crowdsales-and-multiple-inheritance/</guid><pubDate>Sun, 08 Apr 2018 15:58:13 GMT</pubDate></item></channel></rss>

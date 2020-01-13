@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Tangamandapio (Publicaciones sobre zeppelin)</title><link>http://elopio.net/</link><description></description><atom:link rel="self" type="application/rss+xml" href="http://elopio.net/es/categories/zeppelin.xml"></atom:link><language>es</language><lastBuildDate>Mon, 13 Jan 2020 17:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Follow this quality checklist before an audit</title><link>http://elopio.net/es/blog/quality-checklist-before-audit/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;At &lt;a href="https://openzeppelin.com/"&gt;OpenZeppelin&lt;/a&gt; we help protect the core
+infrastructure of open and decentralized applications. I'm part of the Research
+team, which is in charge of conducting
+&lt;a href="https://openzeppelin.com/security-audits/"&gt;security audits&lt;/a&gt;.
+We review tons of lines of code written by very smart developers for projects
+that will shake the foundations of our society.&lt;/p&gt;
+&lt;p&gt;Finding security vulnerabilities in this futuristic cypherpunk environment is
+super challenging and fun, but
+&lt;a href="https://blog.openzeppelin.com/"&gt;we have already covered those topics elsewhere&lt;/a&gt;.
+I think that security actually starts in a
+pretty boring and traditional place, full of the wisdom that our elders have
+collected through millennia of developing software in community. Standing on
+their shoulders, I want to share our checklist for basic quality measures
+that your next awesome project should consider before you hand it over for an
+external audit.&lt;/p&gt;
+&lt;h2&gt;✔️ Choose a free software license&lt;/h2&gt;
+&lt;p&gt;Closed code is inherently insecure. If people who use your project can't inspect it,
+study it, hack it, and experiment on it, there's no way it can be trusted. If you
+hold abusive control over your users, nothing prevents you (or anyone
+more powerful than you) from making them vulnerable.&lt;/p&gt;
+&lt;p&gt;Take a look at the
+&lt;a href="https://www.gnu.org/philosophy/free-sw.en.html"&gt;Free Software Definition&lt;/a&gt;,
+and begin with &lt;a href="https://choosealicense.com/"&gt;choosing the license&lt;/a&gt; that best
+suits your needs.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update: previously we introduced here Richard Stallman as a wise elder, dressed as a saint 🤦. 
+This joke no longer seems appropriate due to his repeated 
+bad comments, &lt;a href="https://en.wikipedia.org/wiki/Richard_Stallman#Controversy_and_resignation_from_MIT_and_Free_Software_Foundation"&gt;brought to light by a recent controversy&lt;/a&gt;.
+Let's just say that we thank him for having hacked copyright laws, for starting the free software movement, and 
+for writing the above definition. And that we consider appropriate him stepping down from his
+leadership position in the free software community.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;✔️ Build your core team of maintainers&lt;/h2&gt;
+&lt;p&gt;When your project succeeds, hundreds of external contributors will surely be supporting it. But in order to
+get to that point, you'll need to bootstrap with a strong and diverse team of core
+maintainers. They'll take care of the bulk of the work, the fun and the boring
+parts, proposing and reviewing the code of your shared project. Together,
+you all need to have strong knowledge of all points on this checklist.
+Look not only for technical knowledge, but also for a knack for cat-herding and a
+healthy work style—because, well, things will get complicated.&lt;/p&gt;
+&lt;p&gt;Pay attention to your &lt;a href="https://en.wikipedia.org/wiki/Bus_factor"&gt;bus factor&lt;/a&gt;:
+make sure your team members are sharing their expertise, the lessons learned, and their
+responsibilities, while at the same time constantly mentoring new people
+that could potentially join the core team.&lt;/p&gt;
+&lt;p&gt;And somebody will have to lead and orchestrate in order to get value out of the eternal
+tendency toward chaos. Let me introduce you to the magician,
+&lt;a href="http://www.camilletalk.com/"&gt;Camille Fournier&lt;/a&gt;, who wrote THE book on technical
+management,
+&lt;a href="https://www.goodreads.com/book/show/33369254-the-manager-s-path"&gt;The Manager's Path&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.camilletalk.com/contact/"&gt;&lt;img src="https://static1.squarespace.com/static/56bf8b0622482edc3dc1919d/t/56bf8ef5f85082335f63196b/1455400011874/21793992240_b56cd4b3e2_o+%281%29.jpg?format=500w" alt="Camille Fournier" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Camille Fournier (Image taken from
+&lt;a href="http://www.camilletalk.com/contact/"&gt;her website&lt;/a&gt;)&lt;/p&gt;
+&lt;h2&gt;✔️ Write clean code&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.osnews.com/story/19266/wtfsm/"&gt;The only valid measurement of code quality is WTFs per minute&lt;/a&gt;. This point &lt;em&gt;must&lt;/em&gt; be simple. If things get overly complicated or
+weird, you're doing it wrong. Go for a walk and try again with fresh eyes.&lt;/p&gt;
+&lt;p&gt;But don't get me wrong: no interesting software project is simple. Add the
+complexity dimensions of decentralization, transparency, cryptography, and all
+these shiny ideas that are keeping us so busy these days. It's complicated by
+design. But with the correct abstractions, a well thought-out model, and proper encapsulation,
+you can start building the bank-killer app one line at a time. And each of
+those lines &lt;em&gt;must&lt;/em&gt; be clean and readable.&lt;/p&gt;
+&lt;p&gt;I'm not a spectacular programmer, I was just lucky to find Uncle Bob
+Martin's book
+&lt;a href="https://www.goodreads.com/book/show/3735293-clean-code"&gt;Clean Code&lt;/a&gt; at
+the right moment and to have read a never-ending stream of very, very ugly code.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Robert_Cecil_Martin.png/800px-Robert_Cecil_Martin.png" alt="Robert C. Martin" height="250"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Robert Cecil Martin (Image taken from
+&lt;a href="https://en.wikipedia.org/wiki/Robert_C._Martin#/media/File:Robert_Cecil_Martin.png"&gt;Wikipedia&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Once all core maintainers reach common ground on this topic, you should
+enforce a consistent code style by running a
+&lt;a href="https://en.wikipedia.org/wiki/Lint_(software)"&gt;linter&lt;/a&gt; on every new line of
+code that's added. The particular rules aren't as important as
+following them strictly is, but if you can
+&lt;a href="https://github.com/OpenZeppelin/openzeppelin-solidity/issues/1396#issuecomment-440426310"&gt;sacrifice your peculiar preferences to be consistent with the rest of the world&lt;/a&gt;, your contributors will appreciate it a lot.&lt;/p&gt;
+&lt;p&gt;I also practice slow-food... er, slow programming.
+Take your time, enjoy the journey to mastering this craft, and when you've built something you can
+proudly set free, let the masses read it and judge it.&lt;/p&gt;
+&lt;h2&gt;✔️ Write unit tests&lt;/h2&gt;
+&lt;p&gt;Write unit tests. Tons of them. 100% coverage. This might sound extreme, but hey, your code is now
+playing directly with somebody else's money. If you forget, or just get lazy and
+don't write a test for that super obvious line of code, you might be leaving an open
+door for an exploit later in the game that will make your project crash, and
+all this magic internet money will disappear in no time. It &lt;em&gt;has&lt;/em&gt; happened.&lt;/p&gt;
+&lt;p&gt;I feel immediately more secure when I do test-driven development. At least give
+an honest try to writing the tests first, and get into a cycle of
+red-green-refactor. There are other techniques that can achieve the same
+result, but I suggest starting there and then deviating if you find good
+reasons to do so. Never worked this way? Read
+&lt;a href="https://www.goodreads.com/book/show/387190.Test_Driven_Development"&gt;Test Driven Development: By Example&lt;/a&gt;
+by Kent Beck. It's a quick read that will help you avoid the temptation of
+just jumping into code without thinking it through.&lt;/p&gt;
+&lt;p&gt;Then, even if you design for testability, you'll find many scenarios that are
+hard to test. Gerard Meszaros provides all the answers in
+&lt;a href="https://www.goodreads.com/book/show/337302.xUnit_Test_Patterns"&gt;xUnit Test Patterns&lt;/a&gt;.
+This book is huge, so I recommend choosing a designated test expert on your
+team.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Kent_Beck#/media/File:Kent_Beck_1.jpg"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Kent_Beck_1.jpg" alt="Kent Beck" height="350"&gt;&lt;/a&gt; &lt;a href="https://twitter.com/gerardmes"&gt;&lt;img src="https://pbs.twimg.com/profile_images/71233259/Gerard_in_Vancouver__Brian_Foote-O-O_Canada_012_.jpg" alt="Gerard Meszaros" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Left: Kent Beck speaking in 2001 (Image taken from
+&lt;a href="https://en.wikipedia.org/wiki/Kent_Beck#/media/File:Kent_Beck_1.jpg"&gt;Wikipedia&lt;/a&gt;)
+Right: Gerard Meszaros (Image taken from &lt;a href="https://twitter.com/gerardmes"&gt;Twitter&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Finally, make sure to run your unit tests on every single pull request, and make sure
+they're &lt;em&gt;all&lt;/em&gt; green before merging the changes. In addition, you can set up a
+test coverage report to ensure that test coverage never goes down.&lt;/p&gt;
+&lt;h2&gt;✔️ Test early, test often, test agile&lt;/h2&gt;
+&lt;p&gt;Now that you have your first layer of tests covered with tons of unit tests,
+what comes next is...more tests! You need to test the integration between
+all of your components, then go one level higher to test your
+application from the point of view of a real user, and then go even
+higher to test the interactions with other systems end-to-end.&lt;/p&gt;
+&lt;p&gt;To me, this is the biggest challenge, and designing a good process that
+keeps many bugs out of your system can be as difficult as designing the system
+itself. Iterate, automate as much as possible, share the load of manual
+testing...and let your community help.&lt;/p&gt;
+&lt;p&gt;We'll talk later about community, but I think this is the reason for
+publishing your code as early as possible: you can get help from early adopters
+and enthusiasts to validate your system, not only for correctness but also to
+verify that you're focusing on the right user stories and that you're tackling a
+real problem with a user-friendly solution.&lt;/p&gt;
+&lt;p&gt;A lot has been written about iterative development processes that deliver
+functionalities in progressive sprints and milestones. I found Mike Cohn's
+&lt;a href="https://www.goodreads.com/book/show/6707987-succeeding-with-agile"&gt;Succeeding with Agile: Software Development Using Scrum&lt;/a&gt;
+a good place to start, but keep in mind that any methodology will have to be
+adjusted to your team, your users, and your context. There are a lot fewer
+resources focused on the quality and testing part; that's why I was so happy
+when I read
+&lt;a href="https://www.goodreads.com/book/show/5341009-agile-testing"&gt;Agile Testing&lt;/a&gt; by
+Lisa Crispin and Janet Gregory, which is full of good ideas and advice. But
+let me stress again: nothing you read will perfectly fit your project, so take your
+time to design the testing process with as much love and care as you use when
+designing the system's architecture.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mike_Cohn_2013-06-12.jpg/1280px-Mike_Cohn_2013-06-12.jpg" alt="Mike Cohn" height="350"&gt;&lt;/a&gt; &lt;a href="https://agiletester.ca/about-the-authors/"&gt;&lt;img src="https://agiletester.ca/wp-content/uploads/sites/26/2013/09/Lisa-Crispin-and-Janet-Gregory.jpg" alt="Lisa Crispin and Janet Gregory" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Left: Mike Cohn in 2013 (Image taken from
+&lt;a href="https://en.wikipedia.org/wiki/Mike_Cohn#/media/File:Mike_Cohn_2013-06-12.jpg"&gt;Wikipedia&lt;/a&gt;)
+Right: Right: Lisa Crispin and Janet Gregory (Image taken from their
+&lt;a href="https://agiletester.ca/about-the-authors/"&gt;website&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;While there's still some debate about the perfect moment for auditing a project (i.e, before or after the code is
+published), I think audits should be performed when there's a release candidate
+ready to be deployed to mainnet, after you have performed extensive alpha and
+beta testing. I see room for auditing before the code has been published,
+but in this case, the audit would be more related to checking that the development
+process will lead to a high-quality, properly tested release candidate and
+validating the bases of your project than to performing a deep and thorough
+inspection of the codebase.&lt;/p&gt;
+&lt;p&gt;However, this doesn’t mean that you have to wait until the end of a long
+development phase to prepare for a release and audit. Once you start writing and
+testing clean code in incremental iterations, it becomes easier to think about
+your complex system. Many smaller independent parts will start to pop up, which
+can be extracted, generalized, and packaged for reuse, reducing anxiety for
+developers and auditors. These packages are the focus of
+&lt;a href="https://zeppelinos.org/"&gt;ZeppelinOS&lt;/a&gt; for this year, to know more take a look at
+the &lt;a href="https://blog.zeppelinos.org/state-of-evm-packages-end-of-2018/"&gt;State of EVM Packages&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;✔️ Write documentation&lt;/h2&gt;
+&lt;p&gt;This is my least favorite part, by far. So let's keep it simple, starting at
+the beginning: the README, the most important file of your repository.
+And yet, it's usually either empty or bloated, outdated, and ugly. Ideally, as it's the
+first thing developers and potential contributors will read, it should work as a clear, straightforward index of
+your project.&lt;/p&gt;
+&lt;p&gt;It's best not to get creative here. Just follow this simple specification that
+works for all cases, proposed by Richard Littauer in
+&lt;a href="https://github.com/RichardLitt/standard-readme/blob/master/spec.md"&gt;Standard Readme&lt;/a&gt;.
+&lt;em&gt;Do not forget&lt;/em&gt; to include a specific section in the main README that states how people should disclose any security
+vulnerabilities found in your project.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/richlitt"&gt;&lt;img src="https://pbs.twimg.com/profile_images/853672023511490561/m_RAvJfy.jpg" alt="Richard Littauer" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Richard Littauer (Image taken from &lt;a href="https://twitter.com/richlitt"&gt;Twitter&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Next come the docstrings, the documentation inside your code files. We hit
+an apparent conflict here, since in theory, if your code is clean,
+it will not require documentation. However, note that we are no longer
+designing standalone systems that work as a black box. We are building
+protocols for decentralized applications, and your code will be called by all sorts
+of external agents. So by all means, document every function that's part
+of the contract's public API, following the
+&lt;a href="https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format"&gt;NatSpec format&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Which brings me to the next point. I highly recommend that you document the
+specification of your protocol—that's how others will know what to call and
+what to expect. But more related to the topic at hand, in an audit, we check that
+the implemented code works as intended by the specification. That's why this
+document is a &lt;em&gt;must&lt;/em&gt;: without it, auditors will just guess at your intentions, which
+might result in some issues getting missed because they're completely consistent
+within the system but take it to a state that you want to avoid.&lt;/p&gt;
+&lt;p&gt;Finally, there's the user documentation. For high-quality systems,
+writing the user documentation should be mostly painless. The moment things get cumbersome
+while documenting, consider re-evaluating your user stories, and don't be afraid to go back to iterate on
+them.&lt;/p&gt;
+&lt;h2&gt;✔️ Check your dependencies&lt;/h2&gt;
+&lt;p&gt;Your project builds on top of many, many others. It will probably depend at least
+on the Ethereum protocol and its network of nodes, and on Solidity, a bunch of
+Ethereum Improvement Proposals and their implementation, libraries for testing and UI, and maybe hundreds
+of other small projects. Even if yours is secure, you need to check how healthy your dependencies are,
+since they can easily become the source of
+vulnerabilities.&lt;/p&gt;
+&lt;p&gt;Earlier, I mentioned that your team should have strong and diverse knowledge.
+That includes knowledge of all the projects that surround you. You should be able to
+write idiomatic code following the best practices of the language, to identify
+and avoid known issues, always keeping an eye on new
+&lt;a href="https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures"&gt;CVEs&lt;/a&gt;
+that may directly (or indirectly, through third-party dependencies) affect your project. Moreover, try to participate in the communities around your
+dependencies, as it's an excellent way to see firsthand how safe and trustworthy they are.
+You should also consider &lt;em&gt;actively&lt;/em&gt; participating in those communities, to gain some karma that will surely come in
+handy later when you need new features and bug fixes.&lt;/p&gt;
+&lt;p&gt;Moreover, don't forget to pay attention to your dependencies' finances. When making your project's budget,
+take into account a share for your dependencies, as they may need it in order
+to remain actively maintained. There's a very nice project called
+&lt;a href="https://opencollective.com/discover"&gt;OpenCollective&lt;/a&gt;,
+led by Pia Mancini, which is making it extremely easy to transparently support
+the organizations and developers you depend on.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.piamancini.com/"&gt;&lt;img src="https://static.wixstatic.com/media/a7bdaa_ab650ff17e804731b7cf560bc5ee9a02~mv2.jpg/v1/crop/x_0,y_120,w_961,h_961/fill/w_530,h_530,al_c,q_80,usm_0.66_1.00_0.01/Pia%20Mancini%20-%20headshot.jpg" alt="Pia Mancini" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pia Mancini (Image taken from her &lt;a href="https://www.piamancini.com/"&gt;website&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;And, of course, with &lt;a href="https://zeppelinos.org/"&gt;ZeppelinOS&lt;/a&gt;, we're building a
+platform that will let you vouch for the security of a package. It's in beta
+testing, so expect exciting news very soon.&lt;/p&gt;
+&lt;p&gt;Specific to Ethereum and Solidity, the community is collecting the lessons
+learned (usually in a painful way). You can learn a lot about interesting
+and tricky vulnerabilities playing the
+&lt;a href="https://ethernaut.zeppelin.solutions/"&gt;Ethernaut capture-the-flag game&lt;/a&gt;.
+We've
+&lt;a href="https://blog.zeppelin.solutions/tagged/security"&gt;published many of our past audits&lt;/a&gt;
+with descriptions of the issues found, recommendations, and usually a link
+to the patch that fixes them. All of our learnings from audits are distilled into
+the &lt;a href="https://openzeppelin.org/"&gt;OpenZeppelin package&lt;/a&gt;, which you should definitely add
+to your list of dependencies—if you're not one of the thousands that already did. The
+&lt;a href="https://smartcontractsecurity.github.io/SWC-registry/"&gt;Smart Contracts Weakness Registry&lt;/a&gt;
+maintained by the Mythril team is also a great resource for learning from the
+experience of others.&lt;/p&gt;
+&lt;p&gt;Whatever approach you take, remember that as the Ethereum space is very young and unexplored, we're learning many things as we go, so &lt;em&gt;always&lt;/em&gt;
+proceed with caution.&lt;/p&gt;
+&lt;h2&gt;✔️ Build your community&lt;/h2&gt;
+&lt;p&gt;This is a complement to the first point: code without a community is insecure.
+The community gives you eyes to monitor the project, hands to test it in a
+real environment, support to survive challenging problems, and resilience to
+adjust to the unexpected. No amount of money, experience, or knowledge
+can substitute for this.&lt;/p&gt;
+&lt;p&gt;Once you publish the code, you can get started engaging your community. If your
+project is interesting, they will come, and this is where the cat-herding
+abilities of your team will shine. However, you definitely need to set up proper and fluent communication channels,
+invest in some marketing, and hire a bold community manager with a plan to disentangle
+and wisely leverage all the opportunities your community brings. I can't
+recommend highly enough the writings and videos by
+&lt;a href="https://www.jonobacon.com/"&gt;Jono Bacon&lt;/a&gt;, who has covered all the topics you
+can imagine about community management.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.flickr.com/photos/jonobacon/12622356185/"&gt;&lt;img src="https://farm4.staticflickr.com/3740/12622356185_b89d134675_k.jpg" alt="Jono Bacon" height="350"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Jono Bacon in 2014 (Image taken from &lt;a href="https://www.flickr.com/photos/jonobacon/12622356185/"&gt;Flickr&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;You should be thoughtful and caring with your community. A small step that
+goes a long way is to adopt and enforce a
+&lt;a href="https://www.contributor-covenant.org/"&gt;code of conduct&lt;/a&gt; so you can all feel
+safe. Then, write some contribution guidelines to make sure that all of their
+enthusiasm can be put to good use and they don't get lost. Lastly, think about
+setting up a &lt;a href="https://www.hackerone.com/"&gt;bug bounty program&lt;/a&gt; that will
+encourage your community to watch out for vulnerabilities in the wild,
+providing hackers with enough incentives to disclose security issues in a responsible way.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;tldr:&lt;/p&gt;
+&lt;p&gt;✅ Choose a free software license.&lt;/p&gt;
+&lt;p&gt;✅ Build a strong and diverse team of core maintainers.&lt;/p&gt;
+&lt;p&gt;✅️ Increase your bus factor: share knowledge and responsibilities.&lt;/p&gt;
+&lt;p&gt;✅ Choose a good leader.&lt;/p&gt;
+&lt;p&gt;✅️ Write clean code.&lt;/p&gt;
+&lt;p&gt;✅️ Enforce a consistent code style.&lt;/p&gt;
+&lt;p&gt;✅️ Ensure 100% unit test coverage.&lt;/p&gt;
+&lt;p&gt;✅️ Enforce green tests on all your pull requests.&lt;/p&gt;
+&lt;p&gt;✅️ Design your iterative development and testing process.&lt;/p&gt;
+&lt;p&gt;✅️ Publish your code.&lt;/p&gt;
+&lt;p&gt;✅️ Write a good README.&lt;/p&gt;
+&lt;p&gt;✅️ Document the functions of your public API.&lt;/p&gt;
+&lt;p&gt;✅️ Document your protocol.&lt;/p&gt;
+&lt;p&gt;✅️ Write the end-user documentation.&lt;/p&gt;
+&lt;p&gt;✅️ Make sure that your dependencies can be trusted.&lt;/p&gt;
+&lt;p&gt;✅️ Review known issues and keep an eye out for new ones.&lt;/p&gt;
+&lt;p&gt;✅️ Use OpenZeppelin, the community-vetted standard for smart contract development.&lt;/p&gt;
+&lt;p&gt;✅️ Build and care for your community.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Ready to hire an auditing team?&lt;/h2&gt;
+&lt;p&gt;That's us! :) The OpenZeppelin team can help you assess the quality of your project and
+processes. We'll take a deep and thorough dive into your code, with years of experience hacking,
+researching, and developing on blockchains, plus a little touch of Latin
+American fire, to give you and your users all the confidence you need to
+continue building the core systems of this new decentralized, global, and open economy.&lt;/p&gt;
+&lt;p&gt;We're available for auditing services, so check out this information about
+&lt;a href="https://openzeppelin.com/security-audits/"&gt;security audits&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href="https://notonlyowner.com/"&gt;Martín Abbatemarco&lt;/a&gt; for editing this
+post, to the OpenZeppelin team for the continuous experimentation and feedback,
+and to &lt;a href="https://blog.openzeppelin.com/tagged/security"&gt;our customers&lt;/a&gt; for
+trusting us and helping us better understand what makes a free software
+project awesome.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Be part of our community&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Continue the discussion on our &lt;a href="https://forum.openzeppelin.com/"&gt;forum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Request a &lt;a href="https://openzeppelin.com/security-audits/"&gt;security audit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Even better, &lt;a href="https://openzeppelin.com/jobs/"&gt;join the team&lt;/a&gt; 🚀&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/quality-checklist-before-audit/</guid><pubDate>Fri, 08 Feb 2019 15:58:13 GMT</pubDate></item><item><title>On crowdsales and multiple inheritance</title><link>http://elopio.net/es/blog/crowdsales-and-multiple-inheritance/</link><dc:creator>Leo Arias</dc:creator><description>&lt;div&gt;&lt;p&gt;On 2017 we saw a mind-blowing number of crowdsales and ICOs running in the
+Ethereum blockchain. They have proven to be a
+powerful tool to collect the funds required to start a project, and they are
+one of the most common uses for smart contracts right now. The Zeppelin team
+has been very involved in this topic,
+&lt;a href="https://blog.zeppelin.solutions/tagged/audit"&gt;auditing many crowdsale contracts&lt;/a&gt;,
+and supporting &lt;a href="https://openzeppelin.org/"&gt;OpenZeppelin&lt;/a&gt;, the most popular
+framework to build these crowdsales. What we found was a lot of contracts
+repeating the same basic concepts, with very similar code, and common
+vulnerabilities.&lt;/p&gt;
+&lt;p&gt;Earlier this year, part of the team took the task to redesign our base
+&lt;code&gt;Crowdsale&lt;/code&gt; contract in order to support a lot of new crowdsale flavors out of
+the box and to make the experience of building and publishing your own
+crowdsale more clear and secure. The idea is to make audits less necessary,
+with an architecture that is modular, that encourages reuse and that will be
+collectively reviewed. These new contracts were added to OpenZeppelin version
+&lt;code&gt;1.7.0&lt;/code&gt;, and since the release they have been widely used by our community with
+ great success. So, this is a good moment to show off :)&lt;/p&gt;
+&lt;p&gt;Let's start with a dive into
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol"&gt;the source code of the &lt;code&gt;Crowdsale&lt;/code&gt; base contract&lt;/a&gt;.
+The first thing you will notice is a lot of comments, guiding you through the
+details of the OpenZeppelin crowdsale architecture. They explain that some
+functions are the core of the architecture and should not be overriden, like
+&lt;code&gt;buyTokens&lt;/code&gt;. Some others like &lt;code&gt;_preValidatePurchase&lt;/code&gt; can be overriden to
+implement the requirements of your crowdsale, but that extra behavior should
+be concatenated with the one of the parent by calling &lt;code&gt;super&lt;/code&gt;, to preserve the
+validations from the  base contract. Some functions like
+&lt;code&gt;_postValidatePurchase&lt;/code&gt; can be just added as hooks in other parts of the
+crowdsale's lifecycle.&lt;/p&gt;
+&lt;p&gt;Building on top of this base, we now provide some contracts for common
+crowdsale scenarios involving
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/distribution"&gt;distribution&lt;/a&gt;,
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/emission"&gt;emission&lt;/a&gt;,
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/price"&gt;price&lt;/a&gt;,
+and
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale/validation"&gt;validation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So, let's say that you want to set a goal for your crowdsale and if it's not
+met by the time the sale finishes, you want to refund all your investors. For
+that, you can use the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/distribution/RefundableCrowdsale.sol"&gt;RefundableCrowdsale contract&lt;/a&gt;,
+which overrides the base &lt;code&gt;_forwardFunds&lt;/code&gt; behavior to send the funds to a fancy
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/distribution/utils/RefundVault.sol"&gt;RefundVault&lt;/a&gt;
+while the crowdsale is in progress, instead of sending them directly to the
+wallet of the crowdsale owner.&lt;/p&gt;
+&lt;p&gt;Another common scenario is when you want the tokens to be minted when they are
+purchased. For that, take a look at the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/emission/MintedCrowdsale.sol"&gt;MintedCrowdsale contract&lt;/a&gt;,
+which overrides the simple &lt;code&gt;_deliverTokens&lt;/code&gt; behavior of the base class to call
+instead the &lt;code&gt;mint&lt;/code&gt; function of an
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/MintableToken.sol"&gt;ERC20 Mintable token&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What if we want to do something more interesting with the price of the tokens?
+The base &lt;code&gt;Crowdsale&lt;/code&gt; contract defines a constant rate between tokens and wei,
+but if we override &lt;code&gt;_getTokenAmount&lt;/code&gt;, we could do something like increasing
+the price as the closing time of the crowdsale approaches. That's exactly what
+the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/crowdsale/price/IncreasingPriceCrowdsale.sol"&gt;IncreasingPriceCrowdsale contract&lt;/a&gt;
+does.&lt;/p&gt;
+&lt;p&gt;To get started developing and deploying a crowdsale using the OpenZeppelin
+framework, Gustavo Guimaraes published a nice
+&lt;a href="https://blog.zeppelin.solutions/how-to-create-token-and-initial-coin-offering-contracts-using-truffle-openzeppelin-1b7a5dae99b6"&gt;guide where you will see in action a crowdsale that is timed &lt;strong&gt;and&lt;/strong&gt; minted&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;These are just a few examples. I invite you to explore the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale"&gt;OpenZeppelin crowdsale contracts&lt;/a&gt;
+to see all the new flavors that you can easily use to fund your cool idea;
+and take a look at the
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/examples/SampleCrowdsale.sol"&gt;SampleCrowdsale contract&lt;/a&gt;,
+a more complex scenario that comes with full
+&lt;a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/test/examples/SampleCrowdsale.test.js"&gt;test coverage&lt;/a&gt;.
+If you like OpenZeppelin, remember that you are welcome into
+&lt;a href="https://slack.openzeppelin.org/"&gt;our vibrating community&lt;/a&gt; to help us adding new
+contracts or improving the existing ones.&lt;/p&gt;
+&lt;p&gt;On the repo you will also find that all these contracts are very well tested. And
+as we have seen, the new architecture is clearer and safer, with each contract
+explaining the functions that you can or can't override, and how to do it.
+However, you should be extra careful when combining them. It's not the same to
+have three contracts with one condition than to have one contract with three
+conditions. The combination increases the attack surface, so you need to have
+a good idea of what you want to achieve, and know the implementation details of
+the tools you are using.&lt;/p&gt;
+&lt;p&gt;Before you go ahead and deploy a complex crowdsale that combines some of our
+contracts, I would like to spend some time going deep into how Solidity works
+when you combine contracts through multiple inheritance, like Gustavo did in
+his guide to make a contract that inherits from &lt;code&gt;TimedCrowdsale&lt;/code&gt; &lt;strong&gt;and&lt;/strong&gt; from
+&lt;code&gt;MintedCrowdsale&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Multiple inheritance is hard, and it can get very confusing if you abuse it.
+Some languages don't support it at all; but it is becoming a very common
+pattern on Solidity.&lt;/p&gt;
+&lt;p&gt;The problem, from the point of view of the programmer, is to understand the
+order of the calls when a contract has multiple parents. Let's say we have a
+base contract &lt;code&gt;A&lt;/code&gt;, with a function named &lt;code&gt;f&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract A {&lt;/span&gt;
+&lt;span class="err"&gt;  function f() {&lt;/span&gt;
+&lt;span class="err"&gt;    somethingA();&lt;/span&gt;
+&lt;span class="err"&gt;  }&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Then we have two contracts &lt;code&gt;B&lt;/code&gt; and &lt;code&gt;C&lt;/code&gt;, both inherit from &lt;code&gt;A&lt;/code&gt; and override &lt;code&gt;f&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;somethingB&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;super&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;somethingC&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="n"&gt;super&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="err"&gt;}&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;And finaly we have a contract &lt;code&gt;D&lt;/code&gt;, which inherits from &lt;code&gt;B&lt;/code&gt; and &lt;code&gt;C&lt;/code&gt;, and
+overrides &lt;code&gt;f&lt;/code&gt; too:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is B, C {&lt;/span&gt;
+&lt;span class="err"&gt;  function f() {&lt;/span&gt;
+&lt;span class="err"&gt;    somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;    super.f();&lt;/span&gt;
+&lt;span class="err"&gt;  }&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;What happens when you call &lt;code&gt;D.f&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;This is called the diamond problem, because we end up with a diamond-shaped
+inheritance diagram:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/180px-Diamond_inheritance.svg.png"&gt;&lt;img alt="Diamond inheritance problem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/180px-Diamond_inheritance.svg.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(the image is from wikipedia)&lt;/p&gt;
+&lt;p&gt;To solve it, Solidity uses C3 linearization, also called Method Resolution
+Order (MRO). This means that it will linearize the inheritance graph. If &lt;code&gt;D&lt;/code&gt;
+is defined as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is B, C {}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;then &lt;code&gt;D.f&lt;/code&gt; will call:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;somethingC();&lt;/span&gt;
+&lt;span class="err"&gt;somethingB();&lt;/span&gt;
+&lt;span class="err"&gt;somethingA();&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When &lt;code&gt;D&lt;/code&gt; inherits from &lt;code&gt;B, C&lt;/code&gt;, the linearization results in D→ C→ B→ A. This
+means that &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;D&lt;/code&gt; calls &lt;code&gt;C&lt;/code&gt;. And you might be a little surprised by the
+fact that calling &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;C&lt;/code&gt; will result on a call to &lt;code&gt;B&lt;/code&gt; instead of &lt;code&gt;A&lt;/code&gt;,
+even though &lt;code&gt;C&lt;/code&gt; doesn't inherit from &lt;code&gt;B&lt;/code&gt;. Finally, &lt;code&gt;super&lt;/code&gt; on &lt;code&gt;B&lt;/code&gt; will call
+&lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If &lt;code&gt;D&lt;/code&gt; is instead defined as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;contract D is C, B {}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;then &lt;code&gt;D.f&lt;/code&gt; will call:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;somethingD();&lt;/span&gt;
+&lt;span class="err"&gt;somethingB();&lt;/span&gt;
+&lt;span class="err"&gt;somethingC();&lt;/span&gt;
+&lt;span class="err"&gt;somethingA();&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;When &lt;code&gt;D&lt;/code&gt; inherits from &lt;code&gt;C, B&lt;/code&gt;, the linearization results in D→ B→ C→ A.&lt;/p&gt;
+&lt;p&gt;Notice here that the order in which you declare the parent contracts matters a
+lot. If the inheritance graph is not too complex, it will be easy to see that
+the order of calls will follow the order in which the parents were declared,
+right to left. If your inheritance is more complicated than this and the
+hierarchy is not very clear, you should probably stop using multiple
+inheritance and look for an alternate solution.&lt;/p&gt;
+&lt;p&gt;I recommend you to read the wikipedia pages of
+&lt;a href="https://en.wikipedia.org/wiki/Multiple_inheritance"&gt;Multiple inheritance&lt;/a&gt; and
+&lt;a href="https://en.wikipedia.org/wiki/C3_linearization"&gt;C3 linearization&lt;/a&gt;, and the
+&lt;a href="https://solidity.readthedocs.io/en/latest/contracts.html#multiple-inheritance-and-linearization"&gt;Solidity docs about multiple inheritance&lt;/a&gt;.
+You will find in there a complete explanation of the C3 algorithm, and an
+example with a more complicated inheritance graph.&lt;/p&gt;
+&lt;p&gt;To better understand how this can impact your crowdsales, take a look at the
+case that Philip Daian brilliantly explains on his blog post
+&lt;a href="https://pdaian.com/blog/solidity-anti-patterns-fun-with-inheritance-dag-abuse/"&gt;Solidity anti-patterns: Fun with inheritance DAG abuse&lt;/a&gt;.
+There, he presents a Crowdsale contract that needs "to have a whitelist
+pool of preferred investors able to buy in the pre-sale [...], along with a
+hard cap of the number of [...] tokens that can be distributed." On his first
+(deliberately) faulty implementation, he ends up with a crowdsale that checks:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;((withinPeriod &amp;amp;&amp;amp; nonZeroPurchase) &amp;amp;&amp;amp; withinCap) || (whitelist[msg.sender] &amp;amp;&amp;amp; !hasEnded())&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Pay close attention to the resulting condition, and notice that if a
+whitelisted investor buys tokens before the crowdsale has ended, she will be
+able to bypass the hard cap, and buy as many tokens as she wants.&lt;/p&gt;
+&lt;p&gt;By just inverting the order on which the parents are defined, he fixes the
+contract which will now check for:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;(withinPeriod &amp;amp;&amp;amp; nonZeroPurchase || (whitelist[msg.sender] &amp;amp;&amp;amp; !hasEnded())) &amp;amp;&amp;amp; withinCap&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Now, if the purchase attempt goes above the cap, the transaction will be
+reverted even if the sender is whitelisted.&lt;/p&gt;
+&lt;p&gt;There are some simple cases, where the order of the conditions is not
+important. By now, you should have started to suspect that the contract above
+became complicated because of the &lt;code&gt;||&lt;/code&gt; (&lt;em&gt;or&lt;/em&gt;) condition. Things are a lot easier
+when all our conditions are merged with &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; (&lt;em&gt;and&lt;/em&gt;), because in that case the
+order of the conditions doesn't alter the result.&lt;/p&gt;
+&lt;p&gt;Our new architecture was crafted for using &lt;code&gt;require&lt;/code&gt; instead of returning
+booleans, which works nicely to combine &lt;em&gt;and&lt;/em&gt; conditions, and to revert the
+transaction when one fails. Let's say that we have a crowdsale that should
+&lt;strong&gt;only&lt;/strong&gt; allow whitelisted investors to buy tokens while the sale is open
+&lt;strong&gt;and&lt;/strong&gt; the cap has not been reached. In this
+case, the condition to check would be (in pseudocode):&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;require(hasStarted() &amp;amp;&amp;amp; !hasEnded())&lt;/span&gt;
+&lt;span class="err"&gt;require(isInWhiteList(msg.sender))&lt;/span&gt;
+&lt;span class="err"&gt;require(isWithinCap(msg.value))&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;Our contract would be as simple as:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pragma&lt;/span&gt; &lt;span class="n"&gt;solidity&lt;/span&gt; &lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mf"&gt;0.4&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="s2"&gt;"zeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;contract&lt;/span&gt; &lt;span class="n"&gt;WhitelistedTimedCappedCrowdsale&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;TimedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;WhitelistedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CappedCrowdsale&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+  &lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="n"&gt;WhitelistedTimedCappedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;address&lt;/span&gt; &lt;span class="n"&gt;_wallet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;ERC20&lt;/span&gt; &lt;span class="n"&gt;_token&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_openingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_closingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;uint256&lt;/span&gt; &lt;span class="n"&gt;_cap&lt;/span&gt;
+  &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;public&lt;/span&gt;
+    &lt;span class="n"&gt;Crowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_rate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_wallet&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_token&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;TimedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_openingTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_closingTime&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;CappedCrowdsale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_cap&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;It doesn't matter how you order the parents, all the conditions will be
+checked always. But take this with a grain of salt. All the conditions will be
+checked, but the order will be different. This can have different side-effects
+on Solidity, as some paths will execute statements that other paths won't, and
+it could lead an attacker to find a specific path that is vulnerable. Also, if
+your parent contracts are not super clear, they might be hiding an &lt;code&gt;||&lt;/code&gt;
+condition in a few hard-to-read code statements.&lt;/p&gt;
+&lt;p&gt;It's very easy to think that the parent contracts will just be magically merged
+into something that will make sense for our use case, or to make a mistake when
+we linearize them in our mind. Every use case will be different, so our
+framework can't save you from the work of organizing your contracts' hierarchy.
+You must analyze the linearization of the inheritance graph to get a clear view
+of the functions that will be called and their order, and always always add a
+full suite of automated tests for your final crowdsale contract to make sure
+that it enforces all the conditions.&lt;/p&gt;
+&lt;p&gt;To finish, I wanted to show you my repo where I will be doing
+experiments with crowdsales and their tests:
+&lt;a href="https://github.com/elopio/zeppelin-crowdsales"&gt;https://github.com/elopio/zeppelin-crowdsales&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Take a look at my
+&lt;a href="https://github.com/elopio/zeppelin-crowdsales/blob/master/contracts/PreSaleWithCapCrowdsale.sol"&gt;PreSaleWithCapCrowdsale contract&lt;/a&gt;.
+You will see that I preferred to be explicit about the conditions instead of
+using &lt;code&gt;super&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_preValidatePurchase&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;uint256&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;internal&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;timestamp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;openingTime&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;whitelist&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;_beneficiary&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;timestamp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;closingTime&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;weiRaised&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_weiAmount&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cap&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;I encourage you to join me on these experiments, to try different combinations
+of crowdsales and to play switching the order of the inheritance graph. We will
+learn more about the resulting code that Solidity compiles, we will improve our
+mental picture of the execution stack, and we will practice writing tests
+that fully cover all the possible paths. If you have questions, find
+errors on the implementations in OpenZeppelin, or find an alternative
+implementation that will make it easier to develop crowdsales on top of our
+contracts, please
+&lt;a href="https://slack.openzeppelin.org/"&gt;let us know by sending a message to the slack channel&lt;/a&gt;.
+I am &lt;em&gt;elopio&lt;/em&gt; in there.&lt;/p&gt;
+&lt;p&gt;A relevant experiment here is to use
+&lt;a href="https://en.wikipedia.org/wiki/Composition_over_inheritance#Benefits"&gt;composition over inheritance&lt;/a&gt;.
+In OpenZeppelin we couldn't implement an architecture based on composition
+because of the high gas costs implied, especially during deployment. That is
+one of the reasons we are now hard at work
+on &lt;a href="https://zeppelinos.org/"&gt;zeppelin_os&lt;/a&gt;, which minimizes deployment costs
+by helping you use libraries that are already on-chain. Expect exciting news
+very soon!&lt;/p&gt;
+&lt;p&gt;Thanks a lot to &lt;a href="https://github.com/ajsantander"&gt;Ale&lt;/a&gt; and
+&lt;a href="https://github.com/fiiiu"&gt;Alejo&lt;/a&gt;, who worked on these new contracts and helped
+me to understand them. &amp;lt;3&lt;/p&gt;&lt;/div&gt;</description><guid>http://elopio.net/es/blog/crowdsales-and-multiple-inheritance/</guid><pubDate>Sun, 08 Apr 2018 15:58:13 GMT</pubDate></item></channel></rss>

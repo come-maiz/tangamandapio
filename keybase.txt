@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/elopio
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://elopio.net
+  * I am elopio (https://keybase.io/elopio) on keybase.
+  * I have a public key with fingerprint 35A8 C06D B592 5D17 864A  AB71 852F 630D 0DA3 C0E0
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204138dbbc0f40ddf6e972f04eb290e38f4d85bda448479213e4dd07afc5dff0970a",
+      "fingerprint": "35a8c06db5925d17864aab71852f630d0da3c0e0",
+      "host": "keybase.io",
+      "key_id": "852f630d0da3c0e0",
+      "kid": "01011d912b76d4802d2531642c511d309841356c88e522ba3229975e3d83c81ff2d70a",
+      "uid": "421bb11855f9b796179bf581a27f8d19",
+      "username": "elopio"
+    },
+    "service": {
+      "hostname": "elopio.net",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1559616946,
+  "expire_in": 157680000,
+  "prev": "ca52ae6be07700becb1baf536c68f444dbfd1d0acafdf9435a3ee2ced1d73179",
+  "seqno": 54,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owFtUn9MVVUchyeuQECYIs5kxFWzP3hw7u97EajQFFiuTFioINx7z7lwE959vPeA
+hDFgBptGTBmETcotJEHACCJBnEIgEuSYgQ1csCe6FPwFCyJ+NDqP4o+2zj9n53M+
+n8/5fM/3e9pjjZObc2Gw4uFR1WF37p+QneJnR6/mELIOjxMhOcQxtLKhVIistsRj
+GiRCCEBSgCFpAcqyAlQGQKhySOQpFTBIpkSAaEFloMDKUGIYgeFFiqQRAyHgJVVh
+oaoCkQcSEUiomikZWcwWzWTDtjQrCQrgoMyKFAtJXuAYSZJ5UmAplaMBBFCiFYAA
+FqboVocCh5MlKwrSdIzhQ+JKvP/hr+YGJAlFkpJ5DjICoCDF0iTHUAqLcRqIAq6K
+5RRBQCxFyRJNUaLIs4iGAq0IpKpS8J/cGSt2DEXKMonjsaoo8yJH8qKssgIpUbwq
+QFJ0EK3IYpLSEGajVN2Mc+YGEhjL1BTk+FZHHf+5DzIhG9aZLbpNV/RUjKfYbGZr
+iENnO252ELOQnPivRaKsmSD+Q6zIRBarppuIEBIzFZvm8CRZFqfiRIYLJNBHZs2C
+EjUHg+U5AeDleAdlYktFYikJcTICfCwPgIwUmZQllaU5hcOtZBgoq5CEQFIkFaoi
+gztFI0QpCIM8jesmHFWlm3QihGVwUCkZm1q1ZJNky7AgItftpIF2cXJ2c/LbFODC
+1nSktZQm+BZF16WvDt5ag2PqnNxcvVYRP7/1yxFCxanZocvAR22d2bxjrP5eU3XB
+1sbAsIbTH4fOLV3zKrtf5n32VcW3dvGvoJj4tUqWNXdx3D6nXwnQPD9LogZvXdre
+1Xzoqa/7SITvVKTU9OdX+9Ldnnjn7Ig7rx08U/f9uIHPP9gS//PouUcn9/7YM7jk
+28u4Lt3aFbenbeHs2Pxtw+cdRTk3Oza/HS89yW7lr4ee8r/XLQ7N2bf5mDXPbxqN
+J37d+GH9YY+HPwQDz6TJuFJhfFd/XZz97nfVN27XB8XsTypT7F9G32mQSmb3eEqX
+fvOivv62y9tQ49X3yyfvhL4xWLCg5P9xYOenzRXo0L43k82duwYfg866ZxO7w18K
+H153oH1iYvqV7CP1c5F5j8+nvvyFLcrncoXp+lxC30D2Dfv+159GVI2Gz1/0dC+s
+Xp5+MBkh9b+ITdnbvlxeaj5xtDLAeyym8rkxbIPuSg/UlBg8i+2BRUnvGd/PfRFp
+LHAJqKwNnll/P2/78/Boo/sSQzbINeXn3mpqnkAjxeaF0CrTtS1ic195Ys3Us/Hp
+I12ZcY0jxUe9jB7rDt/pNXrrGTvnuzbBgurh/NnuNDWp8LULV2NND35q/+DduYsJ
+kzfbhreO+W8wNLQXDYVt271xUexecp/qjN7yu15LWgbYHj3nwporal5US1uX0R5/
+t+NhoG9nln/PWGtv1Ax6VLJAUvl/Aw==
+=y0FT
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/elopio
+
+==================================================================
